@@ -13,6 +13,7 @@
 		27F5601F2042829B00BD7549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5601E2042829B00BD7549 /* Assets.xcassets */; };
 		27F5602C20434FC700BD7549 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F5602B20434FC700BD7549 /* Launch Screen.storyboard */; };
 		4CED6FBB37121804C3BB77F2 /* Pods_Libs_With_Pals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729041734A25155835917708 /* Pods_Libs_With_Pals.framework */; };
+		F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35801C3204A0E2F004E6B3C /* MPCHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		27F560232042829B00BD7549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F5602B20434FC700BD7549 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		729041734A25155835917708 /* Pods_Libs_With_Pals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libs_With_Pals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F35801C3204A0E2F004E6B3C /* MPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				27F5601E2042829B00BD7549 /* Assets.xcassets */,
 				27F5602B20434FC700BD7549 /* Launch Screen.storyboard */,
 				27F560232042829B00BD7549 /* Info.plist */,
+				F35801C3204A0E2F004E6B3C /* MPCHandler.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				27F5601A2042829B00BD7549 /* ViewController.swift in Sources */,
 				27F560182042829B00BD7549 /* AppDelegate.swift in Sources */,
+				F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
