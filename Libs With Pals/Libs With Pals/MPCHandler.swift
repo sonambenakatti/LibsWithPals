@@ -48,25 +48,31 @@ class MPCHandler: NSObject, MCSessionDelegate {
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         let userInfo = ["peerId": peerId, "state":state.rawValue] as [String : Any]
-        //dispatch_async(dispatch_get_main_queue(), { () -> Void in
-           // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotif"), object: nil)
-        //})
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil, userInfo: userInfo)
+        }
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        
+        let userInfo = ["data": data, "peerID": peerID] as [String : Any]
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil, userInfo: userInfo)
+        }
     }
     
+    // not recieving any resources
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
         
     }
     
+    // not recieving any resources 
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        <#code#>
+
     }
     
+    // not recieving a data stream
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        <#code#>
+        
     }
 
 }
