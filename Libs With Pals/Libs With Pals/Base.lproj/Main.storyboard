@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -153,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDj-9X-EeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-912.79999999999995" y="1749.1754122938532"/>
+            <point key="canvasLocation" x="-346" y="1693"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5Og-SO-0aC">
@@ -186,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzR-qO-SHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="1748.2758620689656"/>
+            <point key="canvasLocation" x="457" y="1693"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="syu-pz-9BX">
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuY-Jd-EPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821.60000000000002" y="1748.2758620689656"/>
+            <point key="canvasLocation" x="1225" y="1693"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="F0m-hy-LfF">
@@ -355,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4z-qr-Tq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168.8" y="872.11394302848578"/>
+            <point key="canvasLocation" x="1225" y="872"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="T4y-DQ-BbE">
@@ -403,12 +403,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8k-bw-9JX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944.8" y="871.21439280359823"/>
+            <point key="canvasLocation" x="-1071" y="1693"/>
         </scene>
-        <!--View Controller-->
+        <!--Connect Player View Controller-->
         <scene sceneID="RNo-9B-Cdk">
             <objects>
-                <viewController id="haA-OV-LML" sceneMemberID="viewController">
+                <viewController id="haA-OV-LML" customClass="ConnectPlayerViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfm-9l-Mmu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,18 +423,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Connect another player"/>
                                 <connections>
-                                    <action selector="connectWithPlayer:" destination="phs-e2-Y77" eventType="touchUpInside" id="QW0-kc-V3B"/>
+                                    <action selector="connectWithPlayer:" destination="haA-OV-LML" eventType="touchUpInside" id="8lu-jW-9fC"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="8c7-Ek-poI"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF3-zj-KgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="phs-e2-Y77" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="916" y="123"/>
+            <point key="canvasLocation" x="1961" y="872"/>
         </scene>
     </scenes>
     <resources>

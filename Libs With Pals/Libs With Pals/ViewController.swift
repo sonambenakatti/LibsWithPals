@@ -12,11 +12,10 @@ import FacebookLogin
 import FBSDKLoginKit
 import MultipeerConnectivity
 
-class ViewController: UIViewController, MCBrowserViewControllerDelegate {
+class ViewController: UIViewController {
    
     var dict : [String : AnyObject]!
-    var appDelegate: AppDelegate!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -31,15 +30,6 @@ class ViewController: UIViewController, MCBrowserViewControllerDelegate {
         if (FBSDKAccessToken.current()) != nil{
             getFBUserData()
         }
-        
-        appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
-        appDelegate.mpcHandler.setupSession()
-        appDelegate.mpcHandler.advertiseSelf(advertise: true)
-        
-        NotificationCenter.default.addObserver(self, selector: Selector(("peerChangedStateWithNotificatoin")), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: Selector(("handleRecieveDataWithNotification")), name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
     }
     
     //when login button clicked
@@ -69,24 +59,5 @@ class ViewController: UIViewController, MCBrowserViewControllerDelegate {
             })
         }
     }
-    
-    // function to connect two players
-    @IBAction func connectWithPlayer(_ sender: Any) {
-        if appDelegate.mpcHandler.session != nil {
-            appDelegate.mpcHandler.browser.delegate? = self
-            
-            self.present(appDelegate.mpcHandler.browser, animated: true, completion: nil)
-            
-        }
-    }
-    
-    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        appDelegate.mpcHandler.browser.dismiss(animated: true, completion: nil)
-    }
-    
-    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        appDelegate.mpcHandler.browser.dismiss(animated: true, completion: nil)
-    }
-    
-    
+
 }
