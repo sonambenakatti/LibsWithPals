@@ -128,7 +128,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="onLoginButtonPressed:" destination="xkW-ZX-Inf" eventType="touchUpInside" id="dBN-Bc-low"/>
-                                    <segue destination="8vk-ve-krd" kind="show" id="TII-ou-g1B"/>
+                                    <segue destination="8vk-ve-krd" kind="show" identifier="loginToHomeSegue" id="TII-ou-g1B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-Xi-Mj9" customClass="FBSDKButton" customModule="Libs_With_Pals">
@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1v-tH-fBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-993" y="889"/>
+            <point key="canvasLocation" x="-1492" y="893"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4Ox-6T-7D2">

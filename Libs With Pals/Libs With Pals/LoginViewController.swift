@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 import FacebookLogin
 import FBSDKLoginKit
@@ -30,6 +31,50 @@ class LoginViewController: UIViewController {
     
     // Login manually with a name, email, password
     @IBAction func onLoginButtonPressed(_ sender: Any) {
+        if(retrieveUserIfExists(email: emailText.text!, password: passwordText.text!)) {
+            performSegue(withIdentifier: "loginToHomeSegue", sender: AnyClass.self)
+        }
+    }
+    
+    // Verify that user exists and return it
+    func retrieveUserIfExists(email: String, password: String) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+    
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"User")
+        var fetchedResults:[NSManagedObject]? = nil
+        request.predicate = NSPredicate(format: "email == %@", email)
+        
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    
+        // Email does not exists
+        if(fetchedResults?.isEmpty)! {
+            self.alertInvalidInput(message: "No user with the email " + email + " found.")
+            return false
+        }
+        
+        // Verify correct password - only need to check the first element because there should not be mulitple users with the same email address
+        let user = fetchedResults![0]
+        if(String(describing: user.value(forKey: "password")!) != password) {
+            self.alertInvalidInput(message: "Incorrect password.")
+            return false
+        }
+
+        return true
+    }
+    
+    // Alert the user when their input is not valid
+    func alertInvalidInput(message: String) {
+        let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // Login with Facebook

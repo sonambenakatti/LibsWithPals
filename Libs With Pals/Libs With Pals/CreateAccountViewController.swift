@@ -64,6 +64,7 @@ class CreateAccountViewController: UIViewController {
     
     // Ensures user entered proper data when creating account (no empty fields)
     // TODO: validate that user email is the proper format (string@service.com)
+    // TODO: ensure user email does not already exist
     func validateInput() -> Bool {
         print(nameInput.text!)
         if (nameInput.text!.isEmpty) {
@@ -81,13 +82,8 @@ class CreateAccountViewController: UIViewController {
     
     // Alerts user what they entered is incorrect
     func createAlert(field: String) {
-        // create the alert
         let alert = UIAlertController(title: "Invalid Input", message: field + " cannot be empty.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        // add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        
-        // show the alert
         self.present(alert, animated: true, completion: nil)
     }
     
