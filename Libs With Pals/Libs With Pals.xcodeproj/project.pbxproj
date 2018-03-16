@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27D44874205B290B00907DC0 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D44873205B290B00907DC0 /* CreateAccountViewController.swift */; };
+		27D44877205B364000907DC0 /* UserInfoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27D44875205B364000907DC0 /* UserInfoModel.xcdatamodeld */; };
+		27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D56793205B57F0005A26D1 /* HomeViewController.swift */; };
+		27D56796205B58C1005A26D1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D56795205B58C1005A26D1 /* SettingsViewController.swift */; };
 		27F560182042829B00BD7549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F560172042829B00BD7549 /* AppDelegate.swift */; };
-		27F5601A2042829B00BD7549 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F560192042829B00BD7549 /* ViewController.swift */; };
+		27F5601A2042829B00BD7549 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F560192042829B00BD7549 /* LoginViewController.swift */; };
 		27F5601D2042829B00BD7549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F5601B2042829B00BD7549 /* Main.storyboard */; };
 		27F5601F2042829B00BD7549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5601E2042829B00BD7549 /* Assets.xcassets */; };
 		27F5602C20434FC700BD7549 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F5602B20434FC700BD7549 /* Launch Screen.storyboard */; };
@@ -20,9 +24,13 @@
 /* Begin PBXFileReference section */
 		04FDD2EC60937CE2795BABD6 /* Pods-Libs With Pals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs With Pals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Libs With Pals/Pods-Libs With Pals.release.xcconfig"; sourceTree = "<group>"; };
 		1F9FF8ABA85AB7DFC0EBAE86 /* Pods-Libs With Pals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs With Pals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Libs With Pals/Pods-Libs With Pals.debug.xcconfig"; sourceTree = "<group>"; };
+		27D44873205B290B00907DC0 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		27D44876205B364000907DC0 /* UserInfoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserInfoModel.xcdatamodel; sourceTree = "<group>"; };
+		27D56793205B57F0005A26D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		27D56795205B58C1005A26D1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		27F560142042829B00BD7549 /* Libs With Pals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Libs With Pals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F560172042829B00BD7549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27F560192042829B00BD7549 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27F560192042829B00BD7549 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		27F5601C2042829B00BD7549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27F5601E2042829B00BD7549 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27F560232042829B00BD7549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,14 +73,18 @@
 		27F560162042829B00BD7549 /* Libs With Pals */ = {
 			isa = PBXGroup;
 			children = (
+				27D44873205B290B00907DC0 /* CreateAccountViewController.swift */,
 				27F560172042829B00BD7549 /* AppDelegate.swift */,
-				27F560192042829B00BD7549 /* ViewController.swift */,
+				27D44875205B364000907DC0 /* UserInfoModel.xcdatamodeld */,
+				27F560192042829B00BD7549 /* LoginViewController.swift */,
 				27F5601B2042829B00BD7549 /* Main.storyboard */,
 				27F5601E2042829B00BD7549 /* Assets.xcassets */,
 				27F5602B20434FC700BD7549 /* Launch Screen.storyboard */,
 				27F560232042829B00BD7549 /* Info.plist */,
 				F35801C3204A0E2F004E6B3C /* MPCHandler.swift */,
 				F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */,
+				27D56793205B57F0005A26D1 /* HomeViewController.swift */,
+				27D56795205B58C1005A26D1 /* SettingsViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -231,10 +243,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27F5601A2042829B00BD7549 /* ViewController.swift in Sources */,
+				27D44877205B364000907DC0 /* UserInfoModel.xcdatamodeld in Sources */,
+				27D44874205B290B00907DC0 /* CreateAccountViewController.swift in Sources */,
+				27F5601A2042829B00BD7549 /* LoginViewController.swift in Sources */,
 				27F560182042829B00BD7549 /* AppDelegate.swift in Sources */,
 				F39C3B8C204CE1C700994757 /* ConnectPlayerViewController.swift in Sources */,
+				27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */,
 				F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */,
+				27D56796205B58C1005A26D1 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +427,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		27D44875205B364000907DC0 /* UserInfoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				27D44876205B364000907DC0 /* UserInfoModel.xcdatamodel */,
+			);
+			currentVersion = 27D44876205B364000907DC0 /* UserInfoModel.xcdatamodel */;
+			path = UserInfoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 27F5600C2042829B00BD7549 /* Project object */;
 }

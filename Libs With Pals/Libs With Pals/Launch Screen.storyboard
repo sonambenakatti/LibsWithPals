@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,21 +19,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Copyright © 2018 Group8." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
-                                <rect key="frame" x="0.0" y="626.5" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2018 Group8." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
+                                <rect key="frame" x="0.0" y="627" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="libswithpals" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-af-2iz">
-                                <rect key="frame" x="67" y="138" width="240" height="240"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="342" placeholderIntrinsicHeight="342" preservesSuperviewLayoutMargins="YES" image="libswithpals" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-af-2iz">
+                                <rect key="frame" x="15" y="131" width="342" height="342"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fb7-af-2iz" secondAttribute="height" multiplier="1:1" id="A0o-RY-dyI"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <viewLayoutGuide key="safeArea" id="r9r-ix-UjT"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.63345128297805786" green="0.83475136756896973" blue="0.85498255491256714" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="fb7-af-2iz" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="67.5" id="Xte-8J-pYh"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="fb7-af-2iz" secondAttribute="trailing" constant="67.5" id="ia7-vW-AoH"/>
+                            <constraint firstItem="fb7-af-2iz" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="15" id="07v-Sc-nAw"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Cq8-ke-Mvd"/>
+                            <constraint firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="ELs-g3-v1q"/>
+                            <constraint firstItem="fb7-af-2iz" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="111" id="Vg6-z5-aQX"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="19" id="bc8-84-raI"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="fb7-af-2iz" secondAttribute="bottom" constant="154" id="j29-OU-BaM"/>
+                            <constraint firstItem="fb7-af-2iz" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="111" id="kf0-dJ-bXl"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="fb7-af-2iz" secondAttribute="trailing" constant="18" id="r6I-4d-2ux"/>
+                            <constraint firstItem="fb7-af-2iz" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="15" id="rIT-ny-hRi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>

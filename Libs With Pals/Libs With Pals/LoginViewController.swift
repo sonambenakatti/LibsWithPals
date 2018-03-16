@@ -12,19 +12,15 @@ import FacebookLogin
 import FBSDKLoginKit
 import MultipeerConnectivity
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
    
     var dict : [String : AnyObject]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        //creating button
-        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        loginButton.center = view.center
-        
-        //adding it to view
-        view.addSubview(loginButton)
         
         //if the user is already logged in
         if (FBSDKAccessToken.current()) != nil{
@@ -32,8 +28,23 @@ class ViewController: UIViewController {
         }
     }
     
-    //when login button clicked
-    func facebookButtonClicked(sender: UIButton) {
+    // Login manually with a name, email, password
+    @IBAction func onLoginButtonPressed(_ sender: Any) {
+    }
+    
+    // Login with Facebook
+    @IBAction func onFacebookLoginButtonPressed(_ sender: Any) {
+        self.facebookButtonClicked()
+    }
+    
+    // Create a new account
+    @IBAction func onNewAccountButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "createAccountSegue", sender: AnyClass.self)
+
+    }
+    
+    // When Facebook login button is clicked
+    func facebookButtonClicked() {
         let loginManager = LoginManager()
         loginManager.logIn(readPermissions: [.publicProfile], viewController : self) { loginResult in
             switch loginResult {
@@ -43,11 +54,12 @@ class ViewController: UIViewController {
                 print("User cancelled login")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Logged in")
+                self.getFBUserData()
             }
         }
     }
 
-    //function is fetching the user data
+    // Fetch user data
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
@@ -55,6 +67,8 @@ class ViewController: UIViewController {
                     self.dict = result as! [String : AnyObject]
                     print(result!)
                     print(self.dict)
+                } else {
+                    print(result!)
                 }
             })
         }
