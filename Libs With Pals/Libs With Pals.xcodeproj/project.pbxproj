@@ -11,6 +11,7 @@
 		27D44877205B364000907DC0 /* UserInfoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27D44875205B364000907DC0 /* UserInfoModel.xcdatamodeld */; };
 		27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D56793205B57F0005A26D1 /* HomeViewController.swift */; };
 		27D56796205B58C1005A26D1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D56795205B58C1005A26D1 /* SettingsViewController.swift */; };
+		27D56798205DBF26005A26D1 /* ChooseStorylineThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D56797205DBF26005A26D1 /* ChooseStorylineThemeViewController.swift */; };
 		27F560182042829B00BD7549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F560172042829B00BD7549 /* AppDelegate.swift */; };
 		27F5601A2042829B00BD7549 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F560192042829B00BD7549 /* LoginViewController.swift */; };
 		27F5601D2042829B00BD7549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F5601B2042829B00BD7549 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		27D44876205B364000907DC0 /* UserInfoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserInfoModel.xcdatamodel; sourceTree = "<group>"; };
 		27D56793205B57F0005A26D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		27D56795205B58C1005A26D1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		27D56797205DBF26005A26D1 /* ChooseStorylineThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseStorylineThemeViewController.swift; sourceTree = "<group>"; };
 		27F560142042829B00BD7549 /* Libs With Pals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Libs With Pals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F560172042829B00BD7549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27F560192042829B00BD7549 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */,
 				27D56793205B57F0005A26D1 /* HomeViewController.swift */,
 				27D56795205B58C1005A26D1 /* SettingsViewController.swift */,
+				27D56797205DBF26005A26D1 /* ChooseStorylineThemeViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				27F5601A2042829B00BD7549 /* LoginViewController.swift in Sources */,
 				27F560182042829B00BD7549 /* AppDelegate.swift in Sources */,
 				F39C3B8C204CE1C700994757 /* ConnectPlayerViewController.swift in Sources */,
+				27D56798205DBF26005A26D1 /* ChooseStorylineThemeViewController.swift in Sources */,
 				27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */,
 				F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */,
 				27D56796205B58C1005A26D1 /* SettingsViewController.swift in Sources */,

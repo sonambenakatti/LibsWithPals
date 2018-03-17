@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // Navigate to correct screen (either for one player mode or two player mode)
     @IBAction func onNewGameButtonPressed(_ sender: Any) {
         let twoPlayer = prefs.bool(forKey: "twoPlayer")
         if(twoPlayer) {

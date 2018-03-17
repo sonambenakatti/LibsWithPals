@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -229,7 +230,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="4S7-BM-JtG">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="7zd-k7-uDQ"/>
+                                        <barButtonItem key="leftBarButtonItem" image="home" id="Cjm-j8-GtN"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -412,7 +413,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
-                                    <segue destination="xkW-ZX-Inf" kind="show" identifier="" id="SjO-l0-zUj"/>
+                                    <action selector="onLogoutButtonPressed:" destination="TWX-VQ-fos" eventType="touchUpInside" id="I7i-Kp-0ZU"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEB-YX-68I">
@@ -439,16 +440,17 @@
                     <connections>
                         <outlet property="saveLibsSwitch" destination="52E-Zh-tBV" id="O3E-pV-8gv"/>
                         <outlet property="twoPlayerSwitch" destination="QkU-5w-3Ob" id="jvz-Tj-K3H"/>
+                        <segue destination="xkW-ZX-Inf" kind="show" identifier="logoutSegue" id="VwQ-28-Zr2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4z-qr-Tq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1065" y="152"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Storyline Theme View Controller-->
         <scene sceneID="T4y-DQ-BbE">
             <objects>
-                <viewController id="ArT-f0-bvX" sceneMemberID="viewController">
+                <viewController id="ArT-f0-bvX" customClass="ChooseStorylineThemeViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tCR-PP-Uue">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -480,7 +482,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="s30-Lk-qCl">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="zDE-3w-xr6"/>
+                                        <barButtonItem key="leftBarButtonItem" image="home" id="ZRx-5K-hMh">
+                                            <connections>
+                                                <action selector="onHomePressed:" destination="ArT-f0-bvX" id="FUg-Ax-DHe"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -488,6 +494,9 @@
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Q9a-PB-mwF"/>
                     </view>
+                    <connections>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="storylineThemeToHomeSegue" id="JHC-Nb-mFF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8k-bw-9JX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -514,10 +523,30 @@
                                     <action selector="connectWithPlayer:" destination="haA-OV-LML" eventType="touchUpInside" id="8lu-jW-9fC"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-Ap-xzi">
+                                <rect key="frame" x="-2" y="21" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="csy-QG-R3R">
+                                        <barButtonItem key="leftBarButtonItem" image="home" id="JgL-Nk-2XU">
+                                            <connections>
+                                                <action selector="onHomePressed:" destination="haA-OV-LML" id="ebj-0w-C8K"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="8c7-Ek-poI" firstAttribute="trailing" secondItem="9Bb-Ap-xzi" secondAttribute="trailing" constant="2" id="dMw-WA-9DW"/>
+                            <constraint firstItem="9Bb-Ap-xzi" firstAttribute="top" secondItem="8c7-Ek-poI" secondAttribute="top" constant="1" id="qgu-8h-9HI"/>
+                            <constraint firstItem="9Bb-Ap-xzi" firstAttribute="leading" secondItem="hfm-9l-Mmu" secondAttribute="leadingMargin" constant="-18" id="xFC-je-807"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8c7-Ek-poI"/>
                     </view>
+                    <connections>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="connectPlayerToHomeSegue" id="Q61-vB-45Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF3-zj-KgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -525,14 +554,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home" width="60" height="60"/>
+        <image name="home" width="36" height="36"/>
         <image name="libswithpals" width="648" height="648"/>
         <image name="person" width="507" height="512"/>
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R9G-fw-mZC"/>
-        <segue reference="4Tv-wD-KQv"/>
+        <segue reference="VwQ-28-Zr2"/>
+        <segue reference="Q61-vB-45Y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

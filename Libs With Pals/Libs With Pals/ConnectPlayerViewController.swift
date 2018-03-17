@@ -42,4 +42,8 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
         appDelegate.mpcHandler.browser.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func onHomePressed(_ sender: Any) {    self.performSegue(withIdentifier: "connectPlayerToHomeSegue", sender: AnyClass.self)
+    }
+
 }

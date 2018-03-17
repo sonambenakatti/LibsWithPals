@@ -24,15 +24,17 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         //if the user is already logged in
-        if (FBSDKAccessToken.current()) != nil{
-            getFBUserData()
-        }
+//        if (FBSDKAccessToken.current()) != nil {
+//            self.getFBUserData()
+//        }
     }
     
     // Login manually with a name, email, password
     @IBAction func onLoginButtonPressed(_ sender: Any) {
         if(retrieveUserIfExists(email: emailText.text!, password: passwordText.text!)) {
             performSegue(withIdentifier: "loginToHomeSegue", sender: AnyClass.self)
+        } else {
+            self.alertInvalidInput(message: "No user with the email " + emailText.text! + " found.")
         }
     }
     
@@ -56,7 +58,6 @@ class LoginViewController: UIViewController {
     
         // Email does not exist
         if(fetchedResults?.isEmpty)! {
-            self.alertInvalidInput(message: "No user with the email " + email + " found.")
             return false
         }
         
@@ -101,31 +102,45 @@ class LoginViewController: UIViewController {
     }
     
     // When Facebook login button is clicked
+    // NOTE: When FB login is used, the returned id is used in place of a traditional password
     func facebookButtonClicked() {
-        let loginManager = LoginManager()
-        loginManager.logIn(readPermissions: [.publicProfile], viewController : self) { loginResult in
-            switch loginResult {
-            case .failed(let error):
-                print(error)
-            case .cancelled:
-                print("User cancelled login")
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                print("Logged in")
-                self.getFBUserData()
+        if (FBSDKAccessToken.current()) == nil {
+            let loginManager = LoginManager()
+            loginManager.logIn(readPermissions: [.publicProfile, .email], viewController : self) { loginResult in
+                switch loginResult {
+                case .failed(let error):
+                    print(error)
+                case .cancelled:
+                    print("User cancelled login")
+                case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                    print("Logged in")
+                    self.getFBUserData()
+            
+                }
             }
+        } else {
+            self.getFBUserData()
         }
     }
 
     // Fetch user data
-    func getFBUserData(){
-        if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-                if (error == nil){
+    func getFBUserData() {
+        if((FBSDKAccessToken.current()) != nil) {
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil) {
                     self.dict = result as! [String : AnyObject]
-                    print(result!)
                     print(self.dict)
-                } else {
-                    print(result!)
+                    
+                    let name = self.dict["name"] as! String
+                    let email = self.dict["email"] as! String
+                    let password = self.dict["id"] as! String
+                    
+                    if(self.retrieveUserIfExists(email: self.dict["email"] as! String, password: self.dict["id"] as! String)) {
+                        self.performSegue(withIdentifier: "loginToHomeSegue", sender: AnyClass.self)
+                    } else {
+                        CreateAccountViewController().saveUserData(name: name, email: email, password: password)
+                        self.performSegue(withIdentifier: "loginToHomeSegue", sender: AnyClass.self)
+                    }
                 }
             })
         }

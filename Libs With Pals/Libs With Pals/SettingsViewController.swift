@@ -45,6 +45,12 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // TODO: Completely log 
+    @IBAction func onLogoutButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "logoutSegue", sender: AnyClass.self)
+    }
+    
+    
     // TODO: Link to delete account button and implement with an alert that asks user if they're sure (with options yes and no)
     // if no: do nothing
     // if yes: delete account information

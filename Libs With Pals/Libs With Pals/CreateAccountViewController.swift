@@ -31,21 +31,27 @@ class CreateAccountViewController: UIViewController {
     // TODO: implement a "forgot password" button
     @IBAction func onCreateAccountPressed(_ sender: Any) {
         
+        // Ensure user fields are not empty
+        if(!self.validateInput()) {
+            return
+        }
+        self.saveUserData(name: nameInput.text!, email: emailInput.text!, password: passwordInput.text!)
+        self.performSegue(withIdentifier: "createAccountToHomeSegue", sender: AnyClass.self)
+
+    }
+    
+    func saveUserData(name: String, email: String, password: String) {
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
         let user = NSEntityDescription.insertNewObject(
             forEntityName: "User", into: context)
-        
-        // Ensure user fields are not empty
-        if(!self.validateInput()) {
-            return
-        }
-        
+
         // Set the attribute values
-        user.setValue(nameInput.text, forKey: "name")
-        user.setValue(emailInput.text, forKey: "email")
-        user.setValue(passwordInput.text, forKey: "password")
+        user.setValue(name, forKey: "name")
+        user.setValue(email, forKey: "email")
+        user.setValue(password, forKey: "password")
         
         // Commit the changes
         do {
@@ -57,9 +63,6 @@ class CreateAccountViewController: UIViewController {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        
-        self.performSegue(withIdentifier: "createAccountToHomeSegue", sender: AnyClass.self)
-
     }
     
     // Ensures user entered proper data when creating account (no empty fields)
