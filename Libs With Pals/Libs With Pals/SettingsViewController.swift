@@ -9,11 +9,35 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    let prefs: UserDefaults = UserDefaults.standard
+    @IBOutlet weak var twoPlayerSwitch: UISwitch!
+    @IBOutlet weak var saveLibsSwitch: UISwitch!
+    
+    
     override func viewDidLoad() {
+        // Ensure switches are set to what the user last set them to
+        let twoPlayer = prefs.bool(forKey: "twoPlayer")
+        let saveLibs = prefs.bool(forKey: "saveLibs")
+        if (twoPlayer) {
+            twoPlayerSwitch.setOn(true, animated: false)
+        }
+        if (saveLibs) {
+            saveLibsSwitch.setOn(true, animated: false)
+        }
+        
         super.viewDidLoad()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // Save the settings in UserDefaults
+        // 1. One player or two player
+        // 2. Save the libs you create or don't save
+        prefs.set(twoPlayerSwitch.isOn, forKey: "twoPlayer")
+        prefs.set(saveLibsSwitch.isOn, forKey: "saveLibs")
+        prefs.synchronize()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +45,11 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // TODO: Link to delete account button and implement with an alert that asks user if they're sure (with options yes and no)
+    // if no: do nothing
+    // if yes: delete account information
+    func deleteAccount() {
+        
     }
-    */
-
+    
 }

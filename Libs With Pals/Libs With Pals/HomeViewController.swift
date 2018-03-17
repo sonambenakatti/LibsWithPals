@@ -10,26 +10,31 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var greetingLabel: UILabel!
+    let prefs:UserDefaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Customize the screen to greet the user with their name
+        let name = String(describing: prefs.value(forKey: "name")!)
+        greetingLabel.text = "Hi, " +  name + "!"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onNewGameButtonPressed(_ sender: Any) {
+        let twoPlayer = prefs.bool(forKey: "twoPlayer")
+        if(twoPlayer) {
+            self.performSegue(withIdentifier: "homeToTwoPlayerSegue", sender: AnyClass.self)
+        } else {
+            self.performSegue(withIdentifier: "homeToOnePlayerSegue", sender: AnyClass.self)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        }
+        
     }
-    */
+    
 
 }

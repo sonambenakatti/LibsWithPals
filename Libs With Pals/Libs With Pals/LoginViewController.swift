@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
    
-    var dict : [String : AnyObject]!
+    var dict: [String: AnyObject]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // Verify that user exists and return it
+    // Verify that user exists
     func retrieveUserIfExists(email: String, password: String) -> Bool {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -54,20 +54,15 @@ class LoginViewController: UIViewController {
             abort()
         }
     
-        // Email does not exists
+        // Email does not exist
         if(fetchedResults?.isEmpty)! {
             self.alertInvalidInput(message: "No user with the email " + email + " found.")
             return false
         }
         
-        // Verify correct password - only need to check the first element because there should not be mulitple users with the same email address
+        // Only need to check the first element in list because there should not be mulitple users with the same email address
         let user = fetchedResults![0]
-        if(String(describing: user.value(forKey: "password")!) != password) {
-            self.alertInvalidInput(message: "Incorrect password.")
-            return false
-        }
-
-        return true
+        return verifyPasswordMatch(password: password, user: user)
     }
     
     // Alert the user when their input is not valid
@@ -75,6 +70,23 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Verify the password matches the email
+    func verifyPasswordMatch(password: String, user: NSManagedObject) -> Bool {
+        if(String(describing: user.value(forKey: "password")!) != password) {
+            self.alertInvalidInput(message: "Incorrect password.")
+            return false
+        }
+        self.saveUserName(user: user)
+        return true
+    }
+    
+    // Save the user's name so that it can be used throughout the app
+    func saveUserName(user: NSManagedObject) {
+        let prefs: UserDefaults = UserDefaults.standard
+        prefs.set(user.value(forKey: "name"), forKey: "name")
+        prefs.synchronize()
     }
     
     // Login with Facebook
