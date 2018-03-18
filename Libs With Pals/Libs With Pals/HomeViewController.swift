@@ -17,8 +17,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Customize the screen to greet the user with their name
-        let name = String(describing: prefs.value(forKey: "name")!)
-        greetingLabel.text = "Hi, " +  name + "!"
+        //let name = String(describing: prefs.value(forKey: "name")!)
+        //greetingLabel.text = "Hi, " +  name + "!"
     }
 
     override func didReceiveMemoryWarning() {

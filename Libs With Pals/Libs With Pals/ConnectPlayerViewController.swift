@@ -21,7 +21,7 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
         appDelegate.mpcHandler.setupBrowser()
         appDelegate.mpcHandler.advertiseSelf(advertise: true)
         
-        NotificationCenter.default.addObserver(self, selector: Selector(("peerChangedStateWithNotificatoin")), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: Selector(("peerChangedStateWithNotification")), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: Selector(("handleRecieveDataWithNotification")), name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
     }
@@ -33,6 +33,20 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
             
             self.present(appDelegate.mpcHandler.browser, animated: true, completion: nil)
         }
+    }
+    
+    func peerChangedStateWithNotification(notification:NSNotification) {
+        let userInfo = NSDictionary(dictionary: notification.userInfo!)
+        let state = userInfo.object(forKey: "state") as! Int
+        
+        if state != MCSessionState.connecting.rawValue {
+            self.navigationItem.title = "Connected"
+        }
+    }
+    
+    // this function will be implemented later when data is passed between players
+    func handleRecieveDataWithNotification(notification:NSNotification) {
+        
     }
     
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
