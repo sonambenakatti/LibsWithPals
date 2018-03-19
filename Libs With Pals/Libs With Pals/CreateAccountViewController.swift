@@ -18,7 +18,7 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the line below only if you want to erase all user data
-        // clearCoreData()
+//         clearCoreData()
         // Do any additional setup after loading the view.
     }
 
@@ -53,6 +53,8 @@ class CreateAccountViewController: UIViewController {
         user.setValue(email, forKey: "email")
         user.setValue(password, forKey: "password")
         
+        LoginViewController().saveUserName(user: user)
+        
         // Commit the changes
         do {
             try context.save()
@@ -64,7 +66,7 @@ class CreateAccountViewController: UIViewController {
             abort()
         }
     }
-    
+        
     // Ensures user entered proper data when creating account (no empty fields)
     // TODO: validate that user email is the proper format (string@service.com)
     // TODO: ensure user email does not already exist
