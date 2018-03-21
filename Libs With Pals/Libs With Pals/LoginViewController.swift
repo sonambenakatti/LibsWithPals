@@ -101,6 +101,18 @@ class LoginViewController: UIViewController {
 
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Called when the user touches on the main view (outside the UITextField).
+    //
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    
     // When Facebook login button is clicked
     // NOTE: When FB login is used, the returned id is used in place of a traditional password
     func facebookButtonClicked() {

@@ -40,6 +40,7 @@ class MPCHandler: NSObject, MCSessionDelegate {
         if advertise {
             advertiser = MCAdvertiserAssistant(serviceType: "my-game", discoveryInfo: nil, session: session)
             advertiser!.start()
+            print(advertiser.debugDescription)
         } else {
             advertiser!.stop()
             advertiser = nil

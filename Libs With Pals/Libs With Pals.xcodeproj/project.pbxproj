@@ -80,8 +80,8 @@
 				27D44875205B364000907DC0 /* UserInfoModel.xcdatamodeld */,
 				27F560192042829B00BD7549 /* LoginViewController.swift */,
 				27F5601B2042829B00BD7549 /* Main.storyboard */,
-				27F5601E2042829B00BD7549 /* Assets.xcassets */,
 				27F5602B20434FC700BD7549 /* Launch Screen.storyboard */,
+				27F5601E2042829B00BD7549 /* Assets.xcassets */,
 				27F560232042829B00BD7549 /* Info.plist */,
 				F35801C3204A0E2F004E6B3C /* MPCHandler.swift */,
 				F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */,
@@ -385,9 +385,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UUVT33266;
 				INFOPLIST_FILE = "Libs With Pals/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "utcs.Libs-With-Pals";
+				PRODUCT_BUNDLE_IDENTIFIER = jenniferrethilwp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -400,9 +401,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UUVT33266;
 				INFOPLIST_FILE = "Libs With Pals/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "utcs.Libs-With-Pals";
+				PRODUCT_BUNDLE_IDENTIFIER = jenniferrethilwp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

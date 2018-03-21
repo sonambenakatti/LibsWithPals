@@ -393,41 +393,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QkU-5w-3Ob">
-                                <rect key="frame" x="92" y="196" width="51" height="31"/>
-                                <color key="onTintColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="52E-Zh-tBV">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="52E-Zh-tBV">
                                 <rect key="frame" x="95.5" y="258" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofa-ux-NJ6">
-                                <rect key="frame" x="179" y="196" width="103" height="26.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Two Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofa-ux-NJ6">
+                                <rect key="frame" x="182" y="196" width="127" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save My Libs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU1-MA-bTh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save My Libs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU1-MA-bTh">
                                 <rect key="frame" x="182.5" y="258.5" width="126.5" height="26.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWB-hf-CdM">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWB-hf-CdM">
                                 <rect key="frame" x="136" y="402" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Delete Account"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-Id-p4v">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-Id-p4v">
                                 <rect key="frame" x="136" y="354" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogoutButtonPressed:" destination="TWX-VQ-fos" eventType="touchUpInside" id="I7i-Kp-0ZU"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEB-YX-68I">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GEB-YX-68I">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Settings" id="aDL-2P-iYD">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="pTr-we-RSF">
@@ -438,28 +440,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QkU-5w-3Ob">
+                                <rect key="frame" x="95" y="194" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="cJK-2C-wS6" firstAttribute="trailing" secondItem="DU1-MA-bTh" secondAttribute="trailing" constant="66" id="1Om-Rc-0bY"/>
-                            <constraint firstItem="ofa-ux-NJ6" firstAttribute="leading" secondItem="QkU-5w-3Ob" secondAttribute="trailing" constant="38" id="1wU-yc-RCU"/>
-                            <constraint firstItem="vWB-hf-CdM" firstAttribute="leading" secondItem="cJK-2C-wS6" secondAttribute="leading" constant="136" id="2tc-jm-HwV"/>
-                            <constraint firstItem="GEB-YX-68I" firstAttribute="trailing" secondItem="cJK-2C-wS6" secondAttribute="trailing" id="5BB-ZF-6Mw"/>
-                            <constraint firstItem="GEB-YX-68I" firstAttribute="leading" secondItem="cJK-2C-wS6" secondAttribute="leading" id="8Ut-Dw-EvK"/>
-                            <constraint firstItem="ofa-ux-NJ6" firstAttribute="top" secondItem="GEB-YX-68I" secondAttribute="bottom" constant="132" id="Fkh-7h-e5Q"/>
-                            <constraint firstItem="fLu-Id-p4v" firstAttribute="top" secondItem="DU1-MA-bTh" secondAttribute="bottom" constant="69" id="KCh-Vv-tFd"/>
-                            <constraint firstItem="cJK-2C-wS6" firstAttribute="trailing" secondItem="fLu-Id-p4v" secondAttribute="trailing" constant="121" id="MMs-bN-IP2"/>
-                            <constraint firstItem="DU1-MA-bTh" firstAttribute="top" secondItem="ofa-ux-NJ6" secondAttribute="bottom" constant="36" id="QUN-L5-k5l"/>
-                            <constraint firstItem="cJK-2C-wS6" firstAttribute="trailing" secondItem="ofa-ux-NJ6" secondAttribute="trailing" constant="93" id="S3Y-fn-U9J"/>
-                            <constraint firstItem="vWB-hf-CdM" firstAttribute="top" secondItem="fLu-Id-p4v" secondAttribute="bottom" constant="18" id="Z6H-wA-2MI"/>
-                            <constraint firstItem="vWB-hf-CdM" firstAttribute="top" secondItem="fLu-Id-p4v" secondAttribute="bottom" constant="18" id="ejM-oA-oDD"/>
-                            <constraint firstItem="DU1-MA-bTh" firstAttribute="top" secondItem="ofa-ux-NJ6" secondAttribute="bottom" constant="36" id="oWb-gD-JKo"/>
-                            <constraint firstItem="DU1-MA-bTh" firstAttribute="leading" secondItem="52E-Zh-tBV" secondAttribute="trailing" constant="38" id="qIN-D7-0OB"/>
-                            <constraint firstItem="cJK-2C-wS6" firstAttribute="trailing" secondItem="vWB-hf-CdM" secondAttribute="trailing" constant="121" id="sde-hQ-8RA"/>
-                            <constraint firstItem="GEB-YX-68I" firstAttribute="top" secondItem="cJK-2C-wS6" secondAttribute="top" id="txA-qa-THz"/>
-                            <constraint firstItem="fLu-Id-p4v" firstAttribute="leading" secondItem="cJK-2C-wS6" secondAttribute="leading" constant="136" id="u73-ux-bOy"/>
-                            <constraint firstItem="fLu-Id-p4v" firstAttribute="top" secondItem="DU1-MA-bTh" secondAttribute="bottom" constant="69" id="vJf-p0-9Ty"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cJK-2C-wS6"/>
                     </view>
                     <connections>
@@ -470,7 +457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4z-qr-Tq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="152"/>
+            <point key="canvasLocation" x="1064.8" y="151.57421289355324"/>
         </scene>
         <!--Choose Storyline Theme View Controller-->
         <scene sceneID="T4y-DQ-BbE">
@@ -585,8 +572,8 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R9G-fw-mZC"/>
-        <segue reference="4Tv-wD-KQv"/>
+        <segue reference="VwQ-28-Zr2"/>
+        <segue reference="cR6-KI-tIX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
