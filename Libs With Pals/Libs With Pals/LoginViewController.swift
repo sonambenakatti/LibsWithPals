@@ -127,7 +127,6 @@ class LoginViewController: UIViewController {
                 case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                     print("Logged in")
                     self.getFBUserData()
-            
                 }
             }
         } else {

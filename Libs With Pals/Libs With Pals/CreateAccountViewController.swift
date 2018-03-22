@@ -18,10 +18,10 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the line below only if you want to erase all user data
-//         clearCoreData()
+        // clearCoreData()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,9 +37,10 @@ class CreateAccountViewController: UIViewController {
         }
         self.saveUserData(name: nameInput.text!, email: emailInput.text!, password: passwordInput.text!)
         self.performSegue(withIdentifier: "createAccountToHomeSegue", sender: AnyClass.self)
-
+        
     }
     
+    // Save the user's data into CoreData
     func saveUserData(name: String, email: String, password: String) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -47,7 +48,7 @@ class CreateAccountViewController: UIViewController {
         
         let user = NSEntityDescription.insertNewObject(
             forEntityName: "User", into: context)
-
+        
         // Set the attribute values
         user.setValue(name, forKey: "name")
         user.setValue(email, forKey: "email")
@@ -66,28 +67,54 @@ class CreateAccountViewController: UIViewController {
             abort()
         }
     }
-        
+    
     // Ensures user entered proper data when creating account (no empty fields)
     // TODO: validate that user email is the proper format (string@service.com)
-    // TODO: ensure user email does not already exist
     func validateInput() -> Bool {
         print(nameInput.text!)
         if (nameInput.text!.isEmpty) {
-            createAlert(field: "Name")
+            createAlert(message: "Name cannot be empty.")
             return false
         } else if (emailInput.text!.isEmpty) {
-            createAlert(field: "Email")
+            createAlert(message: "Email cannot be empty.")
             return false
         } else if (passwordInput.text!.isEmpty) {
-            createAlert(field: "Password")
+            createAlert(message: "Password cannot be empty.")
             return false
         }
+        
+        return ensureEmailDoesNotExist(email: emailInput.text!)
+    }
+    
+    // Makes sure user does not already have an account with their email
+    func ensureEmailDoesNotExist(email: String) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"User")
+        var fetchedResults:[NSManagedObject]? = nil
+        request.predicate = NSPredicate(format: "email == %@", email)
+        
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+        if((fetchedResults?.isEmpty)! == false) {
+            createAlert(message: "An account with this email already exists.")
+            return false
+        }
+        
         return true
     }
     
     // Alerts user what they entered is incorrect
-    func createAlert(field: String) {
-        let alert = UIAlertController(title: "Invalid Input", message: field + " cannot be empty.", preferredStyle: UIAlertControllerStyle.alert)
+    func createAlert(message: String) {
+        let alert = UIAlertController(title: "Invalid Input", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -130,3 +157,4 @@ class CreateAccountViewController: UIViewController {
         self.view.endEditing(true)
     }
 }
+
