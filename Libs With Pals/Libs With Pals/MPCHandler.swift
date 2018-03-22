@@ -36,6 +36,7 @@ class MPCHandler: NSObject, MCSessionDelegate {
         browser = MCBrowserViewController(serviceType: "my-game", session:session)
     }
     
+    // advertise to peer to start connection
     func advertiseSelf(advertise:Bool){
         if advertise {
             advertiser = MCAdvertiserAssistant(serviceType: "my-game", discoveryInfo: nil, session: session)
