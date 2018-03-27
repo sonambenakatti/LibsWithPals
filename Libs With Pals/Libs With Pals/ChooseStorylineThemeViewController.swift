@@ -10,18 +10,41 @@
 
 import UIKit
 
-class ChooseStorylineThemeViewController: UIViewController {
+public let storylines = ["Trip to the Grocery Store"]
 
+class ChooseStorylineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var storylineTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        storylineTableView.delegate = self
+        storylineTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return storylines.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "storylineCell", for: indexPath as IndexPath)
+        let row = indexPath.row
+        cell.textLabel?.text = storylines[row]
+        
+        return cell
+    }
+
     
     @IBAction func onHomePressed(_ sender: Any) {
         self.performSegue(withIdentifier: "storylineThemeToHomeSegue", sender: AnyClass.self)

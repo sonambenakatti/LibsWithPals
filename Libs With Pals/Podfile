@@ -8,5 +8,6 @@ target 'Libs With Pals' do
   # Pods for Libs With Pals
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  pod 'IQKeyboardManagerSwift'
 
 end

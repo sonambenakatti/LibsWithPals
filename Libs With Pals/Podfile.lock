@@ -17,10 +17,12 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.30.0):
     - FBSDKCoreKit
+  - IQKeyboardManagerSwift (5.0.7)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
+  - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -28,7 +30,8 @@ SPEC CHECKSUMS:
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: 7c4bba2877781a131ab5d54c0a78c405d4307b62
   FBSDKLoginKit: fe7a7e82373dc5daad92e1623219e86224ab1fb1
+  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
 
-PODFILE CHECKSUM: acfd904b90e2f8542f450ad18abbb9316649aa30
+PODFILE CHECKSUM: 1c8a1e4e067c6052cb26c4a440923219bb9ca35a
 
 COCOAPODS: 1.4.0

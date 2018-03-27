@@ -13,8 +13,7 @@ Jennifer Rethi (30%)
 
 Gerlou Shyy (30%)
 - Created ViewControllers for each screen
-- Added buttons, labels
-- Added constraints
+- Added buttons, labels, constraints
 
 Deviations:
 
