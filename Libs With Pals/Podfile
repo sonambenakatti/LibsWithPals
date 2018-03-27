@@ -9,5 +9,6 @@ target 'Libs With Pals' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'IQKeyboardManagerSwift'
+  pod 'Eureka'
 
 end
