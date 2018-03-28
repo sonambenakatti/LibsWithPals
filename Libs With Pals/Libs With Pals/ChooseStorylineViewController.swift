@@ -46,13 +46,14 @@ class ChooseStorylineViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     // TODO: Actually send data over here
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if  segue.identifier == "goToChooseWordsSegue",
-//            let destination = segue.destination as? ChooseWordsViewController
-//        {
-//            print("going to ChooseWordsViewController")
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "goToChooseWordsSegue",
+            let destination = segue.destination as? ChooseWordsViewController,
+            let storyIndex = storylineTableView.indexPathForSelectedRow?.row
+        {
+            destination.storyline = Storyline(storyline: storylines[storyIndex])
+        }
+    }
 
     
     @IBAction func onHomePressed(_ sender: Any) {

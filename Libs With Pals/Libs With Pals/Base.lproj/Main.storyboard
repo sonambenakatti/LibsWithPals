@@ -255,32 +255,74 @@
         <!--Choose Words View Controller-->
         <scene sceneID="5Og-SO-0aC">
             <objects>
-                <viewController id="1Ts-Oj-Mpz" customClass="ChooseWordsViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseWords" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Ts-Oj-Mpz" customClass="ChooseWordsViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ik2-Jn-ViU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5e-JU-qdT">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="4S7-BM-JtG">
-                                        <barButtonItem key="leftBarButtonItem" image="home" id="Cjm-j8-GtN"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mBs-N7-ruW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5e-JU-qdT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <items>
+                                            <navigationItem id="4S7-BM-JtG">
+                                                <barButtonItem key="leftBarButtonItem" image="home" id="Cjm-j8-GtN">
+                                                    <connections>
+                                                        <action selector="onHomeButtonPressed:" destination="1Ts-Oj-Mpz" id="In2-xW-Wfb"/>
+                                                        <segue destination="8vk-ve-krd" kind="show" identifier="chooseWordsToHomeSegue" id="7yQ-Tz-3e9"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-zL-V0Y">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="556"/>
+                                        <connections>
+                                            <segue destination="Dbn-qf-UZ5" kind="embed" identifier="ChooseWordsToFormSegue" id="A7a-RX-oub"/>
+                                        </connections>
+                                    </containerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlw-pF-D2K">
+                                        <rect key="frame" x="0.0" y="600" width="375" height="47"/>
+                                        <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Make My Mad Lib!">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="onMakeMyMadLibPressed:" destination="1Ts-Oj-Mpz" eventType="touchUpInside" id="les-Hy-fmV"/>
+                                            <segue destination="l1Y-hP-RDB" kind="show" identifier="ChooseWordsToFinalStorySegue" id="zIa-x0-CGH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vlw-pF-D2K" firstAttribute="centerX" secondItem="mBs-N7-ruW" secondAttribute="centerX" id="JEa-5r-yvk"/>
+                                    <constraint firstItem="G5e-JU-qdT" firstAttribute="leading" secondItem="Efg-zL-V0Y" secondAttribute="leading" id="M1g-sG-kQv"/>
+                                    <constraint firstAttribute="trailing" secondItem="vlw-pF-D2K" secondAttribute="trailing" id="bJL-GI-7td"/>
+                                    <constraint firstItem="vlw-pF-D2K" firstAttribute="leading" secondItem="mBs-N7-ruW" secondAttribute="leading" id="eqh-aB-ws0"/>
+                                    <constraint firstItem="G5e-JU-qdT" firstAttribute="leading" secondItem="mBs-N7-ruW" secondAttribute="leading" id="lze-J5-El0"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="G5e-JU-qdT" firstAttribute="top" secondItem="H2E-mV-MQ3" secondAttribute="top" constant="2" id="QOh-h6-YKm"/>
-                            <constraint firstItem="G5e-JU-qdT" firstAttribute="leading" secondItem="Ik2-Jn-ViU" secondAttribute="leading" id="QTC-5e-8Di"/>
-                            <constraint firstAttribute="trailing" secondItem="G5e-JU-qdT" secondAttribute="trailing" id="Rdg-Cx-89R"/>
+                            <constraint firstItem="mBs-N7-ruW" firstAttribute="bottom" secondItem="H2E-mV-MQ3" secondAttribute="bottom" id="1Vl-1z-VP6"/>
+                            <constraint firstItem="mBs-N7-ruW" firstAttribute="leading" secondItem="Ik2-Jn-ViU" secondAttribute="leading" id="AVP-Uz-foZ"/>
+                            <constraint firstItem="mBs-N7-ruW" firstAttribute="top" secondItem="H2E-mV-MQ3" secondAttribute="top" id="WSp-jh-Qsz"/>
+                            <constraint firstAttribute="trailing" secondItem="mBs-N7-ruW" secondAttribute="trailing" id="bQ3-Uz-Mwm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H2E-mV-MQ3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzR-qO-SHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2382" y="1767"/>
+            <point key="canvasLocation" x="2381.5999999999999" y="1766.2668665667168"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="syu-pz-9BX">
@@ -662,6 +704,35 @@
             </objects>
             <point key="canvasLocation" x="2693.5999999999999" y="241.52923538230885"/>
         </scene>
+        <!--Choose Words View Controller-->
+        <scene sceneID="0g0-ao-zLz">
+            <objects>
+                <viewController id="2dI-iN-39q" customClass="ChooseWordsViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yej-Pr-dhU" customClass="ChooseWordsViewCon">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zev-6E-IZS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVQ-LJ-zLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Words Form View Controller-->
+        <scene sceneID="1C1-eR-u0T">
+            <objects>
+                <viewController id="Dbn-qf-UZ5" customClass="WordsFormViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sel-T9-18n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rUE-nr-IcF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ipi-RE-p0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3312" y="1817"/>
+        </scene>
     </scenes>
     <resources>
         <image name="home" width="36" height="36"/>
@@ -671,7 +742,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="cR6-KI-tIX"/>
+        <segue reference="7yQ-Tz-3e9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
