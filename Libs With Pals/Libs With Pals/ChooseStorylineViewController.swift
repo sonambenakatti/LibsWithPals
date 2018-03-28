@@ -45,7 +45,6 @@ class ChooseStorylineViewController: UIViewController, UITableViewDelegate, UITa
         return cell
     }
     
-    // TODO: Actually send data over here
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier == "goToChooseWordsSegue",
             let destination = segue.destination as? ChooseWordsViewController,

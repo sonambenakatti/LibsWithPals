@@ -295,10 +295,6 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
-                                        <connections>
-                                            <action selector="onMakeMyMadLibPressed:" destination="1Ts-Oj-Mpz" eventType="touchUpInside" id="les-Hy-fmV"/>
-                                            <segue destination="l1Y-hP-RDB" kind="show" identifier="ChooseWordsToFinalStorySegue" id="zIa-x0-CGH"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -319,15 +315,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H2E-mV-MQ3"/>
                     </view>
+                    <connections>
+                        <segue destination="l1Y-hP-RDB" kind="show" identifier="ChooseWordsToFinalStorySegue" id="js7-PB-RyZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzR-qO-SHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="1766.2668665667168"/>
         </scene>
-        <!--View Controller-->
+        <!--Final Storyline View Controller-->
         <scene sceneID="syu-pz-9BX">
             <objects>
-                <viewController id="l1Y-hP-RDB" sceneMemberID="viewController">
+                <viewController id="l1Y-hP-RDB" customClass="FinalStorylineViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9rT-KR-r0J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

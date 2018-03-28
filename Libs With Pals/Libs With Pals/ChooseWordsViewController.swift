@@ -29,10 +29,12 @@ class ChooseWordsViewController: UIViewController {
                 destination.storyline = storyline
                 destination.delegate = self
                 container = destination
+        } else if segue.identifier == "ChooseWordsToFinalStorySegue",
+            let destination = segue.destination as? FinalStorylineViewController {
         }
     }
 
-    
+    // Return home but first warn the user they will lose their progrress
     @IBAction func onHomeButtonPressed(_ sender: Any) {
         
         let alert = UIAlertController(title: "Are you sure?", message: "If you return home you will lose your mad lib.", preferredStyle: UIAlertControllerStyle.alert)
@@ -43,13 +45,13 @@ class ChooseWordsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    // Take user to final storyline if all fields are filled out
     @IBAction func onMakeMyMadLibPressed(_ sender: Any) {
+        print((self.container?.checkIfAllRowsFilled())!)
         if (self.container?.checkIfAllRowsFilled())! {
             self.performSegue(withIdentifier: "ChooseWordsToFinalStorySegue", sender: AnyClass.self)
         }
         
+        // TODO: Add an alert that lets the user know they need to fill out all fields
     }
-    
-    
 }

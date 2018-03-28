@@ -13,6 +13,7 @@ class WordsFormViewController: FormViewController {
     
     var storyline: Storyline? = nil
     var delegate: ChooseWordsViewController?
+    var words: Dictionary<String, String>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +48,17 @@ class WordsFormViewController: FormViewController {
             }
             index += 1
         }
-        let row: TextRow? = form.rowBy(tag: "hey")
-        let value = row?.value
-        print(String(describing: value))
     }
     
     func checkIfAllRowsFilled() -> Bool {
         let valuesDictionary = form.values()
+        print(valuesDictionary)
         for val in valuesDictionary {
             if valuesDictionary.index(forKey: String(describing: val)) == nil {
                 return false
             }
         }
-        print(valuesDictionary)
+        words = valuesDictionary
         return true
 
     }
