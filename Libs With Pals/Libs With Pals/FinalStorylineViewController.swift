@@ -10,12 +10,19 @@ import UIKit
 
 class FinalStorylineViewController: UIViewController {
 
-    var words: Dictionary<String, String>?
+    var storyline: Array<String>?
+    var words: [String: Any?] = [:]
+    var wordsOrdered = [String]()
+    var finalStory: String = ""
     
+    @IBOutlet weak var storylineTextView: UITextView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.putWordsInOrder()
+        self.showStory()
+        storylineTextView.text = finalStory
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,15 +30,20 @@ class FinalStorylineViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func putWordsInOrder() {
+        for i in 0...words.count - 1 {
+            wordsOrdered.append(words[String(i)]!! as! String)
+        }
+        print(wordsOrdered)
     }
-    */
-
+    
+    func showStory() {
+        for i in 0...storyline!.count - 1 {
+            finalStory += storyline![i]
+            if wordsOrdered.indices.contains(i) {
+                finalStory += wordsOrdered[i]
+            }
+        }
+        print(finalStory)
+    }
 }

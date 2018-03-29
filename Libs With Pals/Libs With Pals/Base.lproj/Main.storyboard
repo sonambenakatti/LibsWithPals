@@ -295,6 +295,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="onMakeMyMadLibPressed:" destination="1Ts-Oj-Mpz" eventType="touchUpInside" id="R5Z-uO-m8U"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -331,12 +334,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Storyline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxk-Sa-eZW">
-                                <rect key="frame" x="104" y="128" width="166" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-mk-LYO">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <items>
@@ -345,23 +342,32 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ous-ql-AG3">
+                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hHv-mk-LYO" firstAttribute="top" secondItem="vag-tp-AhB" secondAttribute="top" constant="2" id="14V-n1-L6i"/>
+                            <constraint firstItem="vag-tp-AhB" firstAttribute="trailing" secondItem="ous-ql-AG3" secondAttribute="trailing" id="90W-yF-bha"/>
+                            <constraint firstItem="ous-ql-AG3" firstAttribute="top" secondItem="hHv-mk-LYO" secondAttribute="bottom" id="Bjm-kx-vS2"/>
                             <constraint firstAttribute="trailing" secondItem="hHv-mk-LYO" secondAttribute="trailing" id="Hgd-r9-jix"/>
+                            <constraint firstItem="vag-tp-AhB" firstAttribute="bottom" secondItem="ous-ql-AG3" secondAttribute="bottom" id="IdF-ve-7u9"/>
                             <constraint firstItem="hHv-mk-LYO" firstAttribute="leading" secondItem="9rT-KR-r0J" secondAttribute="leading" id="SN1-5o-RyW"/>
-                            <constraint firstItem="hHv-mk-LYO" firstAttribute="centerX" secondItem="wxk-Sa-eZW" secondAttribute="centerX" id="dkm-ar-dyG"/>
-                            <constraint firstItem="wxk-Sa-eZW" firstAttribute="top" secondItem="hHv-mk-LYO" secondAttribute="bottom" constant="62" id="iPq-cn-iDg"/>
-                            <constraint firstItem="vag-tp-AhB" firstAttribute="bottom" secondItem="wxk-Sa-eZW" secondAttribute="bottom" constant="499" id="iab-yx-Wer"/>
-                            <constraint firstItem="wxk-Sa-eZW" firstAttribute="leading" secondItem="vag-tp-AhB" secondAttribute="leading" constant="104" id="lhQ-zj-ul4"/>
+                            <constraint firstItem="ous-ql-AG3" firstAttribute="leading" secondItem="vag-tp-AhB" secondAttribute="leading" id="esE-ob-jxS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vag-tp-AhB"/>
                     </view>
+                    <connections>
+                        <outlet property="storylineTextView" destination="ous-ql-AG3" id="8Rv-jM-lXm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuY-Jd-EPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="1658"/>
+            <point key="canvasLocation" x="1557.5999999999999" y="1657.4212893553224"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="F0m-hy-LfF">

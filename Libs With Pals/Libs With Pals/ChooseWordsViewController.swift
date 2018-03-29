@@ -31,6 +31,8 @@ class ChooseWordsViewController: UIViewController {
                 container = destination
         } else if segue.identifier == "ChooseWordsToFinalStorySegue",
             let destination = segue.destination as? FinalStorylineViewController {
+            destination.words = (container?.words)!
+            destination.storyline = storyline?.getStory()
         }
     }
 
@@ -47,7 +49,7 @@ class ChooseWordsViewController: UIViewController {
     
     // Take user to final storyline if all fields are filled out
     @IBAction func onMakeMyMadLibPressed(_ sender: Any) {
-        print((self.container?.checkIfAllRowsFilled())!)
+
         if (self.container?.checkIfAllRowsFilled())! {
             self.performSegue(withIdentifier: "ChooseWordsToFinalStorySegue", sender: AnyClass.self)
         }
