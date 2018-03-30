@@ -277,14 +277,17 @@
                                         </items>
                                     </navigationBar>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-zL-V0Y">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="556"/>
+                                        <rect key="frame" x="0.0" y="44" width="375" height="540"/>
                                         <connections>
                                             <segue destination="Dbn-qf-UZ5" kind="embed" identifier="ChooseWordsToFormSegue" id="A7a-RX-oub"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlw-pF-D2K">
-                                        <rect key="frame" x="0.0" y="600" width="375" height="47"/>
+                                        <rect key="frame" x="0.0" y="584" width="375" height="63"/>
                                         <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="VgL-FG-re6"/>
+                                        </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Make My Mad Lib!">
@@ -301,20 +304,18 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="vlw-pF-D2K" firstAttribute="centerX" secondItem="mBs-N7-ruW" secondAttribute="centerX" id="JEa-5r-yvk"/>
-                                    <constraint firstItem="G5e-JU-qdT" firstAttribute="leading" secondItem="Efg-zL-V0Y" secondAttribute="leading" id="M1g-sG-kQv"/>
-                                    <constraint firstAttribute="trailing" secondItem="vlw-pF-D2K" secondAttribute="trailing" id="bJL-GI-7td"/>
-                                    <constraint firstItem="vlw-pF-D2K" firstAttribute="leading" secondItem="mBs-N7-ruW" secondAttribute="leading" id="eqh-aB-ws0"/>
-                                    <constraint firstItem="G5e-JU-qdT" firstAttribute="leading" secondItem="mBs-N7-ruW" secondAttribute="leading" id="lze-J5-El0"/>
+                                    <constraint firstItem="G5e-JU-qdT" firstAttribute="leading" secondItem="Efg-zL-V0Y" secondAttribute="leading" id="Blt-Z3-MVO"/>
+                                    <constraint firstItem="Efg-zL-V0Y" firstAttribute="leading" secondItem="vlw-pF-D2K" secondAttribute="leading" id="RST-e0-crz"/>
+                                    <constraint firstItem="G5e-JU-qdT" firstAttribute="leading" secondItem="mBs-N7-ruW" secondAttribute="leading" id="j7d-21-AHE"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="mBs-N7-ruW" firstAttribute="bottom" secondItem="H2E-mV-MQ3" secondAttribute="bottom" id="1Vl-1z-VP6"/>
-                            <constraint firstItem="mBs-N7-ruW" firstAttribute="leading" secondItem="Ik2-Jn-ViU" secondAttribute="leading" id="AVP-Uz-foZ"/>
-                            <constraint firstItem="mBs-N7-ruW" firstAttribute="top" secondItem="H2E-mV-MQ3" secondAttribute="top" id="WSp-jh-Qsz"/>
-                            <constraint firstAttribute="trailing" secondItem="mBs-N7-ruW" secondAttribute="trailing" id="bQ3-Uz-Mwm"/>
+                            <constraint firstItem="mBs-N7-ruW" firstAttribute="leading" secondItem="Ik2-Jn-ViU" secondAttribute="leading" id="1lC-E1-RBI"/>
+                            <constraint firstItem="mBs-N7-ruW" firstAttribute="top" secondItem="H2E-mV-MQ3" secondAttribute="top" id="2MS-Lz-jSa"/>
+                            <constraint firstItem="mBs-N7-ruW" firstAttribute="bottom" secondItem="H2E-mV-MQ3" secondAttribute="bottom" id="FFU-8Q-B7c"/>
+                            <constraint firstAttribute="trailing" secondItem="mBs-N7-ruW" secondAttribute="trailing" id="udq-qB-KFC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H2E-mV-MQ3"/>
                     </view>
@@ -345,7 +346,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ous-ql-AG3">
                                 <rect key="frame" x="0.0" y="66" width="375" height="601"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -728,7 +729,7 @@
             <objects>
                 <viewController id="Dbn-qf-UZ5" customClass="WordsFormViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sel-T9-18n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rUE-nr-IcF"/>

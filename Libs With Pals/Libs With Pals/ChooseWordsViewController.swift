@@ -9,6 +9,8 @@
 import UIKit
 import Eureka
 
+// Class for the view that allows the user to choose words for the mad lib. Contains a container ViewController that is a form for easy input.
+
 class ChooseWordsViewController: UIViewController {
     
     var storyline: Storyline? = nil
@@ -32,7 +34,8 @@ class ChooseWordsViewController: UIViewController {
         } else if segue.identifier == "ChooseWordsToFinalStorySegue",
             let destination = segue.destination as? FinalStorylineViewController {
             destination.words = (container?.words)!
-            destination.storyline = storyline?.getStory()
+            destination.name = (container?.name)!
+            destination.storyline = storyline
         }
     }
 
@@ -52,8 +55,11 @@ class ChooseWordsViewController: UIViewController {
 
         if (self.container?.checkIfAllRowsFilled())! {
             self.performSegue(withIdentifier: "ChooseWordsToFinalStorySegue", sender: AnyClass.self)
+        } else {
+            let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+
         }
-        
-        // TODO: Add an alert that lets the user know they need to fill out all fields
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Group8. All rights reserved.
 //
 
-// When the game is in single player mode, the player chooses a storyline theme
+// This class is used for when the game is in single player mode and the player chooses a storyline theme
 
 import UIKit
 
@@ -25,7 +25,6 @@ class ChooseStorylineViewController: UIViewController, UITableViewDelegate, UITa
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -45,6 +44,7 @@ class ChooseStorylineViewController: UIViewController, UITableViewDelegate, UITa
         return cell
     }
     
+    // Prepare to go to the form in which user inputs words for blanks in the mad lib
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier == "goToChooseWordsSegue",
             let destination = segue.destination as? ChooseWordsViewController,
