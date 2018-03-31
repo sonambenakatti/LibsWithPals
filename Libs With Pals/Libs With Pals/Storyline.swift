@@ -27,6 +27,15 @@ class Storyline {
     let morningBlanks = ["name", "pronoun", "adverb", "possessive-pronoun", "adverb", "name", "noun", "pronoun", "name", "pronoun", "pronoun", "noun"]
 
     
+    let examDay = ["The alarm rings and ", " crawls out of bed. ", " goes to the ", " and gets ready for the day. ", " has a ", " midterm and quickly grabs ", " from the desk. ", " makes a ", " for lunch before heading out to ", ". ", " walks to campus and then realizes ", " forgot  ", "  , but it's too late to go back home to get it. While ", " is walking, ", " gets a call from ", " that the ", " ran away. This was not how the day was supposed to turn out."]
+    
+    let examDayBlanks = ["name", "pronoun", "place", "name", "noun - subject", "noun", "pronoun", "food", "noun", "name", "pronoun", "possessive pronoun", "noun", "name", "pronoun", "name", "noun - animal"]
+    
+    let travelStory = [" headed to the airport after lunch. ", " was going to ", " for the first time. ", " checked in the luggage and went to look at ", " at the airport store. Then, ", " went to get some ", " at the food court. However, there were a lot of people in line, so it took a while to get the food. When ", " finished eating, it was almost time to board, so ", " quickly ", " to the gate, but since ", " was taking ", " Airlines, the gate was far from where ", " was. ", " barely made it."]
+    
+    let travelBlanks = ["name", "pronoun", "noun - place", "pronoun", "noun", "pronoun", "noun - food", "pronoun", "name", "verb", "name", "pronoun", "pronoun"]
+    
+    
     var name: String = ""
     var pronoun: String = ""
     var storyName: String = ""
