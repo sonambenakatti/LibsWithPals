@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDj-9X-EeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="2150"/>
+            <point key="canvasLocation" x="490" y="1903"/>
         </scene>
         <!--Choose Words View Controller-->
         <scene sceneID="5Og-SO-0aC">
@@ -710,6 +710,49 @@
             </objects>
             <point key="canvasLocation" x="2693.5999999999999" y="241.52923538230885"/>
         </scene>
+        <!--Loading Screen View Controller-->
+        <scene sceneID="E9c-U9-yD0">
+            <objects>
+                <viewController id="ics-5Z-QnL" customClass="LoadingScreenViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jMt-On-a4n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rc-tm-i0t">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xFl-qL-0Jw"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="hBE-JC-lej">
+                                        <barButtonItem key="leftBarButtonItem" image="home" id="5eO-Df-Hfd">
+                                            <connections>
+                                                <action selector="onHomePressed:" destination="haA-OV-LML" id="DfM-OG-ovw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-60-FUZ">
+                                <rect key="frame" x="177" y="192" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1 is choosing sentences, please wait...." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-Te-C6C">
+                                <rect key="frame" x="72" y="254" width="230" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.57649785280227661" green="0.84436458349227905" blue="0.85760635137557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cE7-5e-CI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3508" y="241.52923538230885"/>
+        </scene>
         <!--Choose Words View Controller-->
         <scene sceneID="0g0-ao-zLz">
             <objects>
@@ -748,7 +791,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="7yQ-Tz-3e9"/>
+        <segue reference="Q61-vB-45Y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
