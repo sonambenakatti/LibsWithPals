@@ -35,6 +35,9 @@ class Storyline {
     
     let travelBlanks = ["name", "pronoun", "noun - place", "pronoun", "noun", "pronoun", "noun - food", "pronoun", "name", "verb", "name", "pronoun", "pronoun"]
     
+    let lunchTime = ["It's lunch now, and ", " decides to get ", " with friends. ", " likes to eat ", " but wants to save money and can't cook. ", "decides to ", " to the restaurant. Once ", " is there, ", " orders a ", " and decides to drink some ", " . While waiting for the food, ", " talks to ", " friends about ", " . The waiter finally arrives, and accidentally brings ", " the wrong dish. Luckily, ", " gets to keep the extra dish and brings it back to ", " ."]
+    
+    let lunchBlanks = ["name", "food", "pronoun", "food", "name", "pronoun", "name", "food", "drink", "pronoun", "possessive pronoun", "noun", "pronoun", "pronoun", "place"]
     
     var name: String = ""
     var pronoun: String = ""
