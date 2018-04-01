@@ -221,13 +221,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create the Story" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O34-UI-NqQ">
-                                <rect key="frame" x="94" y="116" width="186" height="35"/>
+                                <rect key="frame" x="94" y="124.5" width="154.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK4-EI-mUq">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qK4-EI-mUq">
                                 <rect key="frame" x="0.0" y="21" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="B10-Y3-3Ka">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="gjn-wc-aw4">
@@ -243,11 +244,6 @@
                         <constraints>
                             <constraint firstItem="O34-UI-NqQ" firstAttribute="leading" secondItem="edr-IL-5C3" secondAttribute="leading" constant="94" id="0v5-Iz-TQB"/>
                             <constraint firstItem="edr-IL-5C3" firstAttribute="bottom" secondItem="O34-UI-NqQ" secondAttribute="bottom" constant="516" id="SFQ-wC-Me0"/>
-                            <constraint firstItem="O34-UI-NqQ" firstAttribute="top" secondItem="qK4-EI-mUq" secondAttribute="bottom" constant="51" id="pp9-tA-jTN"/>
-                            <constraint firstItem="qK4-EI-mUq" firstAttribute="leading" secondItem="lNK-xe-uAK" secondAttribute="leading" id="sMs-E7-9hb"/>
-                            <constraint firstAttribute="trailing" secondItem="qK4-EI-mUq" secondAttribute="trailing" id="u91-T4-y5V"/>
-                            <constraint firstItem="qK4-EI-mUq" firstAttribute="top" secondItem="edr-IL-5C3" secondAttribute="top" constant="1" id="uMZ-tC-wwN"/>
-                            <constraint firstItem="qK4-EI-mUq" firstAttribute="centerX" secondItem="O34-UI-NqQ" secondAttribute="centerX" id="xSE-I1-TKH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="edr-IL-5C3"/>
                     </view>
@@ -674,14 +670,11 @@
                                 <connections>
                                     <action selector="enterWordsClicked:" destination="xWh-Dg-ieh" eventType="touchUpInside" id="l8A-Qv-L1c"/>
                                     <action selector="onNewGameButtonPressed:" destination="8vk-ve-krd" eventType="touchUpInside" id="WaC-Nc-X1M"/>
-                                    <segue destination="ics-5Z-QnL" kind="show" id="F62-0v-cJJ"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCA-ch-pRR">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCA-ch-pRR">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="gET-pa-SkQ"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="abe-D3-50h">
                                         <barButtonItem key="leftBarButtonItem" image="home" id="i4l-WE-NRX">
@@ -700,7 +693,6 @@
                                 <state key="normal" title="Choose sentences"/>
                                 <connections>
                                     <action selector="chooseSentencesClicked:" destination="xWh-Dg-ieh" eventType="touchUpInside" id="oHz-Qr-4fK"/>
-                                    <segue destination="rvt-gh-2Ra" kind="show" id="D8x-ND-JHD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -710,6 +702,8 @@
                     <connections>
                         <outlet property="chooseSentencesButton" destination="Mfx-M8-cRr" id="z0u-7l-XT7"/>
                         <outlet property="enterWordsButton" destination="dk0-kF-Rox" id="Qfp-Yl-ASe"/>
+                        <segue destination="ics-5Z-QnL" kind="show" identifier="enterWordsSegue" id="r1p-d2-lvI"/>
+                        <segue destination="rvt-gh-2Ra" kind="show" identifier="createStorySegue" id="7Mc-w9-zx3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWi-dU-dqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -793,11 +787,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rc-tm-i0t">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rc-tm-i0t">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="xFl-qL-0Jw"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="hBE-JC-lej">
                                         <barButtonItem key="leftBarButtonItem" image="home" id="5eO-Df-Hfd">
@@ -868,7 +860,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Upi-xg-WhK"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="YkX-CT-8bi"/>
+        <segue reference="dkz-GV-h0s"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
