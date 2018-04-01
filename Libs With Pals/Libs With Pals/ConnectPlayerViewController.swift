@@ -24,7 +24,6 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
         
         NotificationCenter.default.addObserver(self, selector: #selector(peerChangedStateWithNotification(notification:)), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
         
-        //NotificationCenter.default.addObserver(self, selector: Selector(("handleRecieveDataWithNotification")), name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
     }
     
     // function to connect two players
@@ -32,12 +31,7 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
         if appDelegate.mpcHandler.session != nil {
             appDelegate.mpcHandler.setupBrowser()
             appDelegate.mpcHandler.browser.delegate = self
-            DispatchQueue.global(qos: .background).async {
-                self.present(self.appDelegate.mpcHandler.browser, animated: true, completion: nil)
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
-                }
-            }
+            self.present(self.appDelegate.mpcHandler.browser, animated: true, completion: nil)
         }
     }
     
@@ -51,18 +45,23 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
     }
     
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        appDelegate.mpcHandler.browser.dismiss(animated: true)
+        appDelegate.mpcHandler.browser.dismiss(animated: true) {
+            self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
+        }
     }
     
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
-        appDelegate.mpcHandler.browser.dismiss(animated: true)
-
+        appDelegate.mpcHandler.browser.dismiss(animated: true) {
+            self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
+        }
+        
     }
     
-    // this function will be implemented later when data is passed between players
-    func handleRecieveDataWithNotification(notification:NSNotification) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startGame2PlayerSegue" {
+            let vc: startTwoPlayerGameViewController = segue.destination as! startTwoPlayerGameViewController
+            vc.appDelegate = self.appDelegate
+        }
     }
 
 }
