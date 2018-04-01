@@ -22,6 +22,7 @@ class FinalStorylineViewController: UIViewController {
         super.viewDidLoad()
         self.putWordsInOrder()
         self.showStory()
+        storylineTextView.isEditable = false
         storylineTextView.text = finalStory
     }
 
@@ -55,4 +56,9 @@ class FinalStorylineViewController: UIViewController {
         }
         print(finalStory)
     }
+    
+    @IBAction func onHomeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "finalStorylineToHomeSegue", sender: AnyClass.self)
+    }
+    
 }

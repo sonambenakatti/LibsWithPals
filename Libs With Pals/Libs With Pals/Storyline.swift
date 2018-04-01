@@ -27,15 +27,15 @@ class Storyline {
     let morningBlanks = ["name", "pronoun", "adverb", "possessive-pronoun", "adverb", "name", "noun", "pronoun", "name", "pronoun", "pronoun", "noun"]
 
     
-    let examDay = ["The alarm rings and ", " crawls out of bed. ", " goes to the ", " and gets ready for the day. ", " has a ", " midterm and quickly grabs ", " from the desk. ", " makes a ", " for lunch before heading out to ", ". ", " walks to campus and then realizes ", " forgot  ", "  , but it's too late to go back home to get it. While ", " is walking, ", " gets a call from ", " that the ", " ran away. This was not how the day was supposed to turn out."]
+    let examStory = ["The alarm rings and ", " crawls out of bed. ", " goes to ", " and gets ready for the day. ", " has a ", " midterm and quickly grabs ", " from the desk. ", " makes a ", " for lunch before heading out to ", ". ", " walks to campus and then realizes ", " forgot  ", "  , but it's too late to go back home to get it. While ", " is walking, ", " gets a call from ", " that the ", " ran away. This was not how the day was supposed to turn out."]
     
-    let examDayBlanks = ["name", "pronoun", "place", "name", "noun - subject", "noun", "pronoun", "food", "noun", "name", "pronoun", "possessive pronoun", "noun", "name", "pronoun", "name", "noun - animal"]
+    let examBlanks = ["name", "pronoun", "place", "name", "noun - subject", "noun", "pronoun", "food", "noun", "name", "pronoun", "possessive pronoun", "noun", "name", "pronoun", "name", "noun - animal"]
     
-    let travelStory = [" headed to the airport after lunch. ", " was going to ", " for the first time. ", " checked in the luggage and went to look at ", " at the airport store. Then, ", " went to get some ", " at the food court. However, there were a lot of people in line, so it took a while to get the food. When ", " finished eating, it was almost time to board, so ", " quickly ", " to the gate, but since ", " was taking ", " Airlines, the gate was far from where ", " was. ", " barely made it."]
+    let travelStory = ["Excited for a trip to Europe, ", " headed to the airport after lunch. ", " was going to ", " for the first time. ", " checked in the luggage and went to look at ", " at the airport store. Then, ", " went to get some ", " at the food court. However, there were a lot of people in line, so it took a while to get the food. When ", " finished eating, it was almost time to board, so ", " quickly ", " to the gate, but since ", " was taking ", " Airlines, the gate was far from where ", " was. ", " barely made it."]
     
     let travelBlanks = ["name", "pronoun", "noun - place", "pronoun", "noun", "pronoun", "noun - food", "pronoun", "name", "verb", "name", "pronoun", "pronoun"]
     
-    let lunchTime = ["It's lunch now, and ", " decides to get ", " with friends. ", " likes to eat ", " but wants to save money and can't cook. ", "decides to ", " to the restaurant. Once ", " is there, ", " orders a ", " and decides to drink some ", " . While waiting for the food, ", " talks to ", " friends about ", " . The waiter finally arrives, and accidentally brings ", " the wrong dish. Luckily, ", " gets to keep the extra dish and brings it back to ", " ."]
+    let lunchStory = ["It's lunch now, and ", " decides to get ", " with friends. ", " likes to eat ", " but wants to save money and can't cook. ", " decides to ", " to the restaurant. Once ", " is there, ", " orders a ", " and decides to drink some ", ". While waiting for the food, ", " talks to ", " friends about ", " . The waiter finally arrives, and accidentally brings ", " the wrong dish. Luckily, ", " gets to keep the extra dish and brings it back to ", "."]
     
     let lunchBlanks = ["name", "food", "pronoun", "food", "name", "pronoun", "name", "food", "drink", "pronoun", "possessive pronoun", "noun", "pronoun", "pronoun", "place"]
     
@@ -47,10 +47,27 @@ class Storyline {
     var userInputedWords: Array<String> = []
     
     init(storyline: String) {
-        if storyline == "Trip to the Grocery Store" {
-            self.story = groceryStory
-            self.blanks = groceryBlanks
-            self.storyName = storyline
+        self.storyName = storyline
+        switch storyline {
+            case "Trip to the Grocery Store":
+                self.story = groceryStory
+                self.blanks = groceryBlanks
+            case "An Eventful Morning":
+                self.story = morningStory
+                self.blanks = morningBlanks
+            case "Exam Day":
+                self.story = examStory
+                self.blanks = examBlanks
+            case "A Travel Adventure":
+                self.story = travelStory
+                self.blanks = travelBlanks
+            case "Lunch Time":
+                self.story = lunchStory
+                self.blanks = lunchBlanks
+            default:
+                // Default to the grocery story for now, although this case should never be reached
+                self.story = groceryStory
+                self.blanks = groceryBlanks
         }
     }
 

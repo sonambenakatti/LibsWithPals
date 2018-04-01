@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -343,7 +343,12 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="arM-qB-hLU">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="e3B-1z-qvE"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="e3B-1z-qvE">
+                                            <connections>
+                                                <action selector="onHomeButtonPressed:" destination="l1Y-hP-RDB" id="wTi-3H-u8w"/>
+                                                <segue destination="8vk-ve-krd" kind="show" identifier="finalStorylineToHomeSegue" id="YkX-CT-8bi"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -861,9 +866,9 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hp1-8B-f8b"/>
-        <segue reference="VwQ-28-Zr2"/>
-        <segue reference="Sxd-w7-yf3"/>
+        <segue reference="Upi-xg-WhK"/>
+        <segue reference="R9G-fw-mZC"/>
+        <segue reference="YkX-CT-8bi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

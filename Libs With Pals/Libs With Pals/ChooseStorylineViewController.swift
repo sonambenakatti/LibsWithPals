@@ -10,7 +10,8 @@
 
 import UIKit
 
-public let storylines = ["Trip to the Grocery Store"]
+// If you update these, you must also update Storyline.swift's constructor
+public let storylines = ["Trip to the Grocery Store", "An Eventful Morning", "Exam Day", "A Travel Adventure", "Lunch Time"]
 
 class ChooseStorylineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
