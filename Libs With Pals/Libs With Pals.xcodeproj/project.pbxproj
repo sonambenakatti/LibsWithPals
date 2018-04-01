@@ -24,6 +24,7 @@
 		4CED6FBB37121804C3BB77F2 /* Pods_Libs_With_Pals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729041734A25155835917708 /* Pods_Libs_With_Pals.framework */; };
 		F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35801C3204A0E2F004E6B3C /* MPCHandler.swift */; };
 		F39C3B8C204CE1C700994757 /* ConnectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */; };
+		F3FD47F7207084C8001F66C6 /* startTwoPlayerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		729041734A25155835917708 /* Pods_Libs_With_Pals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libs_With_Pals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35801C3204A0E2F004E6B3C /* MPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
 		F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPlayerViewController.swift; sourceTree = "<group>"; };
+		F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startTwoPlayerGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				27B31EF3206A985D00159410 /* ChooseStorylineViewController.swift */,
 				2791A890206AE714000CF096 /* WordsFormViewController.swift */,
 				2719E313206BEDE30094D446 /* FinalStorylineViewController.swift */,
+				F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				27F5601A2042829B00BD7549 /* LoginViewController.swift in Sources */,
 				27F560182042829B00BD7549 /* AppDelegate.swift in Sources */,
 				27B31EF4206A985D00159410 /* ChooseStorylineViewController.swift in Sources */,
+				F3FD47F7207084C8001F66C6 /* startTwoPlayerGameViewController.swift in Sources */,
 				2791A891206AE714000CF096 /* WordsFormViewController.swift in Sources */,
 				F39C3B8C204CE1C700994757 /* ConnectPlayerViewController.swift in Sources */,
 				27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */,

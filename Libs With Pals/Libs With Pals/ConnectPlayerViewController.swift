@@ -8,9 +8,11 @@
 
 import UIKit
 import MultipeerConnectivity
+import Foundation
 
 class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDelegate {
     
+    @IBOutlet weak var navBar: UINavigationBar!
     var appDelegate: AppDelegate!
     
     override func viewDidLoad() {
@@ -20,7 +22,7 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
         appDelegate.mpcHandler.setupSession()
         appDelegate.mpcHandler.advertiseSelf(advertise: true)
         
-        //NotificationCenter.default.addObserver(self, selector: Selector(("peerChangedStateWithNotification")), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(peerChangedStateWithNotification(notification:)), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
         
         //NotificationCenter.default.addObserver(self, selector: Selector(("handleRecieveDataWithNotification")), name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
     }
@@ -30,26 +32,30 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
         if appDelegate.mpcHandler.session != nil {
             appDelegate.mpcHandler.setupBrowser()
             appDelegate.mpcHandler.browser.delegate = self
-            self.present(appDelegate.mpcHandler.browser, animated: true, completion: nil)
+            DispatchQueue.global(qos: .background).async {
+                self.present(self.appDelegate.mpcHandler.browser, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
+                }
+            }
         }
     }
     
-    func peerChangedStateWithNotification(notification:NSNotification) {
+   @objc func peerChangedStateWithNotification(notification:NSNotification) {
         let userInfo = NSDictionary(dictionary: notification.userInfo!)
         let state = userInfo.object(forKey: "state") as! Int
-        
-        if state != MCSessionState.connecting.rawValue {
-            
+        if state != MCSessionState.connected.rawValue {
+            navBar.topItem?.title = "Connected"
+            self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
         }
     }
     
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        print("here")
         appDelegate.mpcHandler.browser.dismiss(animated: true)
-
     }
     
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
         appDelegate.mpcHandler.browser.dismiss(animated: true)
 
     }
