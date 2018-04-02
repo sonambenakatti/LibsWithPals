@@ -212,20 +212,14 @@
             </objects>
             <point key="canvasLocation" x="-722" y="539"/>
         </scene>
-        <!--View Controller-->
+        <!--Two Player Create Story View Controller-->
         <scene sceneID="4Ox-6T-7D2">
             <objects>
-                <viewController id="rvt-gh-2Ra" sceneMemberID="viewController">
+                <viewController id="rvt-gh-2Ra" customClass="TwoPlayerCreateStoryViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lNK-xe-uAK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create the Story" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O34-UI-NqQ">
-                                <rect key="frame" x="94" y="124.5" width="154.5" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qK4-EI-mUq">
                                 <rect key="frame" x="0.0" y="21" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -239,18 +233,37 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ohK-om-hCP">
+                                <rect key="frame" x="-2" y="71" width="375" height="578"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-tR-ZGU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                                        <connections>
+                                            <segue destination="l6d-uQ-OGd" kind="embed" identifier="TwoPlayerWriteStorylineFormSegue" id="EhM-nC-lTc"/>
+                                        </connections>
+                                    </containerView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-Wk-2Ir">
+                                        <rect key="frame" x="0.0" y="543" width="375" height="35"/>
+                                        <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="66d-fq-tcX"/>
+                                        </constraints>
+                                        <state key="normal" title="I'm Done!"/>
+                                        <connections>
+                                            <action selector="onDoneButtonPressed:" destination="rvt-gh-2Ra" eventType="touchUpInside" id="4wT-YB-T32"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="O34-UI-NqQ" firstAttribute="leading" secondItem="edr-IL-5C3" secondAttribute="leading" constant="94" id="0v5-Iz-TQB"/>
-                            <constraint firstItem="edr-IL-5C3" firstAttribute="bottom" secondItem="O34-UI-NqQ" secondAttribute="bottom" constant="516" id="SFQ-wC-Me0"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="edr-IL-5C3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDj-9X-EeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4326" y="1519"/>
+            <point key="canvasLocation" x="4309.6000000000004" y="1694.3028485757122"/>
         </scene>
         <!--Choose Words View Controller-->
         <scene sceneID="5Og-SO-0aC">
@@ -834,6 +847,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVQ-LJ-zLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-4" y="-87"/>
         </scene>
         <!--Words Form View Controller-->
         <scene sceneID="1C1-eR-u0T">
@@ -849,6 +863,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipi-RE-p0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3312" y="1817"/>
+        </scene>
+        <!--Two Player Write Storyline View Controller-->
+        <scene sceneID="xQi-Lj-ba5">
+            <objects>
+                <viewController id="l6d-uQ-OGd" customClass="TwoPlayerWriteStorylineViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nKT-su-WK0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMF-A1-GEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4476" y="2405"/>
         </scene>
     </scenes>
     <resources>
