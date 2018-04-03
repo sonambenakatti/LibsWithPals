@@ -20,7 +20,7 @@ class startTwoPlayerGameViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification2"), object: nil)
     }
     
     @IBAction func chooseSentencesClicked(_ sender: Any) {

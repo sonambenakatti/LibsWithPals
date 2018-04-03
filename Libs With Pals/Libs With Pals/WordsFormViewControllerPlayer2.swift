@@ -22,6 +22,9 @@ class WordsFormViewControllerPlayer2: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification3"), object: nil)
+        
         self.addRows()
     }
     
