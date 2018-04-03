@@ -363,30 +363,45 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-lX-RBQ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1VA-qf-ZVk">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1VA-qf-ZVk" id="37w-Aw-pIe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pgQ-bo-Z8t">
+                                <rect key="frame" x="0.0" y="71" width="375" height="587"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-lX-RBQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="321"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="storyCell" id="1VA-qf-ZVk">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1VA-qf-ZVk" id="37w-Aw-pIe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="hello" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-fC-gVu">
+                                        <rect key="frame" x="0.0" y="331" width="375" height="256"/>
+                                        <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="256" id="YlS-JC-gvD"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="eiH-lX-RBQ" firstAttribute="leading" secondItem="PqP-pq-QAI" secondAttribute="leading" id="33Q-lg-gp3"/>
-                            <constraint firstItem="eiH-lX-RBQ" firstAttribute="top" secondItem="INq-91-vA5" secondAttribute="bottom" symbolic="YES" id="CwU-Eq-kU4"/>
-                            <constraint firstItem="PqP-pq-QAI" firstAttribute="trailing" secondItem="INq-91-vA5" secondAttribute="trailing" id="KvH-8P-jyO"/>
-                            <constraint firstItem="INq-91-vA5" firstAttribute="top" secondItem="PqP-pq-QAI" secondAttribute="top" id="MyE-63-ctm"/>
-                            <constraint firstItem="INq-91-vA5" firstAttribute="leading" secondItem="eJA-BU-zRH" secondAttribute="leading" id="QPI-w0-SY1"/>
-                            <constraint firstItem="PqP-pq-QAI" firstAttribute="trailing" secondItem="eiH-lX-RBQ" secondAttribute="trailing" id="guR-IM-Nv2"/>
-                            <constraint firstItem="PqP-pq-QAI" firstAttribute="bottom" secondItem="eiH-lX-RBQ" secondAttribute="bottom" id="nHn-Es-Epq"/>
+                            <constraint firstItem="INq-91-vA5" firstAttribute="leading" secondItem="eJA-BU-zRH" secondAttribute="leading" id="6PC-Pr-vhO"/>
+                            <constraint firstItem="INq-91-vA5" firstAttribute="trailing" secondItem="pgQ-bo-Z8t" secondAttribute="trailing" id="Bmq-tf-Sth"/>
+                            <constraint firstItem="INq-91-vA5" firstAttribute="leading" secondItem="pgQ-bo-Z8t" secondAttribute="leading" id="Ibz-yT-WPr"/>
+                            <constraint firstItem="PqP-pq-QAI" firstAttribute="bottom" secondItem="pgQ-bo-Z8t" secondAttribute="bottom" constant="9" id="MSq-f1-c4Z"/>
+                            <constraint firstItem="pgQ-bo-Z8t" firstAttribute="top" secondItem="INq-91-vA5" secondAttribute="bottom" constant="7" id="NjZ-gz-mMQ"/>
+                            <constraint firstItem="INq-91-vA5" firstAttribute="top" secondItem="PqP-pq-QAI" secondAttribute="top" id="V3A-Xz-Mf7"/>
+                            <constraint firstAttribute="trailing" secondItem="INq-91-vA5" secondAttribute="trailing" id="vet-kp-kdt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PqP-pq-QAI"/>
                     </view>
@@ -409,8 +424,7 @@
                                     <navigationItem id="arM-qB-hLU">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="e3B-1z-qvE">
                                             <connections>
-                                                <action selector="onHomeButtonPressed:" destination="4kL-kv-dAk" id="5KT-s6-pNv"/>
-                                                <segue destination="8vk-ve-krd" kind="show" identifier="finalStorylineToHomeSegue" id="YkX-CT-8bi"/>
+                                                <action selector="onHomeButtonPressed:" destination="l1Y-hP-RDB" id="fig-xy-epL"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -437,12 +451,12 @@
                     </view>
                     <connections>
                         <outlet property="storylineTextView" destination="ous-ql-AG3" id="8Rv-jM-lXm"/>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="finalStorylineToHomeSegue" id="8ld-EV-Cv1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuY-Jd-EPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="4kL-kv-dAk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1557.5999999999999" y="1657.4212893553224"/>
+            <point key="canvasLocation" x="1522" y="1781"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="F0m-hy-LfF">
@@ -1016,7 +1030,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Upi-xg-WhK"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="7yQ-Tz-3e9"/>
+        <segue reference="8ld-EV-Cv1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

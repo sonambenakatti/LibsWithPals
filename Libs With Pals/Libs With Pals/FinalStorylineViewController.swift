@@ -61,10 +61,12 @@ class FinalStorylineViewController: UIViewController {
     
     @IBAction func onHomeButtonPressed(_ sender: Any) {
         let saveLibs = prefs.bool(forKey: "saveLibs")
+        print("value of saveLibs: \(saveLibs)")
         if (saveLibs) {
             self.saveMadLib()
         }
         performSegue(withIdentifier: "finalStorylineToHomeSegue", sender: AnyClass.self)
+
     }
     
     // Save the mad lib into core data if the user has the setting enabled
