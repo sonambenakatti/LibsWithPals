@@ -39,14 +39,10 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     // get the types of words inputed by player one
-    func getTypesOfWords() -> Array<String>{
-        var userWords: Array<String> = []
+    func getTypesOfWords() -> Dictionary<String, String>{
+        var userWords: Dictionary<String, String> = [:]
         for (index, word) in self.words {
-            let i = Int(index)
-            // if an odd index, than the value in the dictionary is a type of word
-            if i! % 2 != 0 {
-                userWords.append(word as! String)
-            }
+            userWords[index] = word as? String
         }
         return userWords
     }
@@ -85,14 +81,12 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     func passDataToPlayer2() {
-        var actionDict: [String: Array<String>] = [:]
+        //var actionDict: [String: Array<String>] = [:]
         //  list to send words to player 2
-        actionDict["typesOfWords"] = getTypesOfWords()
+        //actionDict["typesOfWords"] = getTypesOfWords()
         // send types of words to player 2
         do {
-            let encoder = JSONEncoder()
-            let messageJSON = try encoder.encode(actionDict)
-            let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let messageData = try JSONSerialization.data(withJSONObject: getTypesOfWords(), options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")

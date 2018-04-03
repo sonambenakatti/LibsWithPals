@@ -1144,10 +1144,11 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X2S-qW-p79"/>
+        <segue reference="4tv-xQ-dsl"/>
+        <segue reference="0Pz-SR-6Gr"/>
         <segue reference="Upi-xg-WhK"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="8ld-EV-Cv1"/>
+        <segue reference="mWi-ng-yYy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

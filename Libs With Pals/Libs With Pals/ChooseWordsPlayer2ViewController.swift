@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class ChooseWordsPlayer2ViewController: UIViewController{
     
     //TODO: change this class to work for 2 player
     
     var container: WordsFormViewControllerPlayer2?
+    var appDelegate: AppDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +57,12 @@ class ChooseWordsPlayer2ViewController: UIViewController{
             actionDict["enterWordsClicked"] = false
             actionDict["chooseSentencesClicked"] = false
             actionDict["doneEnteringWords"] = true
-//            do {
-//                let messageData = try JSONSerialization.data(withJSONObject: actionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
-//                try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
-//            } catch let error as NSError {
-//                print("error: \(error.localizedDescription)")
-//            }
+            do {
+                let messageData = try JSONSerialization.data(withJSONObject: actionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+                try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
+            } catch let error as NSError {
+                print("error: \(error.localizedDescription)")
+            }
             self.performSegue(withIdentifier: "ChooseWordsToFinalStorySegue", sender: AnyClass.self)
         } else {
             let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
