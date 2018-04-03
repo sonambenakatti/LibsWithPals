@@ -33,9 +33,10 @@ class startTwoPlayerGameViewController: UIViewController {
         message.actionDict["chooseSentencesClicked"] = true
         message.actionDict["enterWordsClicked"] = false
         message.actionDict["doneEnteringSentences"] = false
+        message.actionDict["doneEnteringWords"] = false
         message.enteredWords = []
         do {
-            let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
             self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
             print("in sentences clicked")
@@ -50,9 +51,10 @@ class startTwoPlayerGameViewController: UIViewController {
         message.actionDict["chooseSentencesClicked"] = false
         message.actionDict["enterWordsClicked"] = true
         message.actionDict["doneEnteringSentences"] = false
+        message.actionDict["doneEnteringWords"] = false
         message.enteredWords = []
         do {
-            let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
             self.performSegue(withIdentifier: "enterWordsSegue", sender: AnyClass.self)
         } catch let error as NSError {
@@ -64,7 +66,6 @@ class startTwoPlayerGameViewController: UIViewController {
     @objc func handleRecieveDataWithNotification(notification:NSNotification){
         let userInfo = notification.userInfo! as Dictionary
         let recievedData:Data = userInfo["data"] as! Data
-        
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Message
             // don't let other player click enter words
@@ -78,7 +79,6 @@ class startTwoPlayerGameViewController: UIViewController {
                 chooseSentencesButton?.isEnabled = false
                 self.view.reloadInputViews()
             }
-            
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }

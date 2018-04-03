@@ -74,6 +74,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         message.actionDict["doneEnteringSentences"] = true
         message.actionDict["enterWordsClicked"] = false
         message.actionDict["chooseSentencesClicked"] = false
+        message.actionDict["doneEnteringWords"] = false
         message.enteredWords = []
         
         // notify player two that player 1 is done entering sentences
@@ -87,11 +88,10 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     
     func passDataToPlayer2() {
         var message = Message(actionDict: [:], enteredWords: [])
-        
         message.actionDict["doneEnteringSentences"] = true
         message.actionDict["enterWordsClicked"] = false
         message.actionDict["chooseSentencesClicked"] = false
-        
+        message.actionDict["doneEnteringWords"] = false
         //  list to send words to player 2
         message.enteredWords = getTypesOfWords()
         

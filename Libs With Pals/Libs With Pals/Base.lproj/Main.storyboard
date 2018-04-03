@@ -1017,6 +1017,7 @@
                                                 <barButtonItem key="leftBarButtonItem" image="home" id="srj-lV-5Ac">
                                                     <connections>
                                                         <action selector="onHomeButtonPressed:" destination="a3J-SJ-Dfd" id="PaL-sn-0GF"/>
+                                                        <segue destination="8vk-ve-krd" kind="show" identifier="ChooseWordsPlayer2HomeSegue" id="mWi-ng-yYy"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -1024,6 +1025,9 @@
                                     </navigationBar>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUq-9e-FAf">
                                         <rect key="frame" x="0.0" y="44" width="375" height="540"/>
+                                        <connections>
+                                            <segue destination="OB7-P8-tRl" kind="embed" identifier="ChooseWordsPlayer2Embed" id="Koh-OF-DO3"/>
+                                        </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhG-ZV-XGN">
                                         <rect key="frame" x="0.0" y="584" width="375" height="63"/>
@@ -1042,7 +1046,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="onMakeMyMadLibPressed:" destination="a3J-SJ-Dfd" eventType="touchUpInside" id="i9y-G3-9jF"/>
+                                            <action selector="onMakeMyMadLibPressed:" destination="a3J-SJ-Dfd" eventType="touchUpInside" id="Lj4-85-OlF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1063,7 +1067,7 @@
                         <viewLayoutGuide key="safeArea" id="axn-Zp-tuQ"/>
                     </view>
                     <connections>
-                        <segue destination="l1Y-hP-RDB" kind="show" identifier="player2DoneEnteringWordsSegue" id="QeB-f7-x33"/>
+                        <segue destination="l1Y-hP-RDB" kind="show" identifier="Player2DoneEnteringWordsSegue" id="QeB-f7-x33"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b21-9E-LXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1075,7 +1079,7 @@
             <objects>
                 <viewController id="OB7-P8-tRl" customClass="WordsFormViewControllerPlayer2" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZDh-7y-Y4F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Q3b-Dc-Y7y"/>
@@ -1083,7 +1087,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqv-W4-bON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5212" y="242"/>
+            <point key="canvasLocation" x="5073" y="242"/>
         </scene>
     </scenes>
     <resources>
@@ -1094,9 +1098,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Upi-xg-WhK"/>
-        <segue reference="js7-PB-RyZ"/>
+        <segue reference="QeB-f7-x33"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="7yQ-Tz-3e9"/>
+        <segue reference="mWi-ng-yYy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

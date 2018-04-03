@@ -121,9 +121,9 @@
 				F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */,
 				276E55482071C4130054261A /* TwoPlayerWriteStorylineViewController.swift */,
 				276E55462071BE700054261A /* TwoPlayerCreateStoryViewController.swift */,
+				F3D1EA7D2073403E0031D43C /* Player2LoadingWordsViewController.swift */,
 				F3D1EA7320730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift */,
 				F3D1EA7520730DFA0031D43C /* WordsFormViewControllerPlayer2.swift */,
-				F3D1EA7D2073403E0031D43C /* Player2LoadingWordsViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
