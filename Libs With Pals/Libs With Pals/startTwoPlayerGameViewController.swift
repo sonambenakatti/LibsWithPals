@@ -28,10 +28,12 @@ class startTwoPlayerGameViewController: UIViewController {
         disableMyButton?.isUserInteractionEnabled = false
         disableMyButton?.isEnabled = false
         self.view.reloadInputViews()
+        var message = Message(actionDict: [:], enteredWords: [])
         // send message to other player that the chooseSentences button has been pressed
-        messageDict["chooseSentencesClicked"] = true
-        messageDict["enterWordsClicked"] = false
-        messageDict["doneEnteringSentences"] = false
+        message.actionDict["chooseSentencesClicked"] = true
+        message.actionDict["enterWordsClicked"] = false
+        message.actionDict["doneEnteringSentences"] = false
+        message.enteredWords = []
         do {
             let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
@@ -43,10 +45,12 @@ class startTwoPlayerGameViewController: UIViewController {
     }
     
     @IBAction func enterWordsClicked(_ sender: Any) {
-        // send message to other player that the enterWords button has been pressed
-        messageDict["enterWordsClicked"] = true
-        messageDict["chooseSentencesClicked"] = false
-        messageDict["doneEnteringSentences"] = false
+        var message = Message(actionDict: [:], enteredWords: [])
+        // send message to other player that the enter words button has been pressed
+        message.actionDict["chooseSentencesClicked"] = false
+        message.actionDict["enterWordsClicked"] = true
+        message.actionDict["doneEnteringSentences"] = false
+        message.enteredWords = []
         do {
             let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
@@ -62,15 +66,14 @@ class startTwoPlayerGameViewController: UIViewController {
         let recievedData:Data = userInfo["data"] as! Data
         
         do {
-            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
-            
+            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Message
             // don't let other player click enter words
-            if message["enterWordsClicked"]! {
+            if message.actionDict["enterWordsClicked"]! {
                 enterWordsButton?.isUserInteractionEnabled = false
                 enterWordsButton?.isEnabled = false
                 self.view.reloadInputViews()
                 // don't let other player click choose sentences
-            } else if message["chooseSentencesClicked"]! {
+            } else if message.actionDict["chooseSentencesClicked"]! {
                 chooseSentencesButton?.isUserInteractionEnabled = false
                 chooseSentencesButton?.isEnabled = false
                 self.view.reloadInputViews()
@@ -87,8 +90,6 @@ class startTwoPlayerGameViewController: UIViewController {
             vc.appDelegate = self.appDelegate
         }
     }
-    
-    
     
 }
 

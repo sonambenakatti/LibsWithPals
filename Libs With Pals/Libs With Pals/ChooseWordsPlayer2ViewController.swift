@@ -9,7 +9,9 @@
 import UIKit
 
 class ChooseWordsPlayer2ViewController: UIViewController{
-
+    
+    //TODO: change this class to work for 2 player
+    
     var container: WordsFormViewControllerPlayer2?
     
     override func viewDidLoad() {
@@ -48,7 +50,6 @@ class ChooseWordsPlayer2ViewController: UIViewController{
     
     // Take user to final storyline if all fields are filled out
     @IBAction func onMakeMyMadLibPressed(_ sender: Any) {
-        
         if (self.container?.checkIfAllRowsFilled())! {
             self.performSegue(withIdentifier: "ChooseWordsToFinalStorySegue", sender: AnyClass.self)
         } else {
@@ -58,5 +59,4 @@ class ChooseWordsPlayer2ViewController: UIViewController{
             
         }
     }
-
 }

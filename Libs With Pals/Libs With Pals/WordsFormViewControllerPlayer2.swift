@@ -12,6 +12,11 @@ import Eureka
 // Class that controls the form used to collect user's input for each blank in the mad lib.
 // Uses the Eureka framework in order to easily create a form.
 
+struct Message {
+    var actionDict: [String:Bool] = [:]
+    var enteredWords: [String]
+}
+
 class WordsFormViewControllerPlayer2: FormViewController {
     
     var storyline: Storyline? = nil
@@ -23,9 +28,8 @@ class WordsFormViewControllerPlayer2: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification3"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
         
-        self.addRows()
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,7 +79,21 @@ class WordsFormViewControllerPlayer2: FormViewController {
         }
         words = valuesDictionary
         return true
-        
+    }
+    
+    // function to handle the recieved data between players
+    @objc func handleRecieveDataWithNotification(notification:NSNotification){
+        let userInfo = notification.userInfo! as Dictionary
+        let recievedData:Data = userInfo["data"] as! Data
+        do {
+            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Message
+            if message.enteredWords.count > 0 {
+                userEnteredWords = message.enteredWords
+                self.addRows()
+            }
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
+        }
     }
 }
 

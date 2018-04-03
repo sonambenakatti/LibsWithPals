@@ -38,10 +38,9 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         self.words = words
     }
     
-    // get the types of words inputted by player one
+    // get the types of words inputed by player one
     func getTypesOfWords() -> Array<String>{
         var userWords: Array<String> = []
-        // Start this index at 1 because the first element is always the name
         for (index, word) in self.words {
             let i = Int(index)
             // if an odd index, than the value in the dictionary is a type of word
@@ -64,17 +63,22 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     @IBAction func onDoneButtonPressed(_ sender: Any) {
         checkUserInputtedAllNeededWords()
         notifyPlayer2DoneEnteringSentences()
-        //passDataToPlayer2()
+        passDataToPlayer2()
+        self.performSegue(withIdentifier: "enteringWordsSegue", sender: AnyClass.self)
     }
     
     func notifyPlayer2DoneEnteringSentences() {
-        var messageDict: [String:Bool] = [:]
+        var message = Message(actionDict: [:], enteredWords: [])
+        
         // send message to other player that this player is done entering sentences 
-        messageDict["doneEnteringSentences"] = true
-        messageDict["enterWordsClicked"] = false
-        messageDict["chooseSentencesClicked"] = false 
+        message.actionDict["doneEnteringSentences"] = true
+        message.actionDict["enterWordsClicked"] = false
+        message.actionDict["chooseSentencesClicked"] = false
+        message.enteredWords = []
+        
+        // notify player two that player 1 is done entering sentences
         do {
-            let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
@@ -82,13 +86,19 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     func passDataToPlayer2() {
-        //  dictionary to send words to player 2
-        let message = getTypesOfWords()
+        var message = Message(actionDict: [:], enteredWords: [])
+        
+        message.actionDict["doneEnteringSentences"] = true
+        message.actionDict["enterWordsClicked"] = false
+        message.actionDict["chooseSentencesClicked"] = false
+        
+        //  list to send words to player 2
+        message.enteredWords = getTypesOfWords()
+        
         // send types of words to player 2
         do {
             let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
-            self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }

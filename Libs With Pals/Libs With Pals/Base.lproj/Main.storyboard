@@ -263,10 +263,53 @@
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="edr-IL-5C3"/>
                     </view>
+                    <connections>
+                        <segue destination="CFz-Ij-ne7" kind="show" identifier="enteringWordsSegue" id="btr-8P-Wm2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDj-9X-EeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4309.6000000000004" y="1694.3028485757122"/>
+        </scene>
+        <!--Player2 Loading Words View Controller-->
+        <scene sceneID="VE6-Zl-94Z">
+            <objects>
+                <viewController id="CFz-Ij-ne7" customClass="Player2LoadingWordsViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="feJ-hM-aOl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2 is entering words, please wait..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cb-7g-bTV">
+                                <rect key="frame" x="30" y="171" width="315" height="243"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E79-F5-WwM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="MTE-nu-RrN">
+                                        <barButtonItem key="leftBarButtonItem" image="home" id="WXa-WX-5iD">
+                                            <connections>
+                                                <action selector="onHomePressed:" destination="haA-OV-LML" id="jCU-VA-fms"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.57649785280227661" green="0.84436458349227905" blue="0.85760635137557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Ny4-H5-LaD"/>
+                    </view>
+                    <connections>
+                        <segue destination="l1Y-hP-RDB" kind="show" identifier="player1DoneSegue" id="dzb-ep-Odd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VtA-Xo-yzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5212" y="1694"/>
         </scene>
         <!--Choose Words View Controller-->
         <scene sceneID="5Og-SO-0aC">
@@ -1019,10 +1062,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="axn-Zp-tuQ"/>
                     </view>
+                    <connections>
+                        <segue destination="l1Y-hP-RDB" kind="show" identifier="player2DoneEnteringWordsSegue" id="QeB-f7-x33"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b21-9E-LXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4388" y="242"/>
+            <point key="canvasLocation" x="4310" y="242"/>
+        </scene>
+        <!--Words Form View Controller Player2-->
+        <scene sceneID="wjK-UV-l6p">
+            <objects>
+                <viewController id="OB7-P8-tRl" customClass="WordsFormViewControllerPlayer2" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZDh-7y-Y4F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="Q3b-Dc-Y7y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqv-W4-bON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5212" y="242"/>
         </scene>
     </scenes>
     <resources>
@@ -1033,8 +1094,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Upi-xg-WhK"/>
+        <segue reference="js7-PB-RyZ"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="fkc-VA-hi3"/>
+        <segue reference="7yQ-Tz-3e9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
