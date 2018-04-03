@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChooseWordsPlayer2ViewController: UIViewController {
+class ChooseWordsPlayer2ViewController: UIViewController{
 
     var container: WordsFormViewControllerPlayer2?
     

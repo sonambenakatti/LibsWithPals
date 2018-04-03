@@ -35,6 +35,7 @@ class startTwoPlayerGameViewController: UIViewController {
             let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
             self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
+            print("in sentences clicked")
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
@@ -75,6 +76,13 @@ class startTwoPlayerGameViewController: UIViewController {
             
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createStorySegue" {
+            let vc: startTwoPlayerGameViewController = segue.destination as! startTwoPlayerGameViewController
+            vc.appDelegate = self.appDelegate
         }
     }
     

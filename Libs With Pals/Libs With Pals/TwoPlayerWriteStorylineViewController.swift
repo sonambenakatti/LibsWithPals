@@ -67,7 +67,6 @@ class TwoPlayerWriteStorylineViewController: FormViewController {
         // pass words to create story view controller
         passWordsDelegate?.passEnteredWords(words: words)
         return true
-        
     }
 }
 

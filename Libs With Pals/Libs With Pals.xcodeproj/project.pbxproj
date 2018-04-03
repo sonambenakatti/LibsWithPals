@@ -29,6 +29,7 @@
 		F39C3B8C204CE1C700994757 /* ConnectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */; };
 		F3D1EA7420730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7320730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift */; };
 		F3D1EA7620730DFA0031D43C /* WordsFormViewControllerPlayer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7520730DFA0031D43C /* WordsFormViewControllerPlayer2.swift */; };
+		F3D1EA7A207317CF0031D43C /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */; };
 		F3FD47F7207084C8001F66C6 /* startTwoPlayerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPlayerViewController.swift; sourceTree = "<group>"; };
 		F3D1EA7320730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWordsPlayer2ViewController.swift; sourceTree = "<group>"; };
 		F3D1EA7520730DFA0031D43C /* WordsFormViewControllerPlayer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsFormViewControllerPlayer2.swift; sourceTree = "<group>"; };
+		F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startTwoPlayerGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				27C7976D2073078500CD99B6 /* SavedLibsViewController.swift */,
 				F3D1EA7320730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift */,
 				F3D1EA7520730DFA0031D43C /* WordsFormViewControllerPlayer2.swift */,
+				F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				2719E314206BEDE30094D446 /* FinalStorylineViewController.swift in Sources */,
 				27D44874205B290B00907DC0 /* CreateAccountViewController.swift in Sources */,
 				27F5601A2042829B00BD7549 /* LoginViewController.swift in Sources */,
+				F3D1EA7A207317CF0031D43C /* LoadingScreenViewController.swift in Sources */,
 				276E55472071BE700054261A /* TwoPlayerCreateStoryViewController.swift in Sources */,
 				27F560182042829B00BD7549 /* AppDelegate.swift in Sources */,
 				27B31EF4206A985D00159410 /* ChooseStorylineViewController.swift in Sources */,

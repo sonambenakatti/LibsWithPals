@@ -900,7 +900,7 @@
                         <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
                     </view>
                     <connections>
-                        <segue destination="a3J-SJ-Dfd" kind="show" identifier="" id="4tv-xQ-dsl"/>
+                        <segue destination="a3J-SJ-Dfd" kind="show" identifier="enterWordsPlayer2Segue" id="4tv-xQ-dsl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cE7-5e-CI6" userLabel="First Responder" sceneMemberID="firstResponder"/>

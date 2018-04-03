@@ -9,14 +9,14 @@
 // For the ViewController that allows a player to create sentences for another player to fill words into
 
 import UIKit
-
+import MultipeerConnectivity
 
 
 class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPlayer2Delegate {
     
     var container: TwoPlayerWriteStorylineViewController?
     var words: Dictionary<String, Any?> = [:]
-    
+    var appDelegate: AppDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +65,34 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     // check that player one inputted all types
     @IBAction func onDoneButtonPressed(_ sender: Any) {
         checkUserInputtedAllNeededWords()
-        var userWords = getTypesOfWords()
+        notifyPlayer2DoneEnteringSentences()
+        //passDataToPlayer2()
     }
     
+    func notifyPlayer2DoneEnteringSentences() {
+        var messageDict: [String:Bool] = [:]
+        // send message to other player that this player is done entering sentences 
+        messageDict["doneEnteringSentences"] = true
+        do {
+            let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+            try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
+            self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
+        }
+    }
     
-    
+//    func passDataToPlayer2() {
+//        //  dictionary to send words to player 2
+//        let message = getTypesOfWords()
+//        // send types of words to player 2
+//        do {
+//            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
+//            try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
+//            self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
+//        } catch let error as NSError {
+//            print("error: \(error.localizedDescription)")
+//        }
+//    }
 }
 
