@@ -20,7 +20,7 @@ class startTwoPlayerGameViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification2"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
     }
     
     @IBAction func chooseSentencesClicked(_ sender: Any) {
@@ -31,6 +31,7 @@ class startTwoPlayerGameViewController: UIViewController {
         // send message to other player that the chooseSentences button has been pressed
         messageDict["chooseSentencesClicked"] = true
         messageDict["enterWordsClicked"] = false
+        messageDict["doneEnteringSentences"] = false
         do {
             let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
@@ -45,6 +46,7 @@ class startTwoPlayerGameViewController: UIViewController {
         // send message to other player that the enterWords button has been pressed
         messageDict["enterWordsClicked"] = true
         messageDict["chooseSentencesClicked"] = false
+        messageDict["doneEnteringSentences"] = false
         do {
             let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)

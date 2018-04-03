@@ -11,7 +11,7 @@ import UIKit
 class LoadingScreenViewController: UIViewController {
     
     override func viewDidLoad() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification3"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
         // Do any additional setup after loading the view.
     }
     

@@ -59,8 +59,6 @@ class MPCHandler: NSObject, MCSessionDelegate {
         let userInfo = ["data": data, "peerID": peerID] as [String : Any]
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil, userInfo: userInfo)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification2"), object: nil, userInfo: userInfo)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification3"), object: nil, userInfo: userInfo)
         }
     }
     

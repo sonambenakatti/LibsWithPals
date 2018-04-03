@@ -71,6 +71,8 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         var messageDict: [String:Bool] = [:]
         // send message to other player that this player is done entering sentences 
         messageDict["doneEnteringSentences"] = true
+        messageDict["enterWordsClicked"] = false
+        messageDict["chooseSentencesClicked"] = false 
         do {
             let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
@@ -79,17 +81,17 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         }
     }
     
-//    func passDataToPlayer2() {
-//        //  dictionary to send words to player 2
-//        let message = getTypesOfWords()
-//        // send types of words to player 2
-//        do {
-//            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
-//            try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
-//            self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
-//        } catch let error as NSError {
-//            print("error: \(error.localizedDescription)")
-//        }
-//    }
+    func passDataToPlayer2() {
+        //  dictionary to send words to player 2
+        let message = getTypesOfWords()
+        // send types of words to player 2
+        do {
+            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
+            try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
+            self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
+        }
+    }
 }
 
