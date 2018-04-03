@@ -2,15 +2,15 @@
 //  FinalStorylinePlayer2ViewController.swift
 //  Libs With Pals
 //
-//  Created by Jennifer Rethi on 3/28/18.
+//  Created by Rethi, Jennifer L on 4/2/18.
 //  Copyright © 2018 Group8. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class FinalStorylinePlayer2ViewController: UIViewController {
-
+class FinalStoryLine2PlayerViewController: UIViewController {
+    
     var storyline: Storyline? = nil
     var words: [String: Any?] = [:]
     var wordsOrdered = [String]()
@@ -19,7 +19,7 @@ class FinalStorylinePlayer2ViewController: UIViewController {
     let prefs: UserDefaults = UserDefaults.standard
     
     @IBOutlet weak var storylineTextView: UITextView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.putWordsInOrder()
@@ -27,7 +27,7 @@ class FinalStorylinePlayer2ViewController: UIViewController {
         storylineTextView.isEditable = false
         storylineTextView.text = finalStory
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -66,7 +66,7 @@ class FinalStorylinePlayer2ViewController: UIViewController {
             self.saveMadLib()
         }
         performSegue(withIdentifier: "finalStorylineToHomeSegue", sender: AnyClass.self)
-
+        
     }
     
     // Save the mad lib into core data if the user has the setting enabled
@@ -77,9 +77,9 @@ class FinalStorylinePlayer2ViewController: UIViewController {
         
         let lib = NSEntityDescription.insertNewObject(
             forEntityName: "MadLib", into: context)
-
+        
         lib.setValue(finalStory, forKey: "story")
-    
+        
         // Commit the changes
         do {
             try context.save()
@@ -90,6 +90,7 @@ class FinalStorylinePlayer2ViewController: UIViewController {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-
+        
     }
 }
+

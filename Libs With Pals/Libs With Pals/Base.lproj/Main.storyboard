@@ -304,7 +304,7 @@
                         <viewLayoutGuide key="safeArea" id="Ny4-H5-LaD"/>
                     </view>
                     <connections>
-                        <segue destination="l1Y-hP-RDB" kind="show" identifier="player1DoneSegue" id="dzb-ep-Odd"/>
+                        <segue destination="sa7-K1-w2N" kind="show" identifier="player1DoneSegue" id="X2S-qW-p79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtA-Xo-yzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -503,7 +503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuY-Jd-EPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522" y="1781"/>
+            <point key="canvasLocation" x="1554" y="1893"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="F0m-hy-LfF">
@@ -1067,7 +1067,7 @@
                         <viewLayoutGuide key="safeArea" id="axn-Zp-tuQ"/>
                     </view>
                     <connections>
-                        <segue destination="l1Y-hP-RDB" kind="show" identifier="Player2DoneEnteringWordsSegue" id="QeB-f7-x33"/>
+                        <segue destination="sa7-K1-w2N" kind="show" identifier="Player2DoneEnteringWordsSegue" id="0Pz-SR-6Gr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b21-9E-LXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1089,6 +1089,53 @@
             </objects>
             <point key="canvasLocation" x="5073" y="242"/>
         </scene>
+        <!--Final Story Line2 Player View Controller-->
+        <scene sceneID="ScW-Co-jxD">
+            <objects>
+                <viewController id="sa7-K1-w2N" customClass="FinalStoryLine2PlayerViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zfV-1q-YTm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-6N-3yP">
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="3BQ-m9-Qdk">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="2nZ-PE-SEW">
+                                            <connections>
+                                                <action selector="onHomeButtonPressed:" destination="sa7-K1-w2N" id="hqN-Gl-Tt5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="huT-P9-chg">
+                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="zdd-6N-3yP" firstAttribute="leading" secondItem="zfV-1q-YTm" secondAttribute="leading" id="Bhs-jp-emy"/>
+                            <constraint firstItem="huT-P9-chg" firstAttribute="top" secondItem="zdd-6N-3yP" secondAttribute="bottom" id="KCY-IT-mQl"/>
+                            <constraint firstItem="mlD-3o-d38" firstAttribute="trailing" secondItem="huT-P9-chg" secondAttribute="trailing" id="Pqf-DV-1Ue"/>
+                            <constraint firstAttribute="trailing" secondItem="zdd-6N-3yP" secondAttribute="trailing" id="XMh-95-wPv"/>
+                            <constraint firstItem="huT-P9-chg" firstAttribute="leading" secondItem="mlD-3o-d38" secondAttribute="leading" id="csk-Sa-EKz"/>
+                            <constraint firstItem="zdd-6N-3yP" firstAttribute="top" secondItem="mlD-3o-d38" secondAttribute="top" constant="2" id="mq6-1y-JwQ"/>
+                            <constraint firstItem="mlD-3o-d38" firstAttribute="bottom" secondItem="huT-P9-chg" secondAttribute="bottom" id="rJb-9R-hht"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mlD-3o-d38"/>
+                    </view>
+                    <connections>
+                        <outlet property="storylineTextView" destination="huT-P9-chg" id="tLS-Au-PRr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Jh-WG-NGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6377" y="995"/>
+        </scene>
     </scenes>
     <resources>
         <image name="home" width="36" height="36"/>
@@ -1097,10 +1144,10 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="X2S-qW-p79"/>
         <segue reference="Upi-xg-WhK"/>
-        <segue reference="QeB-f7-x33"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="mWi-ng-yYy"/>
+        <segue reference="8ld-EV-Cv1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

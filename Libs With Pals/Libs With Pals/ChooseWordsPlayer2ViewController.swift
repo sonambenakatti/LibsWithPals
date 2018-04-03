@@ -29,7 +29,7 @@ class ChooseWordsPlayer2ViewController: UIViewController{
             destination.delegate? = self
             container = destination
         } else if segue.identifier == "Player2DoneEnteringWordsSegue",
-            let destination = segue.destination as? FinalStorylineViewController {
+            let destination = segue.destination as? FinalStoryLine2PlayerViewController {
             destination.words = (container?.words)!
             destination.name = (container?.name)!
             //destination.storyline = storyline

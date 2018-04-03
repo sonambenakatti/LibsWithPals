@@ -31,6 +31,7 @@
 		F3D1EA7620730DFA0031D43C /* WordsFormViewControllerPlayer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7520730DFA0031D43C /* WordsFormViewControllerPlayer2.swift */; };
 		F3D1EA7A207317CF0031D43C /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */; };
 		F3D1EA7E2073403E0031D43C /* Player2LoadingWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7D2073403E0031D43C /* Player2LoadingWordsViewController.swift */; };
+		F3D1EA80207349A90031D43C /* FinalStoryLine2PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7F207349A90031D43C /* FinalStoryLine2PlayerViewController.swift */; };
 		F3FD47F7207084C8001F66C6 /* startTwoPlayerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		F3D1EA7520730DFA0031D43C /* WordsFormViewControllerPlayer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsFormViewControllerPlayer2.swift; sourceTree = "<group>"; };
 		F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		F3D1EA7D2073403E0031D43C /* Player2LoadingWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player2LoadingWordsViewController.swift; sourceTree = "<group>"; };
+		F3D1EA7F207349A90031D43C /* FinalStoryLine2PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStoryLine2PlayerViewController.swift; sourceTree = "<group>"; };
 		F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startTwoPlayerGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				F3D1EA7D2073403E0031D43C /* Player2LoadingWordsViewController.swift */,
 				F3D1EA7320730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift */,
 				F3D1EA7520730DFA0031D43C /* WordsFormViewControllerPlayer2.swift */,
+				F3D1EA7F207349A90031D43C /* FinalStoryLine2PlayerViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				F3D1EA7620730DFA0031D43C /* WordsFormViewControllerPlayer2.swift in Sources */,
 				F39C3B8C204CE1C700994757 /* ConnectPlayerViewController.swift in Sources */,
 				27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */,
+				F3D1EA80207349A90031D43C /* FinalStoryLine2PlayerViewController.swift in Sources */,
 				F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */,
 				27D56796205B58C1005A26D1 /* SettingsViewController.swift in Sources */,
 				27C7976E2073078500CD99B6 /* SavedLibsViewController.swift in Sources */,
