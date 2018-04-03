@@ -341,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzR-qO-SHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381.5999999999999" y="1766.2668665667168"/>
+            <point key="canvasLocation" x="2478" y="1842"/>
         </scene>
         <!--Saved Libs View Controller-->
         <scene sceneID="HsT-CD-69i">
@@ -368,10 +368,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1VA-qf-ZVk">
-                                        <rect key="frame" x="0.0" y="28" width="263" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1VA-qf-ZVk" id="37w-Aw-pIe">
-                                            <rect key="frame" x="0.0" y="0.0" width="263" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -885,6 +885,9 @@
                         <color key="backgroundColor" red="0.57649785280227661" green="0.84436458349227905" blue="0.85760635137557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
                     </view>
+                    <connections>
+                        <segue destination="a3J-SJ-Dfd" kind="show" identifier="" id="4tv-xQ-dsl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cE7-5e-CI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -935,6 +938,74 @@
             </objects>
             <point key="canvasLocation" x="4476" y="2405"/>
         </scene>
+        <!--ChooseWordsPlayer2ViewController-->
+        <scene sceneID="q1W-kf-KFz">
+            <objects>
+                <viewController storyboardIdentifier="ChooseWordsPlayer2" title="ChooseWordsPlayer2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a3J-SJ-Dfd" customClass="ChooseWordsPlayer2ViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tNA-C5-0ch">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rv3-5H-6PU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsV-M4-at5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <items>
+                                            <navigationItem id="Suv-AP-nEf">
+                                                <barButtonItem key="leftBarButtonItem" image="home" id="srj-lV-5Ac">
+                                                    <connections>
+                                                        <action selector="onHomeButtonPressed:" destination="a3J-SJ-Dfd" id="PaL-sn-0GF"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUq-9e-FAf">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="540"/>
+                                    </containerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhG-ZV-XGN">
+                                        <rect key="frame" x="0.0" y="584" width="375" height="63"/>
+                                        <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="zSk-cW-9O7"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Make My Mad Lib!">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="onMakeMyMadLibPressed:" destination="a3J-SJ-Dfd" eventType="touchUpInside" id="i9y-G3-9jF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fUq-9e-FAf" firstAttribute="leading" secondItem="jhG-ZV-XGN" secondAttribute="leading" id="epU-ph-kKg"/>
+                                    <constraint firstItem="xsV-M4-at5" firstAttribute="leading" secondItem="rv3-5H-6PU" secondAttribute="leading" id="jpt-Po-PpW"/>
+                                    <constraint firstItem="xsV-M4-at5" firstAttribute="leading" secondItem="fUq-9e-FAf" secondAttribute="leading" id="p4d-oE-MjY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rv3-5H-6PU" secondAttribute="trailing" id="VmA-aA-TRv"/>
+                            <constraint firstItem="rv3-5H-6PU" firstAttribute="top" secondItem="axn-Zp-tuQ" secondAttribute="top" id="m6A-lZ-SkU"/>
+                            <constraint firstItem="rv3-5H-6PU" firstAttribute="leading" secondItem="tNA-C5-0ch" secondAttribute="leading" id="tYb-fj-Xhr"/>
+                            <constraint firstItem="rv3-5H-6PU" firstAttribute="bottom" secondItem="axn-Zp-tuQ" secondAttribute="bottom" id="xfG-oN-KLo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="axn-Zp-tuQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b21-9E-LXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4388" y="242"/>
+        </scene>
     </scenes>
     <resources>
         <image name="home" width="36" height="36"/>
@@ -945,7 +1016,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Upi-xg-WhK"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="fkc-VA-hi3"/>
+        <segue reference="7yQ-Tz-3e9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -1,24 +1,24 @@
 //
-//  TwoPlayerWriteStorylineViewController.swift
+//  FormViewController.swift
 //  Libs With Pals
 //
-//  Created by Sonam Benakatti on 4/1/18.
+//  Created by Sonam Benakatti on 3/27/18.
 //  Copyright © 2018 Group8. All rights reserved.
 //
 
 import UIKit
 import Eureka
 
-protocol passEnteredWordsToPlayer2Delegate {
-    func passEnteredWords(words: Dictionary<String, Any?>)
-}
+// Class that controls the form used to collect user's input for each blank in the mad lib.
+// Uses the Eureka framework in order to easily create a form.
 
-// The container with a form to fill out a story, contained inside TwoPlayerCreateStoryViewController
-class TwoPlayerWriteStorylineViewController: FormViewController {
+class WordsFormViewControllerPlayer2: FormViewController {
     
+    var storyline: Storyline? = nil
+    var delegate: ChooseWordsPlayer2ViewController?
     var words: [String: Any?] = [:]
-    var delegate: TwoPlayerCreateStoryViewController?
-    var passWordsDelegate: passEnteredWordsToPlayer2Delegate?
+    var name: String = ""
+    var userEnteredWords: Array<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +32,19 @@ class TwoPlayerWriteStorylineViewController: FormViewController {
     // Add the needed rows for the user to input words
     func addRows() {
         
+        let blanks = userEnteredWords
+        var index = 0
+        var nameRowCreated = false
+        
         form +++ Section()
-        for index in 0...9 {
-            var blank = ""
-            if(index % 2 == 0) {
-                blank = "Sentence"
-            } else {
-                blank = "Type of Word"
+        for blank in blanks {
+            if blank == "name" {
+                if nameRowCreated {
+                    continue
+                } else {
+                    nameRowCreated = true
+                }
             }
-            print("Adding a row for index: \(index)")
             form.last!
                 <<< AccountRow("\(index)") { row in
                     row.title = blank
@@ -52,6 +56,7 @@ class TwoPlayerWriteStorylineViewController: FormViewController {
                             cell.titleLabel?.textColor = .red
                         }
             }
+            index += 1
         }
     }
     
@@ -61,11 +66,11 @@ class TwoPlayerWriteStorylineViewController: FormViewController {
         for val in valuesDictionary {
             if val.value == nil {
                 return false
+            } else if val.key == "0" {
+                name = val.value as! String
             }
         }
         words = valuesDictionary
-        // pass words to create story view controller
-        passWordsDelegate?.passEnteredWords(words: words)
         return true
         
     }
