@@ -24,7 +24,8 @@ class LoadingScreenViewController: UIViewController {
     @objc func handleRecieveDataWithNotification(notification:NSNotification){
         let userInfo = notification.userInfo! as Dictionary
         let recievedData:Data = userInfo["data"] as! Data
-        
+        print("this is the user infos")
+        print(userInfo["data"] as! Data)
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences

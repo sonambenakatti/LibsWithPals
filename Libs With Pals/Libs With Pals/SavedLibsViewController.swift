@@ -13,9 +13,14 @@ class SavedLibsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     var madLibs = [String]()
-
+    @IBOutlet weak var madLibTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         self.loadStories()
     }
 
@@ -36,11 +41,16 @@ class SavedLibsViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "storyCell", for: indexPath as IndexPath)
         
         let row = indexPath.row
-        cell.textLabel?.text = "Story \(row)"
+        cell.textLabel?.text = "Story \(row + 1)"
         cell.detailTextLabel?.text = madLibs[row]
 
         return cell
 
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row: \(indexPath.row)")
+        madLibTextView.text = madLibs[indexPath.row]
     }
     
     // load stories from CoreData so that they can be displayed in the table

@@ -380,11 +380,11 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="hello" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-fC-gVu">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-fC-gVu">
                                         <rect key="frame" x="0.0" y="331" width="375" height="256"/>
                                         <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="256" id="YlS-JC-gvD"/>
+                                            <constraint firstAttribute="height" constant="256" id="Vdd-wu-ER9"/>
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -395,17 +395,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="INq-91-vA5" firstAttribute="leading" secondItem="eJA-BU-zRH" secondAttribute="leading" id="6PC-Pr-vhO"/>
-                            <constraint firstItem="INq-91-vA5" firstAttribute="trailing" secondItem="pgQ-bo-Z8t" secondAttribute="trailing" id="Bmq-tf-Sth"/>
-                            <constraint firstItem="INq-91-vA5" firstAttribute="leading" secondItem="pgQ-bo-Z8t" secondAttribute="leading" id="Ibz-yT-WPr"/>
-                            <constraint firstItem="PqP-pq-QAI" firstAttribute="bottom" secondItem="pgQ-bo-Z8t" secondAttribute="bottom" constant="9" id="MSq-f1-c4Z"/>
-                            <constraint firstItem="pgQ-bo-Z8t" firstAttribute="top" secondItem="INq-91-vA5" secondAttribute="bottom" constant="7" id="NjZ-gz-mMQ"/>
-                            <constraint firstItem="INq-91-vA5" firstAttribute="top" secondItem="PqP-pq-QAI" secondAttribute="top" id="V3A-Xz-Mf7"/>
-                            <constraint firstAttribute="trailing" secondItem="INq-91-vA5" secondAttribute="trailing" id="vet-kp-kdt"/>
+                            <constraint firstItem="PqP-pq-QAI" firstAttribute="bottom" secondItem="pgQ-bo-Z8t" secondAttribute="bottom" constant="9" id="4Gk-Dm-4en"/>
+                            <constraint firstAttribute="trailing" secondItem="INq-91-vA5" secondAttribute="trailing" id="H8H-7Y-j4N"/>
+                            <constraint firstItem="pgQ-bo-Z8t" firstAttribute="top" secondItem="INq-91-vA5" secondAttribute="bottom" constant="7" id="a4J-uc-sJR"/>
+                            <constraint firstItem="INq-91-vA5" firstAttribute="leading" secondItem="eJA-BU-zRH" secondAttribute="leading" id="b3u-dA-fgl"/>
+                            <constraint firstItem="INq-91-vA5" firstAttribute="top" secondItem="PqP-pq-QAI" secondAttribute="top" id="lcT-ac-6W9"/>
+                            <constraint firstItem="INq-91-vA5" firstAttribute="trailing" secondItem="pgQ-bo-Z8t" secondAttribute="trailing" id="lrI-oH-4KT"/>
+                            <constraint firstItem="INq-91-vA5" firstAttribute="leading" secondItem="pgQ-bo-Z8t" secondAttribute="leading" id="soT-hu-tgW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PqP-pq-QAI"/>
                     </view>
                     <connections>
+                        <outlet property="madLibTextView" destination="M5U-fC-gVu" id="yTg-FO-JNe"/>
                         <outlet property="tableView" destination="eiH-lX-RBQ" id="k0f-g6-go0"/>
                     </connections>
                 </viewController>
