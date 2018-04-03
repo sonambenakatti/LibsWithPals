@@ -25,9 +25,9 @@ class Player2LoadingWordsViewController: UIViewController {
         let userInfo = notification.userInfo! as Dictionary
         let recievedData:Data = userInfo["data"] as! Data
         do {
-            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Message
+            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences
-            if message.actionDict["doneEnteringWords"]! {
+            if message["doneEnteringWords"]! {
                 self.performSegue(withIdentifier: "player1DoneSegue", sender: AnyClass.self)
             }
         } catch let error as NSError {
