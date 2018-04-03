@@ -14,6 +14,7 @@
 		2791A891206AE714000CF096 /* WordsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791A890206AE714000CF096 /* WordsFormViewController.swift */; };
 		27B31EF2206A97DD00159410 /* ChooseWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B31EF1206A97DD00159410 /* ChooseWordsViewController.swift */; };
 		27B31EF4206A985D00159410 /* ChooseStorylineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B31EF3206A985D00159410 /* ChooseStorylineViewController.swift */; };
+		27C7976E2073078500CD99B6 /* SavedLibsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7976D2073078500CD99B6 /* SavedLibsViewController.swift */; };
 		27D44874205B290B00907DC0 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D44873205B290B00907DC0 /* CreateAccountViewController.swift */; };
 		27D44877205B364000907DC0 /* UserInfoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27D44875205B364000907DC0 /* UserInfoModel.xcdatamodeld */; };
 		27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D56793205B57F0005A26D1 /* HomeViewController.swift */; };
@@ -39,6 +40,7 @@
 		2791A890206AE714000CF096 /* WordsFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsFormViewController.swift; sourceTree = "<group>"; };
 		27B31EF1206A97DD00159410 /* ChooseWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWordsViewController.swift; sourceTree = "<group>"; };
 		27B31EF3206A985D00159410 /* ChooseStorylineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseStorylineViewController.swift; sourceTree = "<group>"; };
+		27C7976D2073078500CD99B6 /* SavedLibsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLibsViewController.swift; sourceTree = "<group>"; };
 		27D44873205B290B00907DC0 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		27D44876205B364000907DC0 /* UserInfoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserInfoModel.xcdatamodel; sourceTree = "<group>"; };
 		27D56793205B57F0005A26D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */,
 				276E55462071BE700054261A /* TwoPlayerCreateStoryViewController.swift */,
 				276E55482071C4130054261A /* TwoPlayerWriteStorylineViewController.swift */,
+				27C7976D2073078500CD99B6 /* SavedLibsViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */,
 				F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */,
 				27D56796205B58C1005A26D1 /* SettingsViewController.swift in Sources */,
+				27C7976E2073078500CD99B6 /* SavedLibsViewController.swift in Sources */,
 				270AFD1C206A9220009A73D6 /* Storyline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

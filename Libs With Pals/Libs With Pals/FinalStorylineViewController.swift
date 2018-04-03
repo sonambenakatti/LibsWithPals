@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FinalStorylineViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class FinalStorylineViewController: UIViewController {
     var wordsOrdered = [String]()
     var finalStory: String = ""
     var name: String = ""
+    let prefs: UserDefaults = UserDefaults.standard
     
     @IBOutlet weak var storylineTextView: UITextView!
 
@@ -58,7 +60,34 @@ class FinalStorylineViewController: UIViewController {
     }
     
     @IBAction func onHomeButtonPressed(_ sender: Any) {
+        let saveLibs = prefs.bool(forKey: "saveLibs")
+        if (saveLibs) {
+            self.saveMadLib()
+        }
         performSegue(withIdentifier: "finalStorylineToHomeSegue", sender: AnyClass.self)
     }
     
+    // Save the mad lib into core data if the user has the setting enabled
+    func saveMadLib() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let lib = NSEntityDescription.insertNewObject(
+            forEntityName: "MadLib", into: context)
+
+        lib.setValue(finalStory, forKey: "story")
+    
+        // Commit the changes
+        do {
+            try context.save()
+            NSLog("Saved story into core data")
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+
+    }
 }
