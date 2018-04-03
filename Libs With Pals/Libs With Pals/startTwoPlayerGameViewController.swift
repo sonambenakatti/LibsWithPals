@@ -20,7 +20,7 @@ class startTwoPlayerGameViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationType1"), object: nil)
     }
     
     @IBAction func chooseSentencesClicked(_ sender: Any) {
@@ -28,37 +28,31 @@ class startTwoPlayerGameViewController: UIViewController {
         disableMyButton?.isUserInteractionEnabled = false
         disableMyButton?.isEnabled = false
         self.view.reloadInputViews()
-        var message = Message(actionDict: [:], enteredWords: [])
+        var actionDict: [String: Bool] = [:]
         // send message to other player that the chooseSentences button has been pressed
-        message.actionDict["chooseSentencesClicked"] = true
-        message.actionDict["enterWordsClicked"] = false
-        message.actionDict["doneEnteringSentences"] = false
-        message.actionDict["doneEnteringWords"] = false
-        message.enteredWords = []
+        actionDict["chooseSentencesClicked"] = true
+        actionDict["enterWordsClicked"] = false
+        actionDict["doneEnteringSentences"] = false
+        actionDict["doneEnteringWords"] = false
         do {
-            let encoder = JSONEncoder()
-            let messageJSON = try encoder.encode(message)
-            let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let messageData = try JSONSerialization.data(withJSONObject: actionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
             self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
             print("in sentences clicked")
-        } catch let error as NSError {
+        } catch {
             print("error: \(error.localizedDescription)")
         }
     }
     
     @IBAction func enterWordsClicked(_ sender: Any) {
-        var message = Message(actionDict: [:], enteredWords: [])
         // send message to other player that the enter words button has been pressed
-        message.actionDict["chooseSentencesClicked"] = false
-        message.actionDict["enterWordsClicked"] = true
-        message.actionDict["doneEnteringSentences"] = false
-        message.actionDict["doneEnteringWords"] = false
-        message.enteredWords = []
+        var actionDict: [String: Bool] = [:]
+        actionDict["chooseSentencesClicked"] = false
+        actionDict["enterWordsClicked"] = true
+        actionDict["doneEnteringSentences"] = false
+        actionDict["doneEnteringWords"] = false
         do {
-            let encoder = JSONEncoder()
-            let messageJSON = try encoder.encode(message)
-            let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let messageData = try JSONSerialization.data(withJSONObject: actionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
             self.performSegue(withIdentifier: "enterWordsSegue", sender: AnyClass.self)
         } catch let error as NSError {
@@ -71,14 +65,14 @@ class startTwoPlayerGameViewController: UIViewController {
         let userInfo = notification.userInfo! as Dictionary
         let recievedData:Data = userInfo["data"] as! Data
         do {
-            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Message
+            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // don't let other player click enter words
-            if message.actionDict["enterWordsClicked"]! {
+            if message["enterWordsClicked"]! {
                 enterWordsButton?.isUserInteractionEnabled = false
                 enterWordsButton?.isEnabled = false
                 self.view.reloadInputViews()
                 // don't let other player click choose sentences
-            } else if message.actionDict["chooseSentencesClicked"]! {
+            } else if message["chooseSentencesClicked"]! {
                 chooseSentencesButton?.isUserInteractionEnabled = false
                 chooseSentencesButton?.isEnabled = false
                 self.view.reloadInputViews()

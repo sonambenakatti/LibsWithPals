@@ -68,19 +68,16 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     func notifyPlayer2DoneEnteringSentences() {
-        var message = Message(actionDict: [:], enteredWords: [])
-        
+        var actionDict: [String: Bool] = [:]
+        //  list to send words to player 2
         // send message to other player that this player is done entering sentences 
-        message.actionDict["doneEnteringSentences"] = true
-        message.actionDict["enterWordsClicked"] = false
-        message.actionDict["chooseSentencesClicked"] = false
-        message.actionDict["doneEnteringWords"] = false
-        message.enteredWords = []
+        actionDict["doneEnteringSentences"] = true
+        actionDict["enterWordsClicked"] = false
+        actionDict["chooseSentencesClicked"] = false
+        actionDict["doneEnteringWords"] = false
         // notify player two that player 1 is done entering sentences
         do {
-            let encoder = JSONEncoder()
-            let messageJSON = try encoder.encode(message)
-            let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let messageData = try JSONSerialization.data(withJSONObject: actionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
@@ -88,17 +85,13 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     func passDataToPlayer2() {
-        var message = Message(actionDict: [:], enteredWords: [])
-        message.actionDict["doneEnteringSentences"] = true
-        message.actionDict["enterWordsClicked"] = false
-        message.actionDict["chooseSentencesClicked"] = false
-        message.actionDict["doneEnteringWords"] = false
+        var actionDict: [String: Array<String>] = [:]
         //  list to send words to player 2
-        message.enteredWords = getTypesOfWords()
+        actionDict["typesOfWords"] = getTypesOfWords()
         // send types of words to player 2
         do {
             let encoder = JSONEncoder()
-            let messageJSON = try encoder.encode(message)
+            let messageJSON = try encoder.encode(actionDict)
             let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
         } catch let error as NSError {

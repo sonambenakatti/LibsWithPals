@@ -57,9 +57,20 @@ class MPCHandler: NSObject, MCSessionDelegate {
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         let userInfo = ["data": data, "peerID": peerID] as [String : Any]
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil, userInfo: userInfo)
+        do {
+            // if lets me cast to dictionary<string, bool> then know I'm not trying to notify user
+            // that words are entered 
+            let message = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String,Bool>
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationType1"), object: nil, userInfo: userInfo)
+            }
+        } catch {
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationType2"), object: nil, userInfo: userInfo)
+            }
         }
+        
+        
     }
     
     // not recieving any resources

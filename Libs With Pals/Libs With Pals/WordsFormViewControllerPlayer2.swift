@@ -13,33 +13,33 @@ import Foundation
 // Class that controls the form used to collect user's input for each blank in the mad lib.
 // Uses the Eureka framework in order to easily create a form.
 
-struct Message: Codable {
-    var actionDict: [String:Bool]
-    var enteredWords: [String]
-    
-    init(actionDict: Dictionary<String, Bool>, enteredWords: Array<String>) {
-        self.actionDict = actionDict
-        self.enteredWords = enteredWords
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case actionDict = "actionDict"
-        case enteredWords = "enteredWords"
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self) // defining our (keyed) container
-        let actionDict: Dictionary<String, Bool> = try container.decode(Dictionary<String, Bool>.self, forKey: .actionDict) // extracting the data
-        let enteredWords: Array<String> = try container.decode(Array<String>.self, forKey: .enteredWords) // extracting the data
-        self.init(actionDict: actionDict, enteredWords: enteredWords) // initializing our struct
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self.actionDict, forKey: .actionDict)
-        try container.encode(self.enteredWords, forKey: .enteredWords)
-    }
-}
+//struct Message: Codable {
+//    var actionDict: [String:Bool]
+//    var enteredWords: [String]
+//    
+//    init(actionDict: Dictionary<String, Bool>, enteredWords: Array<String>) {
+//        self.actionDict = actionDict
+//        self.enteredWords = enteredWords
+//    }
+//    
+//    enum CodingKeys: String, CodingKey {
+//        case actionDict = "actionDict"
+//        case enteredWords = "enteredWords"
+//    }
+//    
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self) // defining our (keyed) container
+//        let actionDict: Dictionary<String, Bool> = try container.decode(Dictionary<String, Bool>.self, forKey: .actionDict) // extracting the data
+//        let enteredWords: Array<String> = try container.decode(Array<String>.self, forKey: .enteredWords) // extracting the data
+//        self.init(actionDict: actionDict, enteredWords: enteredWords) // initializing our struct
+//    }
+//    
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(self.actionDict, forKey: .actionDict)
+//        try container.encode(self.enteredWords, forKey: .enteredWords)
+//    }
+//}
 
 
 class WordsFormViewControllerPlayer2: FormViewController {
@@ -53,7 +53,7 @@ class WordsFormViewControllerPlayer2: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationType2"), object: nil)
         
     }
     
@@ -111,11 +111,9 @@ class WordsFormViewControllerPlayer2: FormViewController {
         let userInfo = notification.userInfo! as Dictionary
         let recievedData:Data = userInfo["data"] as! Data
         do {
-            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Message
-            if message.enteredWords.count > 0 {
-                userEnteredWords = message.enteredWords
-                self.addRows()
-            }
+            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Array<String>>
+            self.userEnteredWords = message["enteredWords"]!
+            self.addRows()
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }

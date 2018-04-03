@@ -11,7 +11,7 @@ import UIKit
 class LoadingScreenViewController: UIViewController {
     
     override func viewDidLoad() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationType1"), object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -25,9 +25,9 @@ class LoadingScreenViewController: UIViewController {
         let userInfo = notification.userInfo! as Dictionary
         let recievedData:Data = userInfo["data"] as! Data
         do {
-            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Message
+            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences
-            if message.actionDict["doneEnteringSentences"]! {
+            if message["doneEnteringSentences"]! {
                 self.performSegue(withIdentifier: "enterWordsPlayer2Segue", sender: AnyClass.self)
             }
         } catch let error as NSError {

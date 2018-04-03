@@ -49,13 +49,18 @@ class ChooseWordsPlayer2ViewController: UIViewController{
     // Take user to final storyline if all fields are filled out
     @IBAction func onMakeMyMadLibPressed(_ sender: Any) {
         if (self.container?.checkIfAllRowsFilled())! {
-            var message = Message(actionDict: [:], enteredWords: [])
+            var actionDict: [String: Bool] = [:]
             // send message to other player that the enter words button has been pressed
-            message.actionDict["chooseSentencesClicked"] = false
-            message.actionDict["enterWordsClicked"] = false
-            message.actionDict["doneEnteringSentences"] = false
-            message.actionDict["doneEnteringWords"] = true
-            message.enteredWords = []
+            actionDict["doneEnteringSentences"] = false
+            actionDict["enterWordsClicked"] = false
+            actionDict["chooseSentencesClicked"] = false
+            actionDict["doneEnteringWords"] = true
+//            do {
+//                let messageData = try JSONSerialization.data(withJSONObject: actionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+//                try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
+//            } catch let error as NSError {
+//                print("error: \(error.localizedDescription)")
+//            }
             self.performSegue(withIdentifier: "ChooseWordsToFinalStorySegue", sender: AnyClass.self)
         } else {
             let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)

@@ -22,7 +22,7 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
         appDelegate.mpcHandler.setupSession()
         appDelegate.mpcHandler.advertiseSelf(advertise: true)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(peerChangedStateWithNotification(notification:)), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(peerChangedStateWithNotification(notification:)), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotificationType1"), object: nil)
         
     }
     
