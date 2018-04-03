@@ -27,9 +27,12 @@ class LoadingScreenViewController: UIViewController {
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences
-            if message["doneEnteringSentences"]! {
-                self.performSegue(withIdentifier: "enterWordsPlayer2Segue", sender: AnyClass.self)
+            if type(of: message["doneEnteringSentences"]!) == Bool.Type.self {
+                    if message["doneEnteringSentences"]! {
+                        self.performSegue(withIdentifier: "enterWordsPlayer2Segue", sender: AnyClass.self)
+                    }
             }
+        
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }

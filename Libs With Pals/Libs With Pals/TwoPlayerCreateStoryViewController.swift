@@ -44,6 +44,10 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         for (index, word) in self.words {
             userWords[index] = word as? String
         }
+        userWords["chooseSentencesClicked"] = ""
+        userWords["enterWordsClicked"] = ""
+        userWords["doneEnteringSentences"] = ""
+        userWords["doneEnteringWords"] = ""
         return userWords
     }
     
