@@ -22,9 +22,9 @@ class Storyline {
     
     let groceryBlanks = ["name", "noun", "possessive-pronoun", "name", "possessive-pronoun", "noun", "noun - article of clothing", "pronoun", "adjective", "name", "noun - emotion", "name", "name", "pronoun", "pronoun", "pronoun", "noun", "name", "noun - plural", "name", "pronoun", "noun - place", "pronoun", "adverb"]
     
-    let morningStory = [" woke up early this morning. ", " went to the bathroom ", " and brushed ", " teeth ", ". After that, ", " went downstairs to cook ", " for breakfast. While ", " was cooking, ", " spilled all over ", " and ", " shouted, 'Oh no!' ", " went upstairs to clean up and unexpectedly found ", " at the top of the stairs. This was turning out to be a really eye opening day."]
+    let morningStory = ["After a full 8 hours of sleep, ", " woke up early this morning. ", " went to the bathroom ", " and brushed ", " teeth ", ". After that, ", " went downstairs to cook ", " for breakfast. While ", " was cooking, ", " spilled all over ", " and ", " shouted, 'Oh no!' ", " went upstairs to clean up and unexpectedly found a ", " at the top of the stairs. This was turning out to be a really eye opening day."]
 
-    let morningBlanks = ["name", "pronoun", "adverb", "possessive-pronoun", "adverb", "name", "noun", "pronoun", "name", "pronoun", "pronoun", "noun"]
+    let morningBlanks = ["name", "pronoun", "adverb", "possessive-pronoun", "adverb", "name", "noun", "pronoun", "noun", "name", "pronoun", "pronoun", "noun"]
 
     
     let examStory = ["The alarm rings and ", " crawls out of bed. ", " goes to ", " and gets ready for the day. ", " has a ", " midterm and quickly grabs ", " from the desk. ", " makes a ", " for lunch before heading out to the ", ". ", " walks to campus and then realizes ", " forgot to bring a ", ", but it's too late to go back home to get it. While ", " is walking, ", " gets a call from the ", " department that the ", " ran away. This was not how the day was supposed to turn out."]
