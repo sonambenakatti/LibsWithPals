@@ -81,7 +81,7 @@ class startTwoPlayerGameViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createStorySegue" {
-            let vc: startTwoPlayerGameViewController = segue.destination as! startTwoPlayerGameViewController
+            let vc: TwoPlayerCreateStoryViewController = segue.destination as! TwoPlayerCreateStoryViewController
             vc.appDelegate = self.appDelegate
         }
     }

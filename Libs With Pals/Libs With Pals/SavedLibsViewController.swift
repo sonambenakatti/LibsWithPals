@@ -11,6 +11,7 @@ import CoreData
 
 class SavedLibsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     var madLibs = [String]()
 
     override func viewDidLoad() {
@@ -65,6 +66,7 @@ class SavedLibsViewController: UIViewController, UITableViewDelegate, UITableVie
             abort()
         }
         
+        self.tableView.reloadData()
     }
     
     @IBAction func onHomeButtonPressed(_ sender: Any) {

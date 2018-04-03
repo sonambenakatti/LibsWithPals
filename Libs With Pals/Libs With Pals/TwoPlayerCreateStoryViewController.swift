@@ -53,9 +53,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     func checkUserInputtedAllNeededWords() {
-        if (self.container?.checkIfAllRowsFilled())! {
-            self.performSegue(withIdentifier: "ChooseWordsToFinalStorySegue", sender: AnyClass.self)
-        } else {
+        if (self.container?.checkIfAllRowsFilled())! == false {
             let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -76,7 +74,6 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         do {
             let messageData = try JSONSerialization.data(withJSONObject: messageDict, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
-            self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }

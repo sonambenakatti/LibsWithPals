@@ -405,6 +405,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PqP-pq-QAI"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="eiH-lX-RBQ" id="k0f-g6-go0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbL-Zz-zEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1030,7 +1033,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Upi-xg-WhK"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="8ld-EV-Cv1"/>
+        <segue reference="fkc-VA-hi3"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
