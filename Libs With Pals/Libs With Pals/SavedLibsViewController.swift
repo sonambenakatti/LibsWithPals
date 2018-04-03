@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+// ViewController that allows a player to see the libs they've created
+
 class SavedLibsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -51,6 +53,47 @@ class SavedLibsViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("row: \(indexPath.row)")
         madLibTextView.text = madLibs[indexPath.row]
+    }
+    
+    // Allow user to edit the rows
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // Delete the row
+    func tableView(_ tableView: UITableView, commit editingStyle:   UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            
+            // Also delete the mad lib in core data
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MadLib")
+            request.predicate = NSPredicate(format: "story == %@", madLibs[indexPath.row])
+            
+            var fetchedResults:[NSManagedObject]
+            
+            do {
+                try fetchedResults = context.fetch(request) as! [NSManagedObject]
+                if fetchedResults.count > 0 {
+                    for result:AnyObject in fetchedResults {
+                        context.delete(result as! NSManagedObject)
+                        print("\(result.value(forKey: "story")!) has been deleted")
+                    }
+                }
+            } catch {
+                // If an error occurs
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+
+            madLibs.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .middle)
+            tableView.endUpdates()
+            
+        }
     }
     
     // load stories from CoreData so that they can be displayed in the table
