@@ -8,14 +8,39 @@
 
 import UIKit
 import Eureka
+import Foundation
 
 // Class that controls the form used to collect user's input for each blank in the mad lib.
 // Uses the Eureka framework in order to easily create a form.
 
-struct Message {
-    var actionDict: [String:Bool] = [:]
+struct Message: Codable {
+    var actionDict: [String:Bool]
     var enteredWords: [String]
+    
+    init(actionDict: Dictionary<String, Bool>, enteredWords: Array<String>) {
+        self.actionDict = actionDict
+        self.enteredWords = enteredWords
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case actionDict = "actionDict"
+        case enteredWords = "enteredWords"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self) // defining our (keyed) container
+        let actionDict: Dictionary<String, Bool> = try container.decode(Dictionary<String, Bool>.self, forKey: .actionDict) // extracting the data
+        let enteredWords: Array<String> = try container.decode(Array<String>.self, forKey: .enteredWords) // extracting the data
+        self.init(actionDict: actionDict, enteredWords: enteredWords) // initializing our struct
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.actionDict, forKey: .actionDict)
+        try container.encode(self.enteredWords, forKey: .enteredWords)
+    }
 }
+
 
 class WordsFormViewControllerPlayer2: FormViewController {
     

@@ -76,10 +76,11 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         message.actionDict["chooseSentencesClicked"] = false
         message.actionDict["doneEnteringWords"] = false
         message.enteredWords = []
-        
         // notify player two that player 1 is done entering sentences
         do {
-            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let encoder = JSONEncoder()
+            let messageJSON = try encoder.encode(message)
+            let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
@@ -94,10 +95,11 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         message.actionDict["doneEnteringWords"] = false
         //  list to send words to player 2
         message.enteredWords = getTypesOfWords()
-        
         // send types of words to player 2
         do {
-            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let encoder = JSONEncoder()
+            let messageJSON = try encoder.encode(message)
+            let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")

@@ -36,7 +36,9 @@ class startTwoPlayerGameViewController: UIViewController {
         message.actionDict["doneEnteringWords"] = false
         message.enteredWords = []
         do {
-            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let encoder = JSONEncoder()
+            let messageJSON = try encoder.encode(message)
+            let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
             self.performSegue(withIdentifier: "createStorySegue", sender: AnyClass.self)
             print("in sentences clicked")
@@ -54,7 +56,9 @@ class startTwoPlayerGameViewController: UIViewController {
         message.actionDict["doneEnteringWords"] = false
         message.enteredWords = []
         do {
-            let messageData = try JSONSerialization.data(withJSONObject: message, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let encoder = JSONEncoder()
+            let messageJSON = try encoder.encode(message)
+            let messageData = try JSONSerialization.data(withJSONObject: messageJSON, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
             self.performSegue(withIdentifier: "enterWordsSegue", sender: AnyClass.self)
         } catch let error as NSError {
