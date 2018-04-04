@@ -5,7 +5,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
-  - Eureka (4.0.1)
+  - Eureka (4.1.1)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.27)
@@ -21,20 +21,29 @@ PODS:
   - IQKeyboardManagerSwift (5.0.7)
 
 DEPENDENCIES:
-  - Eureka
+  - Eureka (from `https://github.com/xmartlabs/Eureka.git`)
   - FacebookCore
   - FacebookLogin
   - IQKeyboardManagerSwift
 
+EXTERNAL SOURCES:
+  Eureka:
+    :git: https://github.com/xmartlabs/Eureka.git
+
+CHECKOUT OPTIONS:
+  Eureka:
+    :commit: 5218e53570e15c1b5087b41af2658ee1a4980f63
+    :git: https://github.com/xmartlabs/Eureka.git
+
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
+  Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: 7c4bba2877781a131ab5d54c0a78c405d4307b62
   FBSDKLoginKit: fe7a7e82373dc5daad92e1623219e86224ab1fb1
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
 
-PODFILE CHECKSUM: 65b6b9bbad6c756e16e197a0c7b70240f96a7a10
+PODFILE CHECKSUM: 91a997b31d01e69eeb98f8a5de3466fde90bddb6
 
 COCOAPODS: 1.4.0
