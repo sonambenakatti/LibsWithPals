@@ -20,7 +20,7 @@ class startTwoPlayerGameViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationType1"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
     }
     
     @IBAction func chooseSentencesClicked(_ sender: Any) {
@@ -85,6 +85,9 @@ class startTwoPlayerGameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createStorySegue" {
             let vc: TwoPlayerCreateStoryViewController = segue.destination as! TwoPlayerCreateStoryViewController
+            vc.appDelegate = self.appDelegate
+        } else if segue.identifier == "enterWordsSegue" {
+            let vc: LoadingScreenViewController = segue.destination as! LoadingScreenViewController
             vc.appDelegate = self.appDelegate
         }
     }

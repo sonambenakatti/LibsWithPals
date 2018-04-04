@@ -26,11 +26,13 @@ class ChooseWordsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Segue to enter words
         if segue.identifier == "ChooseWordsToFormSegue",
             let destination = segue.destination as? WordsFormViewController {
                 destination.storyline = storyline
                 destination.delegate = self
                 container = destination
+        // Segue to the final storyline
         } else if segue.identifier == "ChooseWordsToFinalStorySegue",
             let destination = segue.destination as? FinalStorylineViewController {
             destination.words = (container?.words)!

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FinalStoryLine2PlayerViewController: UIViewController {
+class TwoPlayerFinalStorylineViewController: UIViewController {
     
     var storyline: Storyline? = nil
     var words: [String: Any?] = [:]

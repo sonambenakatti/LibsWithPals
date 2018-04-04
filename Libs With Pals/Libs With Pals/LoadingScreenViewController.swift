@@ -10,8 +10,10 @@ import UIKit
 
 class LoadingScreenViewController: UIViewController {
     
+    var appDelegate: AppDelegate!
+    
     override func viewDidLoad() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationType1"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -27,14 +29,18 @@ class LoadingScreenViewController: UIViewController {
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences
-            if type(of: message["doneEnteringSentences"]!) == Bool.Type.self {
-                    if message["doneEnteringSentences"]! {
-                        self.performSegue(withIdentifier: "enterWordsPlayer2Segue", sender: AnyClass.self)
-                    }
+            if message["doneEnteringSentences"]! {
+                self.performSegue(withIdentifier: "enterWordsPlayer2Segue", sender: AnyClass.self)
             }
-        
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "enterWordsPlayer2Segue",
+            let destination = segue.destination as? ChooseWordsPlayer2ViewController {
+            destination.appDelegate = self.appDelegate
         }
     }
     /*

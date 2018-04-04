@@ -42,17 +42,17 @@ import Foundation
 //}
 
 
-class WordsFormViewControllerPlayer2: FormViewController {
+class TwoPlayerWordsFormViewControllerPlayer2: FormViewController {
     
     var storyline: Storyline? = nil
     var delegate: ChooseWordsPlayer2ViewController?
-    var words: [String: Any?] = [:]
     var name: String = ""
-    var userEnteredWords: [String:String] = [:]
+    var userEnteredWords: [String:Bool] = [:]
+    var words: [String: Any?] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationType2"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
         
     }
     
@@ -63,12 +63,8 @@ class WordsFormViewControllerPlayer2: FormViewController {
     // get the types of words inputed by player one
     func getTypesOfWords() -> Array<String>{
         var userWords: Array<String> = []
-        for (index, word) in self.userEnteredWords {
-            let i = Int(index)
-            // if an odd index, than the value in the dictionary is a type of word
-            if i! % 2 != 0 {
-                userWords.append(word)
-            }
+        for (word, bool) in self.userEnteredWords {
+            userWords.append(word)
         }
         return userWords
     }
@@ -123,7 +119,7 @@ class WordsFormViewControllerPlayer2: FormViewController {
         let userInfo = notification.userInfo! as Dictionary
         let recievedData:Data = userInfo["data"] as! Data
         do {
-            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, String>
+            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             self.userEnteredWords = message
             self.addRows()
         } catch let error as NSError {

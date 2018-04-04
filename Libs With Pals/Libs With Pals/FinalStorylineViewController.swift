@@ -1,8 +1,8 @@
 //
-//  FinalStorylinePlayer2ViewController.swift
+//  FinalStorylinePlayer.swift
 //  Libs With Pals
 //
-//  Created by Jennifer Rethi on 3/28/18.
+//  Created by Sonam Benakatti on 3/28/18.
 //  Copyright © 2018 Group8. All rights reserved.
 //
 

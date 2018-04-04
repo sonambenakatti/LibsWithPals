@@ -55,7 +55,7 @@ class ChooseStorylineViewController: UIViewController, UITableViewDelegate, UITa
         }
     }
 
-    
+    // Return back to home screen
     @IBAction func onHomePressed(_ sender: Any) {
         self.performSegue(withIdentifier: "storylineThemeToHomeSegue", sender: AnyClass.self)
     }

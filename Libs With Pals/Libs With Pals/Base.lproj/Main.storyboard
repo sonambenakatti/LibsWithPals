@@ -254,7 +254,7 @@
                                         </constraints>
                                         <state key="normal" title="I'm Done!"/>
                                         <connections>
-                                            <action selector="onDoneButtonPressed:" destination="rvt-gh-2Ra" eventType="touchUpInside" id="4wT-YB-T32"/>
+                                            <action selector="onDonePressed:" destination="rvt-gh-2Ra" eventType="touchUpInside" id="cVr-Do-rwW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1022,7 +1022,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <items>
                                             <navigationItem id="Suv-AP-nEf">
-                                                <barButtonItem key="leftBarButtonItem" image="home" id="srj-lV-5Ac">
+                                                <barButtonItem key="leftBarButtonItem" image="home" id="srj-lV-5Ac" userLabel="Home">
                                                     <connections>
                                                         <action selector="onHomeButtonPressed:" destination="a3J-SJ-Dfd" id="PaL-sn-0GF"/>
                                                         <segue destination="8vk-ve-krd" kind="show" identifier="ChooseWordsPlayer2HomeSegue" id="mWi-ng-yYy"/>
@@ -1082,10 +1082,10 @@
             </objects>
             <point key="canvasLocation" x="4310" y="242"/>
         </scene>
-        <!--Words Form View Controller Player2-->
+        <!--Two Player Words Form View Controller Player2-->
         <scene sceneID="wjK-UV-l6p">
             <objects>
-                <viewController id="OB7-P8-tRl" customClass="WordsFormViewControllerPlayer2" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OB7-P8-tRl" customClass="TwoPlayerWordsFormViewControllerPlayer2" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZDh-7y-Y4F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1097,10 +1097,10 @@
             </objects>
             <point key="canvasLocation" x="5073" y="242"/>
         </scene>
-        <!--Final Story Line2 Player View Controller-->
+        <!--Two Player Final Storyline View Controller-->
         <scene sceneID="ScW-Co-jxD">
             <objects>
-                <viewController id="sa7-K1-w2N" customClass="FinalStoryLine2PlayerViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sa7-K1-w2N" customClass="TwoPlayerFinalStorylineViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfV-1q-YTm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1155,7 +1155,7 @@
         <segue reference="0Pz-SR-6Gr"/>
         <segue reference="hp1-8B-f8b"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="Sxd-w7-yf3"/>
+        <segue reference="lgq-LD-CDa"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

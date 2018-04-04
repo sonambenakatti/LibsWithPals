@@ -39,15 +39,19 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     // get the types of words inputed by player one
-    func getTypesOfWords() -> Dictionary<String, String>{
-        var userWords: Dictionary<String, String> = [:]
+    func getTypesOfWords() -> Dictionary<String, Bool>{
+        var userWords: Dictionary<String, Bool> = [:]
         for (index, word) in self.words {
-            userWords[index] = word as? String
+            let i = Int(index)
+            // if an odd index, than the value in the dictionary is a type of word
+            if i! % 2 != 0 {
+                userWords[(word as? String)!] = true
+            }
         }
-        userWords["chooseSentencesClicked"] = ""
-        userWords["enterWordsClicked"] = ""
-        userWords["doneEnteringSentences"] = ""
-        userWords["doneEnteringWords"] = ""
+        userWords["chooseSentencesClicked"] = true
+        userWords["enterWordsClicked"] = true
+        userWords["doneEnteringSentences"] = true
+        userWords["doneEnteringWords"] = true
         return userWords
     }
     
@@ -59,8 +63,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         }
     }
     
-    // check that player one inputted all types
-    @IBAction func onDoneButtonPressed(_ sender: Any) {
+    @IBAction func onDonePressed(_ sender: Any) {
         checkUserInputtedAllNeededWords()
         notifyPlayer2DoneEnteringSentences()
         passDataToPlayer2()
@@ -85,9 +88,6 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     func passDataToPlayer2() {
-        //var actionDict: [String: Array<String>] = [:]
-        //  list to send words to player 2
-        //actionDict["typesOfWords"] = getTypesOfWords()
         // send types of words to player 2
         do {
             let messageData = try JSONSerialization.data(withJSONObject: getTypesOfWords(), options: JSONSerialization.WritingOptions.prettyPrinted)
