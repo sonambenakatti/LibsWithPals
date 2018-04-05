@@ -9,6 +9,7 @@
 import UIKit
 import MultipeerConnectivity
 
+// class to set up the server connection between players 
 class MPCHandler: NSObject, MCSessionDelegate {
     
     // id of every device connected in LAN
@@ -48,6 +49,7 @@ class MPCHandler: NSObject, MCSessionDelegate {
         }
     }
     
+    // function to notify obervers when the state of the connection has changed
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         let userInfo = ["peerId": peerId, "state":state.rawValue] as [String : Any]
         DispatchQueue.main.async {
@@ -55,35 +57,25 @@ class MPCHandler: NSObject, MCSessionDelegate {
         }
     }
     
+    // function to notify observers when data is sent over the server
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         let userInfo = ["data": data, "peerID": peerID] as [String : Any]
-        do {
-            // if lets me cast to dictionary<string, bool> then know I'm not trying to notify user
-            // that words are entered 
-            
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil, userInfo: userInfo)
-            }
-        } catch {
-//            DispatchQueue.main.async {
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotificationTypes"), object: nil, userInfo: userInfo)
-//            }
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil, userInfo: userInfo)
         }
-        
-        
     }
     
-    // not recieving any resources
+    // not recieving any resources but required by protocol
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
         
     }
     
-    // not recieving any resources 
+    // not recieving any resources but required by protocol
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
 
     }
     
-    // not recieving a data stream
+    // not recieving a data stream but required by protocol
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
         
     }

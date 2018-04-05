@@ -9,10 +9,10 @@
 import UIKit
 import MultipeerConnectivity
 
-class ChooseWordsPlayer2ViewController: UIViewController{
+class TwoPlayerChooseWordsViewController: UIViewController{
     
     
-    var container: TwoPlayerWordsFormViewControllerPlayer2?
+    var container: TwoPlayerWordsFormViewController?
     var appDelegate: AppDelegate!
     
     
@@ -26,12 +26,12 @@ class ChooseWordsPlayer2ViewController: UIViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ChooseWordsPlayer2Embed",
-            let destination = segue.destination as? TwoPlayerWordsFormViewControllerPlayer2 {
+        if segue.identifier == "TwoPlayerChooseWordsEmbed",
+            let destination = segue.destination as? TwoPlayerWordsFormViewController {
             destination.delegate = self
             container = destination
             destination.words = (container?.words)!
-        } else if segue.identifier == "Player2DoneEnteringWordsSegue",
+        } else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
             let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
         }
     }
@@ -40,7 +40,7 @@ class ChooseWordsPlayer2ViewController: UIViewController{
     @IBAction func onHomeButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Are you sure?", message: "If you return home you will lose your mad lib.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { action in
-            self.performSegue(withIdentifier: "ChooseWordsPlayer2HomeSegue", sender: AnyClass.self)
+            self.performSegue(withIdentifier: "TwoPlayerChooseWordsToHome", sender: AnyClass.self)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -61,7 +61,7 @@ class ChooseWordsPlayer2ViewController: UIViewController{
             } catch let error as NSError {
                 print("error: \(error.localizedDescription)")
             }
-            self.performSegue(withIdentifier: "Player2DoneEnteringWordsSegue", sender: AnyClass.self)
+            self.performSegue(withIdentifier: "TwoPlayerWordsFinalStorylineSegue", sender: AnyClass.self)
         } else {
             let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))

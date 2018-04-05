@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -106,7 +106,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-Xi-Mj9" customClass="FBSDKButton" customModule="Libs_With_Pals">
-                                <rect key="frame" x="77" y="336" width="220" height="30"/>
+                                <rect key="frame" x="77" y="336" width="221" height="30"/>
                                 <color key="backgroundColor" red="0.29159465432167053" green="0.39902985095977783" blue="0.67532515525817871" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title=" Login With Facebook">
@@ -123,10 +123,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="z3X-Rc-Vp2">
-                                <rect key="frame" x="88" y="544" width="200" height="75"/>
+                                <rect key="frame" x="88" y="544" width="199" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbR-9L-lWC">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
                                         <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
@@ -135,7 +135,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dI-yO-VE2">
-                                        <rect key="frame" x="0.0" y="45" width="200" height="30"/>
+                                        <rect key="frame" x="0.0" y="45" width="199" height="30"/>
                                         <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="New User? Create Account"/>
                                         <connections>
@@ -146,7 +146,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XBQ-Xu-qWZ">
-                                <rect key="frame" x="51" y="424" width="274" height="80"/>
+                                <rect key="frame" x="51" y="424" width="273" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bBv-zb-rCF">
                                         <rect key="frame" x="0.0" y="0.0" width="74" height="71"/>
@@ -169,16 +169,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v9w-pS-bQU">
-                                        <rect key="frame" x="94" y="0.0" width="180" height="80"/>
+                                        <rect key="frame" x="94" y="0.0" width="179" height="80"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xL4-vI-hHf">
-                                                <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgz-TJ-YQw">
-                                                <rect key="frame" x="0.0" y="50" width="180" height="30"/>
+                                                <rect key="frame" x="0.0" y="50" width="179" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -264,17 +264,17 @@
                         <viewLayoutGuide key="safeArea" id="edr-IL-5C3"/>
                     </view>
                     <connections>
-                        <segue destination="CFz-Ij-ne7" kind="show" identifier="enteringWordsSegue" id="btr-8P-Wm2"/>
+                        <segue destination="CFz-Ij-ne7" kind="show" identifier="TwoPlayerLoadingWordsSegue" id="btr-8P-Wm2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDj-9X-EeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4309.6000000000004" y="1694.3028485757122"/>
         </scene>
-        <!--Player2 Loading Words View Controller-->
+        <!--Two Player Loading Words View Controller-->
         <scene sceneID="VE6-Zl-94Z">
             <objects>
-                <viewController id="CFz-Ij-ne7" customClass="Player2LoadingWordsViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CFz-Ij-ne7" customClass="TwoPlayerLoadingWordsViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="feJ-hM-aOl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,6 +294,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="home" id="WXa-WX-5iD">
                                             <connections>
                                                 <action selector="onHomePressed:" destination="haA-OV-LML" id="jCU-VA-fms"/>
+                                                <segue destination="8vk-ve-krd" kind="show" id="Mnb-SD-Yjm"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -304,7 +305,7 @@
                         <viewLayoutGuide key="safeArea" id="Ny4-H5-LaD"/>
                     </view>
                     <connections>
-                        <segue destination="sa7-K1-w2N" kind="show" identifier="player1DoneSegue" id="X2S-qW-p79"/>
+                        <segue destination="sa7-K1-w2N" kind="show" identifier="TwoPlayerSentencesFinalStorylineSegue" id="X2S-qW-p79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtA-Xo-yzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,13 +736,13 @@
                                 <rect key="frame" x="30" y="76" width="316" height="533"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Choose a Storyline Theme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXq-B3-eLu">
-                                        <rect key="frame" x="0.0" y="0.0" width="316" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="316" height="67"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="3" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-rq-e6H">
-                                        <rect key="frame" x="0.0" y="50" width="316" height="483"/>
+                                        <rect key="frame" x="0.0" y="87" width="316" height="446"/>
                                         <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="separatorColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -784,16 +785,16 @@
             </objects>
             <point key="canvasLocation" x="2698" y="977"/>
         </scene>
-        <!--Start Two Player Game View Controller-->
+        <!--Two Player Start Game View Controller-->
         <scene sceneID="skH-Up-iyR">
             <objects>
-                <viewController id="xWh-Dg-ieh" customClass="startTwoPlayerGameViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xWh-Dg-ieh" customClass="TwoPlayerStartGameViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9xa-kp-0Lh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-kF-Rox">
-                                <rect key="frame" x="67" y="318" width="222" height="30"/>
+                                <rect key="frame" x="67" y="318.5" width="222" height="30"/>
                                 <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Enter words"/>
                                 <connections>
@@ -815,7 +816,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfx-M8-cRr">
-                                <rect key="frame" x="67" y="224" width="222" height="30"/>
+                                <rect key="frame" x="67" y="224.5" width="222" height="30"/>
                                 <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Choose sentences"/>
                                 <connections>
@@ -840,24 +841,24 @@
                     <connections>
                         <outlet property="chooseSentencesButton" destination="Mfx-M8-cRr" id="z0u-7l-XT7"/>
                         <outlet property="enterWordsButton" destination="dk0-kF-Rox" id="Qfp-Yl-ASe"/>
-                        <segue destination="ics-5Z-QnL" kind="show" identifier="enterWordsSegue" id="r1p-d2-lvI"/>
-                        <segue destination="rvt-gh-2Ra" kind="show" identifier="createStorySegue" id="7Mc-w9-zx3"/>
+                        <segue destination="ics-5Z-QnL" kind="show" identifier="TwoPlayerEnterWordsSegue" id="r1p-d2-lvI"/>
+                        <segue destination="rvt-gh-2Ra" kind="show" identifier="TwoPlayerWriteStorySegue" id="7Mc-w9-zx3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWi-dU-dqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3544.8000000000002" y="975.56221889055485"/>
         </scene>
-        <!--Connect Player View Controller-->
+        <!--Two Player Connect Player View Controller-->
         <scene sceneID="RNo-9B-Cdk">
             <objects>
-                <viewController id="haA-OV-LML" customClass="ConnectPlayerViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="haA-OV-LML" customClass="TwoPlayerConnectPlayerViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfm-9l-Mmu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjM-48-RpM" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="40" y="359" width="294" height="108"/>
+                                <rect key="frame" x="40" y="359" width="295" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="108" id="m4F-GS-tC4"/>
                                 </constraints>
@@ -910,17 +911,17 @@
                     <connections>
                         <outlet property="navBar" destination="9Bb-Ap-xzi" id="HUf-0z-k83"/>
                         <segue destination="8vk-ve-krd" kind="show" identifier="connectPlayerToHomeSegue" id="Q61-vB-45Y"/>
-                        <segue destination="xWh-Dg-ieh" kind="show" identifier="startGame2PlayerSegue" id="s9Q-Zj-YPe"/>
+                        <segue destination="xWh-Dg-ieh" kind="show" identifier="TwoPlayerStartGameSegue" id="s9Q-Zj-YPe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF3-zj-KgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2693.5999999999999" y="241.52923538230885"/>
         </scene>
-        <!--Loading Screen View Controller-->
+        <!--Two Player Loading Sentences View Controller-->
         <scene sceneID="E9c-U9-yD0">
             <objects>
-                <viewController id="ics-5Z-QnL" customClass="LoadingScreenViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ics-5Z-QnL" customClass="TwoPlayerLoadingSentencesViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jMt-On-a4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -955,7 +956,7 @@
                         <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
                     </view>
                     <connections>
-                        <segue destination="a3J-SJ-Dfd" kind="show" identifier="enterWordsPlayer2Segue" id="4tv-xQ-dsl"/>
+                        <segue destination="a3J-SJ-Dfd" kind="show" identifier="TwoPlayerChooseWordsSegue" id="4tv-xQ-dsl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cE7-5e-CI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1010,7 +1011,7 @@
         <!--ChooseWordsPlayer2ViewController-->
         <scene sceneID="q1W-kf-KFz">
             <objects>
-                <viewController storyboardIdentifier="ChooseWordsPlayer2" title="ChooseWordsPlayer2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a3J-SJ-Dfd" customClass="ChooseWordsPlayer2ViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseWordsPlayer2" title="ChooseWordsPlayer2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a3J-SJ-Dfd" customClass="TwoPlayerChooseWordsViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tNA-C5-0ch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1025,7 +1026,6 @@
                                                 <barButtonItem key="leftBarButtonItem" image="home" id="srj-lV-5Ac" userLabel="Home">
                                                     <connections>
                                                         <action selector="onHomeButtonPressed:" destination="a3J-SJ-Dfd" id="PaL-sn-0GF"/>
-                                                        <segue destination="8vk-ve-krd" kind="show" identifier="ChooseWordsPlayer2HomeSegue" id="mWi-ng-yYy"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -1034,7 +1034,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUq-9e-FAf">
                                         <rect key="frame" x="0.0" y="44" width="375" height="540"/>
                                         <connections>
-                                            <segue destination="OB7-P8-tRl" kind="embed" identifier="ChooseWordsPlayer2Embed" id="Koh-OF-DO3"/>
+                                            <segue destination="OB7-P8-tRl" kind="embed" identifier="TwoPlayerChooseWordsEmbed" id="Koh-OF-DO3"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhG-ZV-XGN">
@@ -1075,12 +1075,13 @@
                         <viewLayoutGuide key="safeArea" id="axn-Zp-tuQ"/>
                     </view>
                     <connections>
-                        <segue destination="sa7-K1-w2N" kind="show" identifier="Player2DoneEnteringWordsSegue" id="0Pz-SR-6Gr"/>
+                        <segue destination="sa7-K1-w2N" kind="show" identifier="TwoPlayerWordsFinalStorylineSegue" id="0Pz-SR-6Gr"/>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerChooseWordsToHome" id="IO9-GK-f6e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b21-9E-LXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4310" y="242"/>
+            <point key="canvasLocation" x="4310" y="261"/>
         </scene>
         <!--Two Player Words Form View Controller Player2-->
         <scene sceneID="wjK-UV-l6p">
@@ -1152,10 +1153,10 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Pz-SR-6Gr"/>
+        <segue reference="X2S-qW-p79"/>
         <segue reference="hp1-8B-f8b"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="lgq-LD-CDa"/>
+        <segue reference="dkz-GV-h0s"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -10,23 +10,23 @@ import UIKit
 import MultipeerConnectivity
 import Foundation
 
-class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDelegate {
+// class to set up connection between 2 players
+class TwoPlayerConnectPlayerViewController: UIViewController, MCBrowserViewControllerDelegate {
     
     @IBOutlet weak var navBar: UINavigationBar!
     var appDelegate: AppDelegate!
     
     override func viewDidLoad() {
-        
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
         appDelegate.mpcHandler.setupSession()
         appDelegate.mpcHandler.advertiseSelf(advertise: true)
         
+        // add observer to be notified when connection state has been changed
         NotificationCenter.default.addObserver(self, selector: #selector(peerChangedStateWithNotification(notification:)), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
-        
     }
     
-    // function to connect two players
+    // function to setup connection
     @IBAction func connectWithPlayer(_ sender: Any) {
         if appDelegate.mpcHandler.session != nil {
             appDelegate.mpcHandler.setupBrowser()
@@ -35,31 +35,32 @@ class ConnectPlayerViewController: UIViewController, MCBrowserViewControllerDele
         }
     }
     
+    // When peer has been connected, change title of nav bar to connected
    @objc func peerChangedStateWithNotification(notification:NSNotification) {
         let userInfo = NSDictionary(dictionary: notification.userInfo!)
         let state = userInfo.object(forKey: "state") as! Int
         if state != MCSessionState.connected.rawValue {
             navBar.topItem?.title = "Connected"
-            self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
+            self.performSegue(withIdentifier: "TwoPlayerStartGameSegue" , sender: AnyClass.self)
         }
     }
     
+    // function to handle when the browser is finished
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
         appDelegate.mpcHandler.browser.dismiss(animated: true) {
-            self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
+            self.performSegue(withIdentifier: "TwoPlayerStartGameSegue" , sender: AnyClass.self)
         }
     }
     
+    // function to handle when browser has been cancelled
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        appDelegate.mpcHandler.browser.dismiss(animated: true) {
-            self.performSegue(withIdentifier: "startGame2PlayerSegue" , sender: AnyClass.self)
-        }
+        appDelegate.mpcHandler.browser.dismiss(animated: true)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "startGame2PlayerSegue" {
-            let vc: startTwoPlayerGameViewController = segue.destination as! startTwoPlayerGameViewController
+        if segue.identifier == "TwoPlayerStartGameSegue" {
+            let vc: TwoPlayerStartGameViewController = segue.destination as! TwoPlayerStartGameViewController
             vc.appDelegate = self.appDelegate
         }
     }

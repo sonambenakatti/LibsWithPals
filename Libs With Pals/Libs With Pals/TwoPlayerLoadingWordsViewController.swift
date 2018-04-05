@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Player2LoadingWordsViewController: UIViewController {
+class TwoPlayerLoadingWordsViewController: UIViewController {
 
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
@@ -28,7 +28,7 @@ class Player2LoadingWordsViewController: UIViewController {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences
             if message["doneEnteringWords"]! {
-                self.performSegue(withIdentifier: "player1DoneSegue", sender: AnyClass.self)
+                self.performSegue(withIdentifier: "TwoPlayerSentencesFinalStorylineSegue", sender: AnyClass.self)
             }
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")

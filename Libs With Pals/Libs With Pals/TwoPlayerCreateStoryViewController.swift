@@ -67,7 +67,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         checkUserInputtedAllNeededWords()
         notifyPlayer2DoneEnteringSentences()
         passDataToPlayer2()
-        self.performSegue(withIdentifier: "enteringWordsSegue", sender: AnyClass.self)
+        //self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
     }
     
     func notifyPlayer2DoneEnteringSentences() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingScreenViewController: UIViewController {
+class TwoPlayerLoadingSentencesViewController: UIViewController {
     
     var appDelegate: AppDelegate!
     
@@ -30,7 +30,7 @@ class LoadingScreenViewController: UIViewController {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences
             if message["doneEnteringSentences"]! {
-                self.performSegue(withIdentifier: "enterWordsPlayer2Segue", sender: AnyClass.self)
+                self.performSegue(withIdentifier: "TwoPlayerChooseWordsSegue", sender: AnyClass.self)
             }
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
@@ -38,8 +38,8 @@ class LoadingScreenViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "enterWordsPlayer2Segue",
-            let destination = segue.destination as? ChooseWordsPlayer2ViewController {
+        if segue.identifier == "TwoPlayerChooseWordsSegue",
+            let destination = segue.destination as? TwoPlayerChooseWordsViewController {
             destination.appDelegate = self.appDelegate
         }
     }

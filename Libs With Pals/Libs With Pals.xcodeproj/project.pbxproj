@@ -26,13 +26,13 @@
 		27F5602C20434FC700BD7549 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F5602B20434FC700BD7549 /* Launch Screen.storyboard */; };
 		4CED6FBB37121804C3BB77F2 /* Pods_Libs_With_Pals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729041734A25155835917708 /* Pods_Libs_With_Pals.framework */; };
 		F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35801C3204A0E2F004E6B3C /* MPCHandler.swift */; };
-		F39C3B8C204CE1C700994757 /* ConnectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */; };
-		F3D1EA7420730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7320730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift */; };
-		F3D1EA7620730DFA0031D43C /* TwoPlayerWordsFormViewControllerPlayer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewControllerPlayer2.swift */; };
-		F3D1EA7A207317CF0031D43C /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */; };
-		F3D1EA7E2073403E0031D43C /* Player2LoadingWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7D2073403E0031D43C /* Player2LoadingWordsViewController.swift */; };
+		F39C3B8C204CE1C700994757 /* TwoPlayerConnectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3B8B204CE1C700994757 /* TwoPlayerConnectPlayerViewController.swift */; };
+		F3D1EA7420730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7320730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift */; };
+		F3D1EA7620730DFA0031D43C /* TwoPlayerWordsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewController.swift */; };
+		F3D1EA7A207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA79207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift */; };
+		F3D1EA7E2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7D2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift */; };
 		F3D1EA80207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7F207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift */; };
-		F3FD47F7207084C8001F66C6 /* startTwoPlayerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */; };
+		F3FD47F7207084C8001F66C6 /* TwoPlayerStartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD47F6207084C8001F66C6 /* TwoPlayerStartGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,13 +59,13 @@
 		27F5602B20434FC700BD7549 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		729041734A25155835917708 /* Pods_Libs_With_Pals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libs_With_Pals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35801C3204A0E2F004E6B3C /* MPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
-		F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPlayerViewController.swift; sourceTree = "<group>"; };
-		F3D1EA7320730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWordsPlayer2ViewController.swift; sourceTree = "<group>"; };
-		F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewControllerPlayer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerWordsFormViewControllerPlayer2.swift; sourceTree = "<group>"; };
-		F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
-		F3D1EA7D2073403E0031D43C /* Player2LoadingWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player2LoadingWordsViewController.swift; sourceTree = "<group>"; };
+		F39C3B8B204CE1C700994757 /* TwoPlayerConnectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerConnectPlayerViewController.swift; sourceTree = "<group>"; };
+		F3D1EA7320730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerChooseWordsViewController.swift; sourceTree = "<group>"; };
+		F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerWordsFormViewController.swift; sourceTree = "<group>"; };
+		F3D1EA79207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerLoadingSentencesViewController.swift; sourceTree = "<group>"; };
+		F3D1EA7D2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerLoadingWordsViewController.swift; sourceTree = "<group>"; };
 		F3D1EA7F207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerFinalStorylineViewController.swift; sourceTree = "<group>"; };
-		F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startTwoPlayerGameViewController.swift; sourceTree = "<group>"; };
+		F3FD47F6207084C8001F66C6 /* TwoPlayerStartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerStartGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,14 +118,14 @@
 				2719E313206BEDE30094D446 /* FinalStorylineViewController.swift */,
 				27C7976D2073078500CD99B6 /* SavedLibsViewController.swift */,
 				F35801C3204A0E2F004E6B3C /* MPCHandler.swift */,
-				F39C3B8B204CE1C700994757 /* ConnectPlayerViewController.swift */,
-				F3FD47F6207084C8001F66C6 /* startTwoPlayerGameViewController.swift */,
-				F3D1EA79207317CF0031D43C /* LoadingScreenViewController.swift */,
+				F39C3B8B204CE1C700994757 /* TwoPlayerConnectPlayerViewController.swift */,
+				F3FD47F6207084C8001F66C6 /* TwoPlayerStartGameViewController.swift */,
+				F3D1EA79207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift */,
 				276E55482071C4130054261A /* TwoPlayerWriteStorylineViewController.swift */,
 				276E55462071BE700054261A /* TwoPlayerCreateStoryViewController.swift */,
-				F3D1EA7D2073403E0031D43C /* Player2LoadingWordsViewController.swift */,
-				F3D1EA7320730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift */,
-				F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewControllerPlayer2.swift */,
+				F3D1EA7D2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift */,
+				F3D1EA7320730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift */,
+				F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewController.swift */,
 				F3D1EA7F207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift */,
 			);
 			path = "Libs With Pals";
@@ -290,21 +290,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				276E55492071C4130054261A /* TwoPlayerWriteStorylineViewController.swift in Sources */,
-				F3D1EA7420730D7C0031D43C /* ChooseWordsPlayer2ViewController.swift in Sources */,
+				F3D1EA7420730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift in Sources */,
 				27D44877205B364000907DC0 /* UserInfoModel.xcdatamodeld in Sources */,
 				27B31EF2206A97DD00159410 /* ChooseWordsViewController.swift in Sources */,
 				2719E314206BEDE30094D446 /* FinalStorylineViewController.swift in Sources */,
 				27D44874205B290B00907DC0 /* CreateAccountViewController.swift in Sources */,
 				27F5601A2042829B00BD7549 /* LoginViewController.swift in Sources */,
-				F3D1EA7A207317CF0031D43C /* LoadingScreenViewController.swift in Sources */,
-				F3D1EA7E2073403E0031D43C /* Player2LoadingWordsViewController.swift in Sources */,
+				F3D1EA7A207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift in Sources */,
+				F3D1EA7E2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift in Sources */,
 				276E55472071BE700054261A /* TwoPlayerCreateStoryViewController.swift in Sources */,
 				27F560182042829B00BD7549 /* AppDelegate.swift in Sources */,
 				27B31EF4206A985D00159410 /* ChooseStorylineViewController.swift in Sources */,
-				F3FD47F7207084C8001F66C6 /* startTwoPlayerGameViewController.swift in Sources */,
+				F3FD47F7207084C8001F66C6 /* TwoPlayerStartGameViewController.swift in Sources */,
 				2791A891206AE714000CF096 /* WordsFormViewController.swift in Sources */,
-				F3D1EA7620730DFA0031D43C /* TwoPlayerWordsFormViewControllerPlayer2.swift in Sources */,
-				F39C3B8C204CE1C700994757 /* ConnectPlayerViewController.swift in Sources */,
+				F3D1EA7620730DFA0031D43C /* TwoPlayerWordsFormViewController.swift in Sources */,
+				F39C3B8C204CE1C700994757 /* TwoPlayerConnectPlayerViewController.swift in Sources */,
 				27D56794205B57F0005A26D1 /* HomeViewController.swift in Sources */,
 				F3D1EA80207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift in Sources */,
 				F35801C4204A0E2F004E6B3C /* MPCHandler.swift in Sources */,

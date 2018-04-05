@@ -42,10 +42,10 @@ import Foundation
 //}
 
 
-class TwoPlayerWordsFormViewControllerPlayer2: FormViewController {
+class TwoPlayerWordsFormViewController: FormViewController {
     
     var storyline: Storyline? = nil
-    var delegate: ChooseWordsPlayer2ViewController?
+    var delegate: TwoPlayerChooseWordsViewController?
     var name: String = ""
     var userEnteredWords: [String:Bool] = [:]
     var words: [String: Any?] = [:]
