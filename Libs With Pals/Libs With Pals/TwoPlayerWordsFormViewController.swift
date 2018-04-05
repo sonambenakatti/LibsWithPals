@@ -63,8 +63,13 @@ class TwoPlayerWordsFormViewController: FormViewController {
     // get the types of words inputed by player one
     func getTypesOfWords() -> Array<String>{
         var userWords: Array<String> = []
-        for (word, bool) in self.userEnteredWords {
-            userWords.append(word)
+        for (word, _) in self.userEnteredWords {
+            if(word != "doneEnteringSentences"
+                && word != "enterWordsClicked"
+                && word != "chooseSentencesClicked"
+                && word != "doneEnteringWords") {
+                userWords.append(word)
+            }
         }
         print(userWords)
         return userWords
