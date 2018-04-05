@@ -254,7 +254,7 @@
                                         </constraints>
                                         <state key="normal" title="I'm Done!"/>
                                         <connections>
-                                            <action selector="onDonePressed:" destination="rvt-gh-2Ra" eventType="touchUpInside" id="BOL-RL-kaP"/>
+                                            <action selector="onDonePressed:" destination="rvt-gh-2Ra" eventType="touchUpInside" id="ds0-Hu-Cdq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1160,7 +1160,7 @@
         <segue reference="0Pz-SR-6Gr"/>
         <segue reference="hp1-8B-f8b"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="IO9-GK-f6e"/>
+        <segue reference="dkz-GV-h0s"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

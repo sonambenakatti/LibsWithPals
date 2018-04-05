@@ -2,7 +2,7 @@
 //  FormViewController.swift
 //  Libs With Pals
 //
-//  Created by Sonam Benakatti on 3/27/18.
+//  Created by Rethi, Jennifer L on 4/2/18.
 //  Copyright © 2018 Group8. All rights reserved.
 //
 
@@ -10,8 +10,7 @@ import UIKit
 import Eureka
 import Foundation
 
-// Class that controls the form used to collect user's input for each blank in the mad lib.
-// Uses the Eureka framework in order to easily create a form.
+
 
 //struct Message: Codable {
 //    var actionDict: [String:Bool]
@@ -41,7 +40,8 @@ import Foundation
 //    }
 //}
 
-
+// Class that controls the form used to collect user's input for each blank in the mad lib.
+// Uses the Eureka framework in order to easily create a form.
 class TwoPlayerWordsFormViewController: FormViewController {
     
     //var storyline: Storyline? = nil
@@ -64,11 +64,14 @@ class TwoPlayerWordsFormViewController: FormViewController {
     func getTypesOfWords() -> Array<String>{
         var userWords: Array<String> = []
         for (word, _) in self.userEnteredWords {
+            // need to make sure that word is not identified as sentence and not other data sent over server
             if(word != "doneEnteringSentences"
                 && word != "enterWordsClicked"
                 && word != "chooseSentencesClicked"
-                && word != "doneEnteringWords") {
-                userWords.append(word)
+                && word != "doneEnteringWords" && word.last != "2") {
+                // get rid of identifier on word
+                let val = String(word.suffix(word.count - 1))
+                userWords.append(val)
             }
         }
         print(userWords)
@@ -128,6 +131,8 @@ class TwoPlayerWordsFormViewController: FormViewController {
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             self.userEnteredWords = message
+            print("In data recieved function")
+            print(self.userEnteredWords)
             self.addRows()
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")

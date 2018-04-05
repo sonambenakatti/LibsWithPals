@@ -26,39 +26,19 @@ class TwoPlayerStartGameViewController: UIViewController {
     
     // function when the player wants to choose the sentences 
     @IBAction func chooseSentencesClicked(_ sender: Any) {
-        let disableMyButton = sender as? UIButton
-        disableMyButton?.isUserInteractionEnabled = false
-        disableMyButton?.isEnabled = false
-        self.view.reloadInputViews()
-        var actionDict: [String: Bool] = [:]
         // send message to other player that the chooseSentences button has been pressed over server
-        actionDict["chooseSentencesClicked"] = true
-        actionDict["enterWordsClicked"] = false
-        actionDict["doneEnteringSentences"] = false
-        actionDict["doneEnteringWords"] = false
-        do {
-            let messageData = try JSONSerialization.data(withJSONObject: actionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
-            try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
-            self.performSegue(withIdentifier: "TwoPlayerWriteStorySegue", sender: AnyClass.self)
-        } catch {
-            print("error: \(error.localizedDescription)")
-        }
+        var actionDict: [String: Bool] = [:]
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, true, false])
+        sendDataOverServer(dataToSend: actionDict)
+        self.performSegue(withIdentifier: "TwoPlayerWriteStorySegue", sender: AnyClass.self)
     }
     
     @IBAction func enterWordsClicked(_ sender: Any) {
         // send message to other player that the enter words button has been pressed over server
         var actionDict: [String: Bool] = [:]
-        actionDict["chooseSentencesClicked"] = false
-        actionDict["enterWordsClicked"] = true
-        actionDict["doneEnteringSentences"] = false
-        actionDict["doneEnteringWords"] = false
-        do {
-            let messageData = try JSONSerialization.data(withJSONObject: actionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
-            try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
-            self.performSegue(withIdentifier: "TwoPlayerEnterWordsSegue", sender: AnyClass.self)
-        } catch let error as NSError {
-            print("error: \(error.localizedDescription)")
-        }
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, true, false, false])
+        sendDataOverServer(dataToSend: actionDict)
+        self.performSegue(withIdentifier: "TwoPlayerEnterWordsSegue", sender: AnyClass.self)
     }
     
     // function to handle the recieved data between players
@@ -91,6 +71,25 @@ class TwoPlayerStartGameViewController: UIViewController {
         } else if segue.identifier == "TwoPlayerEnterWordsSegue" {
             let vc: TwoPlayerLoadingSentencesViewController = segue.destination as! TwoPlayerLoadingSentencesViewController
             vc.appDelegate = self.appDelegate
+        }
+    }
+    
+    // function to set all needed values sent over server
+    func setNeededValuesInJson(dataToSend: inout Dictionary<String, Bool>, Vals: Array<Bool>) {
+        // let player know done enter sentences
+        dataToSend["doneEnteringSentences"] = Vals[0]
+        dataToSend["enterWordsClicked"] = Vals[1]
+        dataToSend["chooseSentencesClicked"] = Vals[2]
+        dataToSend["doneEnteringWords"] = Vals[3]
+    }
+    
+    // function to send data over the server
+    func sendDataOverServer(dataToSend: Dictionary<String, Bool>) {
+        do {
+            let messageData = try JSONSerialization.data(withJSONObject: dataToSend, options: JSONSerialization.WritingOptions.prettyPrinted)
+            try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
         }
     }
     
