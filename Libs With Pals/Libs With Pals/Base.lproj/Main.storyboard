@@ -254,7 +254,7 @@
                                         </constraints>
                                         <state key="normal" title="I'm Done!"/>
                                         <connections>
-                                            <action selector="onDonePressed:" destination="rvt-gh-2Ra" eventType="touchUpInside" id="cVr-Do-rwW"/>
+                                            <action selector="onDonePressed:" destination="rvt-gh-2Ra" eventType="touchUpInside" id="BOL-RL-kaP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -300,6 +300,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="TTu-MZ-Gos">
+                                <rect key="frame" x="177" y="171" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.57649785280227661" green="0.84436458349227905" blue="0.85760635137557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Ny4-H5-LaD"/>
@@ -1034,7 +1038,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUq-9e-FAf">
                                         <rect key="frame" x="0.0" y="44" width="375" height="540"/>
                                         <connections>
-                                            <segue destination="OB7-P8-tRl" kind="embed" identifier="TwoPlayerChooseWordsEmbed" id="Koh-OF-DO3"/>
+                                            <segue destination="OB7-P8-tRl" kind="embed" identifier="TwoPlayerChooseWordsEmbed" id="you-1m-nzz"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhG-ZV-XGN">
@@ -1081,12 +1085,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b21-9E-LXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4310" y="261"/>
+            <point key="canvasLocation" x="4310" y="242"/>
         </scene>
-        <!--Two Player Words Form View Controller Player2-->
+        <!--Two Player Words Form View Controller-->
         <scene sceneID="wjK-UV-l6p">
             <objects>
-                <viewController id="OB7-P8-tRl" customClass="TwoPlayerWordsFormViewControllerPlayer2" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OB7-P8-tRl" customClass="TwoPlayerWordsFormViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZDh-7y-Y4F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1153,10 +1157,10 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X2S-qW-p79"/>
+        <segue reference="0Pz-SR-6Gr"/>
         <segue reference="hp1-8B-f8b"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="dkz-GV-h0s"/>
+        <segue reference="IO9-GK-f6e"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -31,6 +31,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
             let destination = segue.destination as? TwoPlayerWriteStorylineViewController {
             container = destination
             destination.delegate = self
+            destination.passWordsDelegate = self
         }
     }
     
@@ -48,10 +49,10 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
                 userWords[(word as? String)!] = true
             }
         }
-        userWords["chooseSentencesClicked"] = true
-        userWords["enterWordsClicked"] = true
-        userWords["doneEnteringSentences"] = true
-        userWords["doneEnteringWords"] = true
+        userWords["chooseSentencesClicked"] = false
+        userWords["enterWordsClicked"] = false
+        userWords["doneEnteringSentences"] = false
+        userWords["doneEnteringWords"] = false
         return userWords
     }
     
@@ -67,7 +68,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         checkUserInputtedAllNeededWords()
         notifyPlayer2DoneEnteringSentences()
         passDataToPlayer2()
-        //self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
+        self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
     }
     
     func notifyPlayer2DoneEnteringSentences() {

@@ -44,7 +44,7 @@ import Foundation
 
 class TwoPlayerWordsFormViewController: FormViewController {
     
-    var storyline: Storyline? = nil
+    //var storyline: Storyline? = nil
     var delegate: TwoPlayerChooseWordsViewController?
     var name: String = ""
     var userEnteredWords: [String:Bool] = [:]
@@ -66,6 +66,7 @@ class TwoPlayerWordsFormViewController: FormViewController {
         for (word, bool) in self.userEnteredWords {
             userWords.append(word)
         }
+        print(userWords)
         return userWords
     }
     
@@ -116,6 +117,7 @@ class TwoPlayerWordsFormViewController: FormViewController {
     
     // function to handle the recieved data between players
     @objc func handleRecieveDataWithNotification(notification:NSNotification){
+        print("Words recieved over server")
         let userInfo = notification.userInfo! as Dictionary
         let recievedData:Data = userInfo["data"] as! Data
         do {

@@ -11,7 +11,6 @@ import MultipeerConnectivity
 
 class TwoPlayerChooseWordsViewController: UIViewController{
     
-    
     var container: TwoPlayerWordsFormViewController?
     var appDelegate: AppDelegate!
     
@@ -28,9 +27,9 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwoPlayerChooseWordsEmbed",
             let destination = segue.destination as? TwoPlayerWordsFormViewController {
+            //destination.storyline = storyline
             destination.delegate = self
             container = destination
-            destination.words = (container?.words)!
         } else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
             let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
         }
