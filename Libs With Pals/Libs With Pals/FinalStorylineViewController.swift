@@ -17,6 +17,7 @@ class FinalStorylineViewController: UIViewController {
     var finalStory: String = ""
     var name: String = ""
     let prefs: UserDefaults = UserDefaults.standard
+
     
     @IBOutlet weak var storylineTextView: UITextView!
 
@@ -68,6 +69,14 @@ class FinalStorylineViewController: UIViewController {
         performSegue(withIdentifier: "finalStorylineToHomeSegue", sender: AnyClass.self)
 
     }
+    
+    // Allow user to share their mad lib
+    @IBAction func onShareButtonPressed(_ sender: Any) {
+        let items = [finalStory];
+        let activity = UIActivityViewController(activityItems: items, applicationActivities: nil);
+        self.present(activity, animated: true, completion: nil)
+    }
+    
     
     // Save the mad lib into core data if the user has the setting enabled
     func saveMadLib() {
