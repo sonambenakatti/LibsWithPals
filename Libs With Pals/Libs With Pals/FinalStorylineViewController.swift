@@ -18,7 +18,7 @@ class FinalStorylineViewController: UIViewController {
     var name: String = ""
     let prefs: UserDefaults = UserDefaults.standard
 
-    
+    @IBOutlet weak var changeFontSizeSlider: UISlider!
     @IBOutlet weak var storylineTextView: UITextView!
 
     override func viewDidLoad() {
@@ -75,6 +75,12 @@ class FinalStorylineViewController: UIViewController {
         let items = [finalStory];
         let activity = UIActivityViewController(activityItems: items, applicationActivities: nil);
         self.present(activity, animated: true, completion: nil)
+    }
+    
+    // Allow user to change the font size of their story
+    @IBAction func onChangeFontSizeSlide(_ sender: Any) {
+        
+        self.storylineTextView.font = UIFont.systemFont(ofSize: CGFloat(changeFontSizeSlider.value * 30.0))
     }
     
     
