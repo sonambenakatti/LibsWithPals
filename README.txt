@@ -12,7 +12,7 @@ Beta:
 - displaying final story
 - Implemented saving mad libs into Core Data, viewing them, and deleting them
 - Implemented some logic and navigation for two player mode
-- creating storyline
+- wrote a storyline
 
 Alpha:
 

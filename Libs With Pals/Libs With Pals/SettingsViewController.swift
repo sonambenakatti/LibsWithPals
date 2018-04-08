@@ -44,13 +44,12 @@ class SettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // TODO: Completely log 
     @IBAction func onLogoutButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "logoutSegue", sender: AnyClass.self)
     }
     
     
-    // TODO: Link to delete account button and implement with an alert that asks user if they're sure (with options yes and no)
+    // Delete account button displays alert asking user if they are sure
     // if no: do nothing
     // if yes: delete account information
     @IBAction func onDeleteAccountButtonPressed(_ sender: Any) {
@@ -88,6 +87,7 @@ class SettingsViewController: UIViewController {
             abort()
         }
         
+        LoginViewController().logoutOfFacebook()
         self.performSegue(withIdentifier: "logoutSegue", sender: AnyClass.self)
     }
     

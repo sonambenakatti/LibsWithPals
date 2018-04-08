@@ -19,14 +19,18 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
    
     var dict: [String: AnyObject]!
+    // This bool is used so that once we know once FB is done logging in, we can go to the HomeViewController
+    var FBLoginSuccess = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //if the user is already logged in
-//        if (FBSDKAccessToken.current()) != nil {
-//            self.getFBUserData()
-//        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if(FBLoginSuccess) {
+            performSegue(withIdentifier: "loginToHomeSegue", sender: AnyClass.self)
+        }
     }
     
     // Login manually with a name, email, password
@@ -140,6 +144,8 @@ class LoginViewController: UIViewController {
         if((FBSDKAccessToken.current()) != nil) {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil) {
+                    self.FBLoginSuccess = true
+                    
                     self.dict = result as! [String : AnyObject]
                     print(self.dict)
                     
@@ -147,15 +153,23 @@ class LoginViewController: UIViewController {
                     let email = self.dict["email"] as! String
                     let password = self.dict["id"] as! String
                     
-                    if(self.retrieveUserIfExists(email: self.dict["email"] as! String, password: self.dict["id"] as! String)) {
-                        self.performSegue(withIdentifier: "loginToHomeSegue", sender: AnyClass.self)
-                    } else {
+                    if(!self.retrieveUserIfExists(email: self.dict["email"] as! String, password: self.dict["id"] as! String)) {
                         CreateAccountViewController().saveUserData(name: name, email: email, password: password)
-                        self.performSegue(withIdentifier: "loginToHomeSegue", sender: AnyClass.self)
                     }
+                    
+                    self.performSegue(withIdentifier: "loginToHomeSegue", sender: AnyClass.self)
                 }
             })
         }
     }
-
+    
+    // Log out of facebook (called from the SettingsViewController)
+    // Sets the FBSDKAccessToken to nil
+    func logoutOfFacebook() {
+        if((FBSDKAccessToken.current()) != nil) {
+            print("Logging out of Facebook")
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut()
+        }
+    }
 }
