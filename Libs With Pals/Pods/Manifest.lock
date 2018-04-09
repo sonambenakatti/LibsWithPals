@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - DKCamera (1.5.2)
   - Eureka (4.1.1)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
@@ -21,6 +22,7 @@ PODS:
   - IQKeyboardManagerSwift (5.0.7)
 
 DEPENDENCIES:
+  - DKCamera
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`)
   - FacebookCore
   - FacebookLogin
@@ -37,6 +39,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  DKCamera: bc3cf80a80167cea61ab2a539b9d64a10b7ed361
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
@@ -44,6 +47,6 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: fe7a7e82373dc5daad92e1623219e86224ab1fb1
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
 
-PODFILE CHECKSUM: 91a997b31d01e69eeb98f8a5de3466fde90bddb6
+PODFILE CHECKSUM: 481574106e8140f23fb7c3bf7863b1308fc71bdb
 
 COCOAPODS: 1.4.0

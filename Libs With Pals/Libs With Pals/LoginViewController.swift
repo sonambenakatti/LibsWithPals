@@ -142,14 +142,14 @@ class LoginViewController: UIViewController {
     // Fetch user data
     func getFBUserData() {
         if((FBSDKAccessToken.current()) != nil) {
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil) {
                     self.FBLoginSuccess = true
                     
                     self.dict = result as! [String : AnyObject]
                     print(self.dict)
                     
-                    let name = self.dict["name"] as! String
+                    let name = self.dict["first_name"] as! String
                     let email = self.dict["email"] as! String
                     let password = self.dict["id"] as! String
                     

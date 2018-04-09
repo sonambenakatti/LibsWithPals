@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    // View either displays a user photo or a default photo
+    @IBOutlet weak var image: UIImageView!
+    var useDefault = true
     @IBOutlet weak var greetingLabel: UILabel!
     let prefs:UserDefaults = UserDefaults.standard
 
@@ -19,6 +22,9 @@ class HomeViewController: UIViewController {
         // Customize the screen to greet the user with their name
         let name = String(describing: prefs.value(forKey: "name")!)
         greetingLabel.text = "Hi, " +  name + "!"
+        if(useDefault) {
+            image.image = #imageLiteral(resourceName: "defaultUserImage")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +40,7 @@ class HomeViewController: UIViewController {
             self.performSegue(withIdentifier: "homeToOnePlayerSegue", sender: AnyClass.self)
 
         }
-        
+
     }
     
 

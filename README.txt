@@ -62,6 +62,8 @@ Special Instructions:
 
 - Use an iPhone 8 Simulator
 
+- Before running app, run "pod install" inside LibsWithPals/Libs\ With\ Pals/ (where the podfile is located)
+
 - To login with Facebook, use this test account:
 
 email: libs_mkpqmlt_pals@tfbnw.net

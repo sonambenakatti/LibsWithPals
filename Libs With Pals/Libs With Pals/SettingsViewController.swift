@@ -8,12 +8,14 @@
 
 import UIKit
 import CoreData
+import DKCamera
 
 class SettingsViewController: UIViewController {
     
     let prefs: UserDefaults = UserDefaults.standard
     @IBOutlet weak var twoPlayerSwitch: UISwitch!
     @IBOutlet weak var saveLibsSwitch: UISwitch!
+    
     
     override func viewDidLoad() {
         // Ensure switches are set to what the user last set them to
@@ -90,5 +92,49 @@ class SettingsViewController: UIViewController {
         LoginViewController().logoutOfFacebook()
         self.performSegue(withIdentifier: "logoutSegue", sender: AnyClass.self)
     }
+    
+    // Adds a photo to a user's account
+    @IBAction func onAddPhotoPressed(_ sender: Any) {
+        let camera = DKCamera()
+        
+        camera.didCancel = {
+            print("didCancel")
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        camera.didFinishCapturingImage = { (image: UIImage?, metadata: [AnyHashable : Any]?) in
+            print("didFinishCapturingImage")
+            self.dismiss(animated: true, completion: nil)
+            self.addPhotoToUser(userImage: image!)
+        }
+        
+        self.present(camera, animated: true, completion: nil)
+    }
+    
+    // Add the photo in Core Data so that it may be used again
+    func addPhotoToUser(userImage: UIImage) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"User")
+        var fetchedResults:[NSManagedObject]? = nil
+        request.predicate = NSPredicate(format: "email == %@", String(describing: prefs.value(forKey: "email")!))
+        
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+
+        let user = fetchedResults![0]
+        let imageData: NSData = UIImagePNGRepresentation(userImage)! as NSData
+
+        user.setValue(imageData, forKey: "image")
+        print("Added image to user account")
+    }
+    
     
 }
