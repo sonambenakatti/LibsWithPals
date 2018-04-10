@@ -8,11 +8,43 @@
 
 import UIKit
 
+@IBDesignable extension UIButton {
+    
+    @IBInspectable var borderWidth: CGFloat {
+        set {
+            layer.borderWidth = newValue
+        }
+        get {
+            return layer.borderWidth
+        }
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        set {
+            layer.cornerRadius = newValue
+        }
+        get {
+            return layer.cornerRadius
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        set {
+            guard let uiColor = newValue else { return }
+            layer.borderColor = uiColor.cgColor
+        }
+        get {
+            guard let color = layer.borderColor else { return nil }
+            return UIColor(cgColor: color)
+        }
+    }
+}
+
+
 class HomeViewController: UIViewController {
 
     // View either displays a user photo or a default photo
     @IBOutlet weak var image: UIImageView!
-    var useDefault = true
     @IBOutlet weak var greetingLabel: UILabel!
     let prefs:UserDefaults = UserDefaults.standard
 
@@ -22,9 +54,7 @@ class HomeViewController: UIViewController {
         // Customize the screen to greet the user with their name
         let name = String(describing: prefs.value(forKey: "name")!)
         greetingLabel.text = "Hi, " +  name + "!"
-        if(useDefault) {
-            image.image = #imageLiteral(resourceName: "defaultUserImage")
-        }
+        image.image = #imageLiteral(resourceName: "defaultUserImage")
     }
 
     override func didReceiveMemoryWarning() {
