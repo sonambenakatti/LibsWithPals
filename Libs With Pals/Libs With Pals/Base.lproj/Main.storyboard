@@ -36,10 +36,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRM-xd-6K7">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.096382386982440948" green="0.11902237683534622" blue="0.20418325066566467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="FYz-94-fto">
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="settings" id="uso-7b-51T">
-                                            <color key="tintColor" red="0.09573286802" green="0.09573286802" blue="0.09573286802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <segue destination="TWX-VQ-fos" kind="show" identifier="settingsSegue" id="Upi-xg-WhK"/>
                                             </connections>
@@ -56,9 +57,8 @@
                                             <constraint firstAttribute="height" constant="63" id="AUj-y2-WoA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="36"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.20597419140000001" green="0.23276054860000001" blue="0.32579594849999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="yxb-hx-uHV">
                                         <rect key="frame" x="53" y="83" width="200" height="295"/>
@@ -74,13 +74,13 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfJ-Gs-8RP">
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
-                                                        <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="jyL-ih-ivh"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                                         <state key="normal" title="New Game">
-                                                            <color key="titleShadowColor" red="0.095732868020304562" green="0.095732868020304562" blue="0.095732868020304562" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="titleColor" red="0.21313074230000001" green="0.23351633550000001" blue="0.30219572779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -89,11 +89,11 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.9405414879624614" green="0.86663631430591948" blue="0.29507183936077241" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -102,24 +102,26 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-Id-Weh">
                                                         <rect key="frame" x="0.0" y="75" width="200" height="50"/>
-                                                        <color key="backgroundColor" red="0.86226242779999995" green="0.94852572680000002" blue="0.96870678659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.97866434010000003" green="0.89135335360000001" blue="0.089821785279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="mSw-Mh-xHO"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
-                                                        <state key="normal" title="Saved Libs"/>
+                                                        <state key="normal" title="Saved Libs">
+                                                            <color key="titleColor" red="0.096382386982440948" green="0.11902237683534622" blue="0.20418325066566467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -181,7 +183,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-Xi-Mj9" customClass="FBSDKButton" customModule="Libs_With_Pals">
                                                 <rect key="frame" x="0.0" y="0.0" width="185" height="32"/>
-                                                <color key="backgroundColor" red="0.29159465432167053" green="0.39902985095977783" blue="0.67532515525817871" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.21313074231147766" green="0.23351633548736572" blue="0.30219572782516479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="jUH-OF-9ZQ"/>
                                                     <constraint firstAttribute="width" constant="185" id="pb4-Dr-Dn6"/>
@@ -251,7 +253,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbR-9L-lWC">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="35"/>
-                                                <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
                                                 <state key="normal" title="Login"/>
                                                 <userDefinedRuntimeAttributes>
@@ -272,7 +274,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dI-yO-VE2">
                                                 <rect key="frame" x="0.0" y="45" width="210" height="35"/>
-                                                <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
                                                 <state key="normal" title="New User? Create Account"/>
                                                 <userDefinedRuntimeAttributes>
@@ -671,9 +673,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gOl-SK-D7I"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.096382386982440948" green="0.11902237683534622" blue="0.20418325066566467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="wcQ-K8-9i6">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C13-SO-OlM">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <segue destination="xkW-ZX-Inf" kind="show" identifier="cancelCreateAccountSegue" id="R9G-fw-mZC"/>
                                             </connections>
@@ -683,7 +687,7 @@
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wuv-jO-spW">
                                 <rect key="frame" x="111" y="564" width="150" height="30"/>
-                                <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kFa-36-0uu"/>
                                 </constraints>
@@ -692,9 +696,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.97866434010000003" green="0.89135335360000001" blue="0.089821785279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
@@ -1358,9 +1359,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X2S-qW-p79"/>
-        <segue reference="hp1-8B-f8b"/>
-        <segue reference="VwQ-28-Zr2"/>
-        <segue reference="iFx-QR-Dwy"/>
+        <segue reference="Upi-xg-WhK"/>
+        <segue reference="R9G-fw-mZC"/>
+        <segue reference="TII-ou-g1B"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
