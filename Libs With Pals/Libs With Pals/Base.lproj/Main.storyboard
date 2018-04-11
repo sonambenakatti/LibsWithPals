@@ -18,7 +18,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -36,7 +36,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRM-xd-6K7">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.096382386982440948" green="0.11902237683534622" blue="0.20418325066566467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.20042926073074341" green="0.33692091703414917" blue="0.4867551326751709" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="FYz-94-fto">
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="settings" id="uso-7b-51T">
@@ -138,7 +138,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gRM-xd-6K7" secondAttribute="trailing" id="91I-74-aRU"/>
                             <constraint firstItem="zU3-8b-AUk" firstAttribute="centerY" secondItem="1MR-PO-WEA" secondAttribute="centerY" id="LwM-W9-l7N"/>
@@ -162,7 +162,6 @@
         <!--Login View Controller-->
         <scene sceneID="S2k-3a-Is7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U1v-tH-fBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="xkW-ZX-Inf" customClass="LoginViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G8d-jX-FAt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -183,7 +182,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-Xi-Mj9" customClass="FBSDKButton" customModule="Libs_With_Pals">
                                                 <rect key="frame" x="0.0" y="0.0" width="185" height="32"/>
-                                                <color key="backgroundColor" red="0.21313074231147766" green="0.23351633548736572" blue="0.30219572782516479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.28753715753555298" green="0.39525538682937622" blue="0.66747099161148071" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="jUH-OF-9ZQ"/>
                                                     <constraint firstAttribute="width" constant="185" id="pb4-Dr-Dn6"/>
@@ -301,7 +300,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415075302124" green="0.92149776220321655" blue="0.92157071828842163" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="tmq-0V-daa" firstAttribute="centerX" secondItem="G8d-jX-FAt" secondAttribute="centerX" id="hOa-hb-aQt"/>
                             <constraint firstItem="tmq-0V-daa" firstAttribute="centerY" secondItem="G8d-jX-FAt" secondAttribute="centerY" id="y1Y-uw-ff4"/>
@@ -314,6 +313,7 @@
                         <outlet property="passwordText" destination="Hgz-TJ-YQw" id="WEf-Ul-mVb"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1v-tH-fBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-722" y="539"/>
         </scene>
@@ -328,9 +328,11 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qK4-EI-mUq">
                                 <rect key="frame" x="0.0" y="21" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="B10-Y3-3Ka">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="gjn-wc-aw4">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <segue destination="8vk-ve-krd" kind="show" id="dkz-GV-h0s"/>
                                             </connections>
@@ -362,7 +364,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="edr-IL-5C3"/>
                     </view>
                     <connections>
@@ -391,9 +393,11 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E79-F5-WwM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="MTE-nu-RrN">
                                         <barButtonItem key="leftBarButtonItem" image="home" id="WXa-WX-5iD">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="onHomePressed:" destination="haA-OV-LML" id="jCU-VA-fms"/>
                                                 <segue destination="8vk-ve-krd" kind="show" id="Mnb-SD-Yjm"/>
@@ -407,7 +411,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.57649785280227661" green="0.84436458349227905" blue="0.85760635137557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Ny4-H5-LaD"/>
                     </view>
                     <connections>
@@ -431,9 +435,11 @@
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5e-JU-qdT">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <items>
                                             <navigationItem id="4S7-BM-JtG">
                                                 <barButtonItem key="leftBarButtonItem" image="home" id="Cjm-j8-GtN">
+                                                    <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
                                                         <action selector="onHomeButtonPressed:" destination="1Ts-Oj-Mpz" id="In2-xW-Wfb"/>
                                                         <segue destination="8vk-ve-krd" kind="show" identifier="chooseWordsToHomeSegue" id="7yQ-Tz-3e9"/>
@@ -476,7 +482,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.73509705069999998" green="0.92540127039999998" blue="0.92549282310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="mBs-N7-ruW" firstAttribute="leading" secondItem="Ik2-Jn-ViU" secondAttribute="leading" id="1lC-E1-RBI"/>
                             <constraint firstItem="mBs-N7-ruW" firstAttribute="top" secondItem="H2E-mV-MQ3" secondAttribute="top" id="2MS-Lz-jSa"/>
@@ -503,9 +509,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INq-91-vA5">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="6Zo-m0-CAB">
                                         <barButtonItem key="leftBarButtonItem" image="home" id="yj1-V9-Q4b">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <segue destination="8vk-ve-krd" kind="show" identifier="savedLibsToHomeSegue" id="fkc-VA-hi3"/>
                                             </connections>
@@ -574,14 +582,17 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-mk-LYO">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="arM-qB-hLU">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="e3B-1z-qvE">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="onHomeButtonPressed:" destination="l1Y-hP-RDB" id="fig-xy-epL"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Ubv-FS-r4S">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="onShareButtonPressed:" destination="l1Y-hP-RDB" id="aay-sL-H2t"/>
                                             </connections>
@@ -673,7 +684,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gOl-SK-D7I"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.096382386982440948" green="0.11902237683534622" blue="0.20418325066566467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.090794121651678772" green="0.23005151865595405" blue="0.40837166878172593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="wcQ-K8-9i6">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C13-SO-OlM">
@@ -713,7 +724,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415075302124" green="0.92149776220321655" blue="0.92157071828842163" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Wuv-jO-spW" firstAttribute="top" secondItem="as4-PV-2Zx" secondAttribute="bottom" constant="52" id="0D7-wg-auF"/>
                             <constraint firstItem="u1J-N6-d09" firstAttribute="top" secondItem="1Le-P0-4Hx" secondAttribute="top" id="46S-Jr-LLD"/>
@@ -764,9 +775,14 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEB-YX-68I">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Settings" id="aDL-2P-iYD">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="pTr-we-RSF">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <segue destination="8vk-ve-krd" kind="show" identifier="doneWithSettingsSegue" id="cR6-KI-tIX"/>
                                             </connections>
@@ -897,7 +913,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="n0Y-gQ-Gjv" firstAttribute="centerY" secondItem="sii-M7-pjG" secondAttribute="centerY" id="3fE-pZ-R8Z"/>
                             <constraint firstItem="GEB-YX-68I" firstAttribute="trailing" secondItem="cJK-2C-wS6" secondAttribute="trailing" id="DNq-Jr-x4F"/>
@@ -927,9 +943,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRt-Kf-FgS">
                                 <rect key="frame" x="0.0" y="21" width="375" height="44"/>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="s30-Lk-qCl">
                                         <barButtonItem key="leftBarButtonItem" image="home" id="ZRx-5K-hMh">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="onHomePressed:" destination="ArT-f0-bvX" id="FUg-Ax-DHe"/>
                                             </connections>
@@ -969,7 +987,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="yRt-Kf-FgS" firstAttribute="leading" secondItem="tCR-PP-Uue" secondAttribute="leading" id="5AU-aV-Me1"/>
                             <constraint firstItem="aVk-CN-DQB" firstAttribute="top" secondItem="yRt-Kf-FgS" secondAttribute="bottom" constant="11" id="By3-l9-3Jk"/>
@@ -1029,7 +1047,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.57649785280227661" green="0.84436458349227905" blue="0.85760635137557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Mfx-M8-cRr" firstAttribute="leading" secondItem="dk0-kF-Rox" secondAttribute="leading" id="3au-OU-sdm"/>
                             <constraint firstItem="dk0-kF-Rox" firstAttribute="top" secondItem="Mfx-M8-cRr" secondAttribute="bottom" constant="64" id="EQA-H7-1Bw"/>
@@ -1078,15 +1096,18 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1yA-rq-ai5"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="csy-QG-R3R">
                                         <barButtonItem key="leftBarButtonItem" image="home" id="JgL-Nk-2XU">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="onHomePressed:" destination="haA-OV-LML" id="ebj-0w-C8K"/>
                                                 <segue destination="8vk-ve-krd" kind="show" id="iFx-QR-Dwy"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="settings" id="oWy-As-gdE">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <segue destination="TWX-VQ-fos" kind="show" id="hp1-8B-f8b"/>
                                             </connections>
@@ -1098,7 +1119,7 @@
                                 <rect key="frame" x="79" y="110" width="210" height="210"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.73509705069999998" green="0.92540127039999998" blue="0.92549282310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="9Bb-Ap-xzi" firstAttribute="leading" secondItem="hfm-9l-Mmu" secondAttribute="leadingMargin" constant="-18" id="0g8-f1-bNJ"/>
                             <constraint firstItem="GjM-48-RpM" firstAttribute="top" secondItem="NcE-AH-41e" secondAttribute="bottom" constant="39" id="AeP-73-zPF"/>
@@ -1134,9 +1155,11 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rc-tm-i0t">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="hBE-JC-lej">
                                         <barButtonItem key="leftBarButtonItem" image="home" id="5eO-Df-Hfd">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="onHomePressed:" destination="haA-OV-LML" id="DfM-OG-ovw"/>
                                                 <segue destination="8vk-ve-krd" kind="show" id="lgq-LD-CDa"/>
@@ -1157,7 +1180,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.57649785280227661" green="0.84436458349227905" blue="0.85760635137557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
                     </view>
                     <connections>
@@ -1190,7 +1213,7 @@
                     <view key="view" contentMode="scaleToFill" id="Sel-T9-18n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="rUE-nr-IcF"/>
                     </view>
                 </viewController>
@@ -1226,9 +1249,11 @@
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsV-M4-at5">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <items>
                                             <navigationItem id="Suv-AP-nEf">
                                                 <barButtonItem key="leftBarButtonItem" image="home" id="srj-lV-5Ac" userLabel="Home">
+                                                    <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
                                                         <action selector="onHomeButtonPressed:" destination="a3J-SJ-Dfd" id="PaL-sn-0GF"/>
                                                     </connections>
@@ -1270,7 +1295,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rv3-5H-6PU" secondAttribute="trailing" id="VmA-aA-TRv"/>
                             <constraint firstItem="rv3-5H-6PU" firstAttribute="top" secondItem="axn-Zp-tuQ" secondAttribute="top" id="m6A-lZ-SkU"/>
@@ -1295,7 +1320,7 @@
                     <view key="view" contentMode="scaleToFill" id="ZDh-7y-Y4F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Q3b-Dc-Y7y"/>
                     </view>
                 </viewController>
@@ -1313,9 +1338,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-6N-3yP">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="3BQ-m9-Qdk">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="2nZ-PE-SEW">
+                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="onHomeButtonPressed:" destination="sa7-K1-w2N" id="hqN-Gl-Tt5"/>
                                             </connections>
@@ -1330,7 +1357,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="zdd-6N-3yP" firstAttribute="leading" secondItem="zfV-1q-YTm" secondAttribute="leading" id="Bhs-jp-emy"/>
                             <constraint firstItem="huT-P9-chg" firstAttribute="top" secondItem="zdd-6N-3yP" secondAttribute="bottom" id="KCY-IT-mQl"/>
@@ -1353,15 +1380,15 @@
     </scenes>
     <resources>
         <image name="home" width="36" height="36"/>
-        <image name="libswithpals" width="648" height="648"/>
+        <image name="libswithpals" width="216" height="216"/>
         <image name="person" width="507" height="512"/>
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X2S-qW-p79"/>
-        <segue reference="Upi-xg-WhK"/>
-        <segue reference="R9G-fw-mZC"/>
-        <segue reference="TII-ou-g1B"/>
+        <segue reference="hp1-8B-f8b"/>
+        <segue reference="VwQ-28-Zr2"/>
+        <segue reference="Mnb-SD-Yjm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
