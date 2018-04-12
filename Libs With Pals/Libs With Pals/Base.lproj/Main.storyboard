@@ -1120,6 +1120,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="NcE-AH-41e">
                                 <rect key="frame" x="79" y="110" width="210" height="210"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-hK-FVk">
+                                <rect key="frame" x="94" y="491" width="185" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Draw"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="6Ii-sV-6hG" eventType="touchUpInside" id="eUZ-E9-yau"/>
+                                    <segue destination="HOH-2b-Pfs" kind="show" identifier="drawSegue" id="J5g-zQ-Du3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.73509705069999998" green="0.92540127039999998" blue="0.92549282310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1143,8 +1158,38 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF3-zj-KgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6Ii-sV-6hG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2693.5999999999999" y="241.52923538230885"/>
+        </scene>
+        <!--Drawing View Controller-->
+        <scene sceneID="OyR-dR-RTM">
+            <objects>
+                <viewController id="HOH-2b-Pfs" customClass="DrawingViewController" customModule="Libs_With_Pals" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pJz-kq-Upj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="mainImageView" translatesAutoresizingMaskIntoConstraints="NO" id="D6h-N7-OXM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="tempImageView" translatesAutoresizingMaskIntoConstraints="NO" id="TB9-m2-2GR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="7re-x3-jdK"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainImageView" destination="D6h-N7-OXM" id="5fs-0z-blY"/>
+                        <outlet property="tempImageView" destination="TB9-m2-2GR" id="DV0-ls-jFI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QvZ-Nd-T1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3093.5999999999999" y="-488.00599700149928"/>
         </scene>
         <!--Two Player Loading Sentences View Controller-->
         <scene sceneID="E9c-U9-yD0">
@@ -1390,7 +1435,7 @@
         <segue reference="X2S-qW-p79"/>
         <segue reference="hp1-8B-f8b"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="cR6-KI-tIX"/>
+        <segue reference="Q61-vB-45Y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
