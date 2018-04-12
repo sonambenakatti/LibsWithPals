@@ -87,6 +87,23 @@ class DrawingViewController: UIViewController {
         }
     }
     
+    func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        if !swiped {
+            // draw a single point
+            drawLineFrom(fromPoint: lastPoint, toPoint: lastPoint)
+        }
+        
+        /*
+        // Merge tempImageView into mainImageView
+        UIGraphicsBeginImageContext(mainImageView.frame.size)
+        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
+        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: opacity)
+        mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        */
+        tempImageView.image = nil
+    }
     
     
 }
