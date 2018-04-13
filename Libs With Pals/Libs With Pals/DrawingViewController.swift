@@ -10,6 +10,7 @@ import UIKit
 
 class DrawingViewController: UIViewController {
     
+    // properties
     @IBOutlet weak var canvasView: UIView!
     var path = UIBezierPath()
     var startPoint = CGPoint()
