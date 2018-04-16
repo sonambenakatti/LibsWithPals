@@ -10,26 +10,41 @@ import UIKit
 
 class HowToPlayViewController: UIViewController {
 
+    @IBOutlet weak var instructionsText: UITextView!
+    let text = ["Choose an option from the storyline library", "Choose words according to the given type", "c", "d"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        fadeTextIn(newText: "Choose an option from the storyline library")
+//        fadeTextIn(newText: "Choose words based on the given type. For example, if given the option \'noun\', enter \'apple\'")
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        fadeTextIn(val: 0)
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func fadeTextIn(val: Int) {
+        let length = self.text.endIndex - 1
+        self.instructionsText.alpha = 1.0
+        UIView.animate(
+            withDuration: 1.0,
+            delay: 5,
+            options: [.curveEaseOut],
+            animations: {
+                self.instructionsText.alpha = 0.0;
+        }, completion: { _ in
+                self.instructionsText.text = self.text[val % length]
+                self.fadeTextIn(val: val + 1)
+        })
     }
-    */
 
+        
 }
