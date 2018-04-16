@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		270AFD1C206A9220009A73D6 /* Storyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270AFD1B206A9220009A73D6 /* Storyline.swift */; };
 		2719E314206BEDE30094D446 /* FinalStorylineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2719E313206BEDE30094D446 /* FinalStorylineViewController.swift */; };
+		2764D2932084311D00E9FA67 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764D2922084311D00E9FA67 /* HowToPlayViewController.swift */; };
 		276E55472071BE700054261A /* TwoPlayerCreateStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E55462071BE700054261A /* TwoPlayerCreateStoryViewController.swift */; };
 		276E55492071C4130054261A /* TwoPlayerWriteStorylineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E55482071C4130054261A /* TwoPlayerWriteStorylineViewController.swift */; };
 		2791A891206AE714000CF096 /* WordsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791A890206AE714000CF096 /* WordsFormViewController.swift */; };
@@ -40,6 +41,7 @@
 		1F9FF8ABA85AB7DFC0EBAE86 /* Pods-Libs With Pals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs With Pals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Libs With Pals/Pods-Libs With Pals.debug.xcconfig"; sourceTree = "<group>"; };
 		270AFD1B206A9220009A73D6 /* Storyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyline.swift; sourceTree = "<group>"; };
 		2719E313206BEDE30094D446 /* FinalStorylineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStorylineViewController.swift; sourceTree = "<group>"; };
+		2764D2922084311D00E9FA67 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
 		276E55462071BE700054261A /* TwoPlayerCreateStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerCreateStoryViewController.swift; sourceTree = "<group>"; };
 		276E55482071C4130054261A /* TwoPlayerWriteStorylineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerWriteStorylineViewController.swift; sourceTree = "<group>"; };
 		2791A890206AE714000CF096 /* WordsFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsFormViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				F3D1EA7320730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift */,
 				F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewController.swift */,
 				F3D1EA7F207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift */,
+				2764D2922084311D00E9FA67 /* HowToPlayViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				276E55472071BE700054261A /* TwoPlayerCreateStoryViewController.swift in Sources */,
 				27F560182042829B00BD7549 /* AppDelegate.swift in Sources */,
 				27B31EF4206A985D00159410 /* ChooseStorylineViewController.swift in Sources */,
+				2764D2932084311D00E9FA67 /* HowToPlayViewController.swift in Sources */,
 				F3FD47F7207084C8001F66C6 /* TwoPlayerStartGameViewController.swift in Sources */,
 				2791A891206AE714000CF096 /* WordsFormViewController.swift in Sources */,
 				F3D1EA7620730DFA0031D43C /* TwoPlayerWordsFormViewController.swift in Sources */,
