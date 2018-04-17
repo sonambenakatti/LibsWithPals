@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,36 +35,64 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Jw-hE-4dz">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jw-hE-4dz">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="How to Play" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5Y-5X-iPW">
-                                        <rect key="frame" x="33" y="113" width="305" height="344"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.94117647059999998" green="0.86666666670000003" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="32"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xEu-ok-kzf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5Y-5X-iPW">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="324"/>
+                                                <color key="textColor" red="0.94117647059999998" green="0.86666666670000003" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="32"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ODk-Bd-hjJ">
+                                                <rect key="frame" x="0.0" y="324" width="375" height="279"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ODk-Bd-hjJ" secondAttribute="height" multiplier="125:93" id="hfq-N1-a5a"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ODk-Bd-hjJ" secondAttribute="bottom" id="4D1-9l-5wM"/>
+                                            <constraint firstItem="ODk-Bd-hjJ" firstAttribute="top" secondItem="K5Y-5X-iPW" secondAttribute="bottom" id="fbJ-Uy-6sk"/>
+                                            <constraint firstAttribute="trailing" secondItem="ODk-Bd-hjJ" secondAttribute="trailing" id="hkC-Y6-VSi"/>
+                                            <constraint firstItem="ODk-Bd-hjJ" firstAttribute="leading" secondItem="xEu-ok-kzf" secondAttribute="leading" id="rhf-UZ-09L"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.23137254900000001" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xEu-ok-kzf" secondAttribute="trailing" id="0dY-Xl-YBC"/>
+                                    <constraint firstAttribute="bottom" secondItem="xEu-ok-kzf" secondAttribute="bottom" id="5uY-D8-HUw"/>
+                                    <constraint firstItem="xEu-ok-kzf" firstAttribute="top" secondItem="4Jw-hE-4dz" secondAttribute="top" id="HL6-I9-alx"/>
+                                    <constraint firstItem="xEu-ok-kzf" firstAttribute="centerY" secondItem="4Jw-hE-4dz" secondAttribute="centerY" id="cO2-7X-hiO"/>
+                                    <constraint firstItem="xEu-ok-kzf" firstAttribute="centerX" secondItem="4Jw-hE-4dz" secondAttribute="centerX" id="gd9-gA-H5D"/>
+                                    <constraint firstItem="xEu-ok-kzf" firstAttribute="leading" secondItem="4Jw-hE-4dz" secondAttribute="leading" id="mOM-Ul-IMa"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="4Jw-hE-4dz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0V6-HS-8Sc"/>
                             <constraint firstItem="2hU-RI-Blb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Z2-ps-CoB"/>
                             <constraint firstItem="2hU-RI-Blb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="76P-Mo-ZXo"/>
+                            <constraint firstItem="4Jw-hE-4dz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FFZ-FJ-wyI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2hU-RI-Blb" secondAttribute="trailing" id="afM-gs-rzn"/>
+                            <constraint firstItem="4Jw-hE-4dz" firstAttribute="top" secondItem="2hU-RI-Blb" secondAttribute="bottom" id="lbI-mF-mbl"/>
+                            <constraint firstItem="4Jw-hE-4dz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tY2-vh-9V9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="howToPlayImage" destination="ODk-Bd-hjJ" id="gWJ-ZC-dJD"/>
                         <outlet property="instructionsText" destination="K5Y-5X-iPW" id="gbg-GD-l0W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="432.5" y="-176.5"/>
+            <point key="canvasLocation" x="431.19999999999999" y="-176.76161919040482"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="iBN-kU-uQd">
@@ -382,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1v-tH-fBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-722" y="539"/>
+            <point key="canvasLocation" x="-334" y="474"/>
         </scene>
         <!--Two Player Create Story View Controller-->
         <scene sceneID="4Ox-6T-7D2">
