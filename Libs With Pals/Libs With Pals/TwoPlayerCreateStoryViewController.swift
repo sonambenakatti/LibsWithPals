@@ -39,6 +39,27 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     
     func passEnteredWords(words: Dictionary<String, Any?>) {
         self.words = words
+        print(self.words)
+    }
+
+    // get the types of words inputed by player one
+    func getTypesOfWords() -> Dictionary<String, Bool>{
+        var userWords: Dictionary<String, Bool> = [:]
+        var order = 0
+        for (index, val) in self.words {
+            let i = Int(index)
+            var word = val as? String
+            // if an odd index, than the value in the dictionary is a type of word
+            if i! % 2 != 0 {
+                // concat an order on end of word to indentify as user inputed word in what oreder they put it in
+                let orderS = String(order)
+                word = word! + orderS
+                order = order + 1
+                userWords[word!] = true
+            }
+        }
+        setNeededValuesInJson(dataToSend: &userWords, Vals: [true, false, false, false])
+        return userWords
     }
     
     // function to check that the user inputted all the required fields
@@ -53,28 +74,9 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     @IBAction func onDonePressed(_ sender: Any) {
         checkUserInputtedAllNeededWords()
         let userEnteredWords = getTypesOfWords()
-        let userEnteredSentences = getSentences()
+        //let userEnteredSentences = getSentences()
         sendDataOverServer(dataToSend: userEnteredWords)
         //sendDataOverServer(dataToSend: userEnteredSentences)
-        self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
-    }
-    
-    
-    // get the types of words inputed by player one
-    func getTypesOfWords() -> Dictionary<String, Bool>{
-        var userWords: Dictionary<String, Bool> = [:]
-        for (index, val) in self.words {
-            let i = Int(index)
-            var word = val as? String
-            // if an odd index, than the value in the dictionary is a type of word
-            if i! % 2 != 0 {
-                // concat a 1 on end of word to indentify as user inputed word
-                word = word! + "1"
-                userWords[word!] = true
-            }
-        }
-        setNeededValuesInJson(dataToSend: &userWords, Vals: [true, false, false, false])
-        return userWords
     }
     
     // function to return the created sentences made by the user
@@ -107,8 +109,11 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     func sendDataOverServer(dataToSend: Dictionary<String, Bool>) {
         do {
             //sending data
+            print("In SendDataOverServer")
+            print(dataToSend)
             let messageData = try JSONSerialization.data(withJSONObject: dataToSend, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
+            self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }

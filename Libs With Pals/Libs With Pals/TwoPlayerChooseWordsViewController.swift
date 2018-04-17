@@ -13,7 +13,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     
     var container: TwoPlayerWordsFormViewController?
     var appDelegate: AppDelegate!
-    
+    var words: Dictionary<String, Bool> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +24,46 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    // get the types of words inputed by player one
+    func getTypesOfWords() -> Array<String>{
+        var userWords: Array<String> = []
+        var ordered: Dictionary<Int, String> = [:]
+        for (word, _) in self.words {
+            // need to make sure that word is not identified as sentence and not other data sent over server
+            if(word != "doneEnteringSentences"
+                && word != "enterWordsClicked"
+                && word != "chooseSentencesClicked"
+                && word != "doneEnteringWords") {
+                // get rid of identifier on word
+                var newWord = word
+                let lastChar = newWord.removeLast()
+                let val = Int(String(lastChar))
+                print("This is val \(val) and word \(newWord)")
+                ordered[val!] = newWord
+            }
+        }
+        // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
+        for i in 0...ordered.count - 1 {
+            print(i)
+            print(ordered[i])
+            userWords.append(ordered[i]!)
+        }
+        print(userWords)
+        return userWords
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwoPlayerChooseWordsEmbed",
             let destination = segue.destination as? TwoPlayerWordsFormViewController {
             //destination.storyline = storyline
             destination.delegate = self
             container = destination
+            print("Sending words to container")
+            print(self.words)
+            self.container?.userEnteredWords = getTypesOfWords()
         } else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
             let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
-            destination.typesOfWords = (self.container?.getTypesOfWords())!
+            destination.typesOfWords = (self.container?.userEnteredWords)!
         }
     }
     

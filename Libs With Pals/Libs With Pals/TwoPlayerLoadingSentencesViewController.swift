@@ -11,6 +11,7 @@ import UIKit
 class TwoPlayerLoadingSentencesViewController: UIViewController {
     
     var appDelegate: AppDelegate!
+    var message: Dictionary<String,Bool> = [:]
     
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
@@ -30,6 +31,9 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences
             if message["doneEnteringSentences"]! {
+                print("In doneEnteringSentences")
+                print(message)
+                self.message = message
                 self.performSegue(withIdentifier: "TwoPlayerChooseWordsSegue", sender: AnyClass.self)
             }
         } catch let error as NSError {
@@ -41,6 +45,7 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
         if segue.identifier == "TwoPlayerChooseWordsSegue",
             let destination = segue.destination as? TwoPlayerChooseWordsViewController {
             destination.appDelegate = self.appDelegate
+            destination.words = self.message
         }
     }
     /*

@@ -47,41 +47,26 @@ class TwoPlayerWordsFormViewController: FormViewController {
     //var storyline: Storyline? = nil
     var delegate: TwoPlayerChooseWordsViewController?
     var name: String = ""
-    var userEnteredWords: [String:Bool] = [:]
-    var words: [String: Any?] = [:]
+    var userEnteredWords: Array<String> = []
+    var words: Dictionary<String, Any?> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
-        
+        self.addRows()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // get the types of words inputed by player one
-    func getTypesOfWords() -> Array<String>{
-        var userWords: Array<String> = []
-        for (word, _) in self.userEnteredWords {
-            // need to make sure that word is not identified as sentence and not other data sent over server
-            if(word != "doneEnteringSentences"
-                && word != "enterWordsClicked"
-                && word != "chooseSentencesClicked"
-                && word != "doneEnteringWords" && word.last != "2") {
-                // get rid of identifier on word
-                let val = String(word.suffix(word.count - 1))
-                userWords.append(val)
-            }
-        }
-        print(userWords)
-        return userWords
-    }
+    
     
     // Add the needed rows for the user to input words
     func addRows() {
         
-        let blanks = getTypesOfWords()
+        let blanks = self.userEnteredWords
+        print("In add rows")
+        print(blanks)
         var index = 0
         var nameRowCreated = false
         
@@ -123,20 +108,5 @@ class TwoPlayerWordsFormViewController: FormViewController {
         return true
     }
     
-    // function to handle the recieved data between players
-    @objc func handleRecieveDataWithNotification(notification:NSNotification){
-        print("Words recieved over server")
-        let userInfo = notification.userInfo! as Dictionary
-        let recievedData:Data = userInfo["data"] as! Data
-        do {
-            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
-            self.userEnteredWords = message
-            print("In data recieved function")
-            print(self.userEnteredWords)
-            self.addRows()
-        } catch let error as NSError {
-            print("error: \(error.localizedDescription)")
-        }
-    }
 }
 
