@@ -20,6 +20,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     var words: Dictionary<String, Any?> = [:]
     var appDelegate: AppDelegate!
     var wordsOrdered = [String]()
+    var sentencesOrdered = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,12 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
             destination.delegate = self
             destination.passWordsDelegate = self
         }
+        if segue.identifier == "TwoPlayerLoadingWordsSegue",
+            let destination = segue.destination as? TwoPlayerLoadingWordsViewController {
+            destination.appDelegate = self.appDelegate
+            destination.words = wordsOrdered
+            destination.sentences = sentencesOrdered
+        }
     }
     
     func passEnteredWords(words: Dictionary<String, Any?>) {
@@ -43,19 +50,20 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         print(self.words)
     }
     
-    // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
-    func putWordsInOrder() {
+    // Ensure the story is in order because words is a dictionary and therefore order is not guaranteed
+    func putStoryInOrder() {
         for i in 0...words.count - 1 {
             // if an odd index, than the value in the dictionary is a type of word
             if i % 2 != 0 {
                 wordsOrdered.append(words[String(i)]!! as! String)
+            } else {
+                sentencesOrdered.append(words[String(i)]!! as! String)
             }
         }
     }
 
     // get the types of words inputed by player one
     func getTypesOfWords() -> Dictionary<String, Bool>{
-        self.putWordsInOrder()
         var userWords: Dictionary<String, Bool> = [:]
         var order = 0
         for word in self.wordsOrdered {
@@ -70,6 +78,22 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         return userWords
     }
     
+    // function to return the created sentences made by the user
+    func getSentences() -> Dictionary<String, Bool>{
+        var userSentences: Dictionary<String, Bool> = [:]
+        var order = 0
+        for sentence in self.sentencesOrdered {
+            var newSentence = sentence
+            // concat an order on end of sentence to specify which order it is in
+            let orderS = String(order)
+            newSentence = sentence + orderS
+            order = order + 1
+            userSentences[newSentence] = true
+        }
+        setNeededValuesInJson(dataToSend: &userSentences, Vals: [true, false, false, false])
+        return userSentences
+    }
+    
     // function to check that the user inputted all the required fields
     func checkUserInputtedAllNeededWords() {
         if (self.container?.checkIfAllRowsFilled())! == false {
@@ -81,27 +105,11 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     
     @IBAction func onDonePressed(_ sender: Any) {
         checkUserInputtedAllNeededWords()
+        putStoryInOrder()
         let userEnteredWords = getTypesOfWords()
-        //let userEnteredSentences = getSentences()
+        let userEnteredSentences = getSentences()
         sendDataOverServer(dataToSend: userEnteredWords)
         //sendDataOverServer(dataToSend: userEnteredSentences)
-    }
-    
-    // function to return the created sentences made by the user
-    func getSentences() -> Dictionary<String, Bool>{
-        var userSentences: Dictionary<String, Bool> = [:]
-        for (index, val) in self.words {
-            let i = Int(index)
-            var word = val as? String
-            // if an even index, than the value in the dictionary is a sentence
-            if i! % 2 == 0 {
-                // concat a 2 on end of word to indentify as user inputed sentence
-                word = word! + "2"
-                userSentences[word!] = true
-            }
-        }
-        setNeededValuesInJson(dataToSend: &userSentences, Vals: [true, false, false, false])
-        return userSentences
     }
     
     // function to set all needed values sent over server
@@ -126,5 +134,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
             print("error: \(error.localizedDescription)")
         }
     }
+    
+    
 }
 

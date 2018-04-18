@@ -38,33 +38,27 @@ class TwoPlayerChooseWordsViewController: UIViewController{
                 var newWord = word
                 let lastChar = newWord.removeLast()
                 let val = Int(String(lastChar))
-                print("This is val \(val) and word \(newWord)")
                 ordered[val!] = newWord
             }
         }
         // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
         for i in 0...ordered.count - 1 {
-            print(i)
-            print(ordered[i])
             userWords.append(ordered[i]!)
         }
-        print(userWords)
         return userWords
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwoPlayerChooseWordsEmbed",
             let destination = segue.destination as? TwoPlayerWordsFormViewController {
-            //destination.storyline = storyline
             destination.delegate = self
             container = destination
-            print("Sending words to container")
-            print(self.words)
             self.container?.userEnteredWords = getTypesOfWords()
-        } else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
-            let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
-            destination.typesOfWords = (self.container?.userEnteredWords)!
-        }
+        } //else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
+            //let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
+            //destination.words = userWords
+            
+        //}
     }
     
     // Return home but first warn the user they will lose their progress

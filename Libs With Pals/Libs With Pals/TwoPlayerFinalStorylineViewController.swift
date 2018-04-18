@@ -12,7 +12,7 @@ import CoreData
 class TwoPlayerFinalStorylineViewController: UIViewController {
     
     var sentences : [String] = []
-    var typesOfWords: [String] = []
+    var words: [String] = []
     var finalStory: String = ""
     var name: String = ""
     let prefs: UserDefaults = UserDefaults.standard
