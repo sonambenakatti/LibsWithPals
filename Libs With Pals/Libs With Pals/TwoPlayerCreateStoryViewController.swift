@@ -19,6 +19,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     // user words
     var words: Dictionary<String, Any?> = [:]
     var appDelegate: AppDelegate!
+    var wordsOrdered = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,22 +42,29 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         self.words = words
         print(self.words)
     }
+    
+    // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
+    func putWordsInOrder() {
+        for i in 0...words.count - 1 {
+            // if an odd index, than the value in the dictionary is a type of word
+            if i % 2 != 0 {
+                wordsOrdered.append(words[String(i)]!! as! String)
+            }
+        }
+    }
 
     // get the types of words inputed by player one
     func getTypesOfWords() -> Dictionary<String, Bool>{
+        self.putWordsInOrder()
         var userWords: Dictionary<String, Bool> = [:]
         var order = 0
-        for (index, val) in self.words {
-            let i = Int(index)
-            var word = val as? String
-            // if an odd index, than the value in the dictionary is a type of word
-            if i! % 2 != 0 {
-                // concat an order on end of word to indentify as user inputed word in what oreder they put it in
-                let orderS = String(order)
-                word = word! + orderS
-                order = order + 1
-                userWords[word!] = true
-            }
+        for word in self.wordsOrdered {
+            var newWord = word
+            // concat an order on end of word to indentify as user inputed word in what oreder they put it in
+            let orderS = String(order)
+            newWord = word + orderS
+            order = order + 1
+            userWords[newWord] = true
         }
         setNeededValuesInJson(dataToSend: &userWords, Vals: [true, false, false, false])
         return userWords
