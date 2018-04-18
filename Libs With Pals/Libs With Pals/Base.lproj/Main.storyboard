@@ -1241,9 +1241,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="NcE-AH-41e">
                                 <rect key="frame" x="79" y="110" width="210" height="210"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-hK-FVk">
-                                <rect key="frame" x="94" y="491" width="185" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-hK-FVk">
+                                <rect key="frame" x="94" y="491" width="185" height="36"/>
                                 <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Draw"/>
@@ -1264,7 +1263,10 @@
                             <constraint firstItem="GjM-48-RpM" firstAttribute="top" secondItem="NcE-AH-41e" secondAttribute="bottom" constant="39" id="AeP-73-zPF"/>
                             <constraint firstItem="8c7-Ek-poI" firstAttribute="trailing" secondItem="9Bb-Ap-xzi" secondAttribute="trailing" constant="2" id="C9N-v8-9ni"/>
                             <constraint firstItem="NcE-AH-41e" firstAttribute="top" secondItem="9Bb-Ap-xzi" secondAttribute="bottom" constant="45" id="KBr-iA-nzM"/>
+                            <constraint firstItem="0Gr-hK-FVk" firstAttribute="leading" secondItem="8c7-Ek-poI" secondAttribute="leading" constant="94" id="LOF-dQ-Gr3"/>
                             <constraint firstItem="GjM-48-RpM" firstAttribute="centerX" secondItem="hfm-9l-Mmu" secondAttribute="centerX" id="Z59-d5-3gt"/>
+                            <constraint firstItem="8c7-Ek-poI" firstAttribute="trailing" secondItem="0Gr-hK-FVk" secondAttribute="trailing" constant="96" id="ZSq-SR-J70"/>
+                            <constraint firstItem="0Gr-hK-FVk" firstAttribute="top" secondItem="GjM-48-RpM" secondAttribute="bottom" constant="24" id="ZWM-JL-0M9"/>
                             <constraint firstItem="9Bb-Ap-xzi" firstAttribute="top" secondItem="8c7-Ek-poI" secondAttribute="top" constant="1" id="cVl-ho-Ds2"/>
                             <constraint firstItem="GjM-48-RpM" firstAttribute="leading" secondItem="8c7-Ek-poI" secondAttribute="leading" constant="40" id="dad-xJ-wia"/>
                             <constraint firstItem="8c7-Ek-poI" firstAttribute="bottom" secondItem="GjM-48-RpM" secondAttribute="bottom" constant="200" id="ifs-4s-jLa"/>
@@ -1293,7 +1295,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMq-NT-j3B">
-                                <rect key="frame" x="0.0" y="87" width="375" height="580"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -1311,6 +1313,72 @@
                                     <action selector="clearButtonPressed:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="umC-Eo-0Pf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLF-K1-q76">
+                                <rect key="frame" x="30" y="36" width="44" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="pressBackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="chA-bm-m3V"/>
+                                    <segue destination="haA-OV-LML" kind="show" identifier="backSegue" id="Zfh-Zp-Aya"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xg-X3-rBx">
+                                <rect key="frame" x="333" y="33" width="32" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressBlueButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="CJQ-Jw-xkM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7f-jz-ojz">
+                                <rect key="frame" x="297" y="33" width="28" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressRedButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="lmZ-gv-D4x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ln-2A-f9T">
+                                <rect key="frame" x="333" y="64" width="32" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressGreenButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="Gdj-gh-FUz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQn-kL-VXT">
+                                <rect key="frame" x="297" y="64" width="28" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressBlackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="Pps-We-Usq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="7re-x3-jdK"/>
@@ -1321,7 +1389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvZ-Nd-T1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3093.5999999999999" y="-488.00599700149928"/>
+            <point key="canvasLocation" x="3309.5999999999999" y="-560.86956521739137"/>
         </scene>
         <!--Two Player Loading Sentences View Controller-->
         <scene sceneID="E9c-U9-yD0">
@@ -1550,9 +1618,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X2S-qW-p79"/>
-        <segue reference="Upi-xg-WhK"/>
+        <segue reference="Zfh-Zp-Aya"/>
+        <segue reference="hp1-8B-f8b"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="Cwz-zh-Mxk"/>
+        <segue reference="iFx-QR-Dwy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

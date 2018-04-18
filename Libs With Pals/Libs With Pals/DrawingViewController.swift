@@ -15,9 +15,30 @@ class DrawingViewController: UIViewController {
     var path = UIBezierPath()
     var startPoint = CGPoint()
     var touchPoint = CGPoint()
+    var color = UIColor.black
     
     @IBAction func onButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "drawSegue", sender: AnyClass.self)
+    }
+    
+    @IBAction func pressBackButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "backSegue", sender: AnyClass.self)
+    }
+    
+    @IBAction func pressBlueButton(_ sender: Any) {
+        color = UIColor.blue
+    }
+    
+    @IBAction func pressRedButton(_ sender: Any) {
+        color = UIColor.red
+    }
+    
+    @IBAction func pressGreenButton(_ sender: Any) {
+        color = UIColor.green
+    }
+    
+    @IBAction func pressBlackButton(_ sender: Any) {
+        color = UIColor.black
     }
     
     override func viewDidLoad() {
@@ -57,7 +78,7 @@ class DrawingViewController: UIViewController {
         let strokeLayer = CAShapeLayer()
         strokeLayer.fillColor = nil
         strokeLayer.lineWidth = 5
-        strokeLayer.strokeColor = UIColor.black.cgColor
+        strokeLayer.strokeColor = color.cgColor
         strokeLayer.path = path.cgPath
         canvasView.layer.addSublayer(strokeLayer)
         canvasView.layer.setNeedsDisplay()
