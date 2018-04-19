@@ -37,8 +37,16 @@ class DrawingViewController: UIViewController {
         color = UIColor.green
     }
     
-    @IBAction func pressBlackButton(_ sender: Any) {
-        color = UIColor.black
+    @IBAction func pressOrangeButton(_ sender: Any) {
+        color = UIColor.orange
+    }
+    
+    @IBAction func pressYelloButton(_ sender: Any) {
+        color = UIColor.yellow
+    }
+    
+    @IBAction func pressPurpleButton(_ sender: Any) {
+        color = UIColor.purple
     }
     
     override func viewDidLoad() {
@@ -89,5 +97,6 @@ class DrawingViewController: UIViewController {
         path.removeAllPoints()
         canvasView.layer.sublayers = nil
         canvasView.setNeedsDisplay()
+        color = UIColor.black
     }
 }
