@@ -14,6 +14,8 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     var container: TwoPlayerWordsFormViewController?
     var appDelegate: AppDelegate!
     var words: Dictionary<String, Bool> = [:]
+    var userSentences: [String] = []
+    var userWords: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     }
     
     // get the types of words inputed by player one
-    func getTypesOfWords() -> Array<String>{
-        var userWords: Array<String> = []
+    func getTypesOfWords(){
         var ordered: Dictionary<Int, String> = [:]
         for (word, _) in self.words {
             // need to make sure that word is not identified as sentence and not other data sent over server
@@ -34,31 +35,36 @@ class TwoPlayerChooseWordsViewController: UIViewController{
                 && word != "enterWordsClicked"
                 && word != "chooseSentencesClicked"
                 && word != "doneEnteringWords") {
-                // get rid of identifier on word
-                var newWord = word
-                let lastChar = newWord.removeLast()
-                let val = Int(String(lastChar))
-                ordered[val!] = newWord
+                    // get rid of identifier on word
+                    var newWord = word
+                    let lastChar = newWord.removeLast()
+                    let val = Int(String(lastChar))
+                    ordered[val!] = newWord
             }
         }
         // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
         for i in 0...ordered.count - 1 {
-            userWords.append(ordered[i]!)
+            if i % 2 == 0 {
+                userWords.append(ordered[i]!)
+            } else {
+                userSentences.append(ordered[i]!)
+            }
         }
-        return userWords
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwoPlayerChooseWordsEmbed",
             let destination = segue.destination as? TwoPlayerWordsFormViewController {
+            getTypesOfWords()
             destination.delegate = self
             container = destination
-            self.container?.userEnteredWords = getTypesOfWords()
-        } //else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
-            //let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
-            //destination.words = userWords
+            self.container?.userEnteredWords = userWords
+        } else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
+            let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
+            destination.words = userWords
+            destination.sentences = userSentences
             
-        //}
+        }
     }
     
     // Return home but first warn the user they will lose their progress

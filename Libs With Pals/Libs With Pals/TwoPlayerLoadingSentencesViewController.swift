@@ -31,8 +31,6 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             // player 2 is done entering sentences
             if message["doneEnteringSentences"]! {
-                print("In doneEnteringSentences")
-                print(message)
                 self.message = message
                 self.performSegue(withIdentifier: "TwoPlayerChooseWordsSegue", sender: AnyClass.self)
             }

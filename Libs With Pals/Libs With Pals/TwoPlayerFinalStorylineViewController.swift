@@ -11,7 +11,8 @@ import CoreData
 
 class TwoPlayerFinalStorylineViewController: UIViewController {
     
-    var sentences : [String] = []
+    var message: Dictionary<String, Bool> = [:]
+    var sentences: [String] = []
     var words: [String] = []
     var finalStory: String = ""
     var name: String = ""
