@@ -14,9 +14,10 @@ class HowToPlayViewController: UIViewController {
     @IBOutlet weak var howToPlayImage: UIImageView!
     
     @IBOutlet weak var instructionsText: UITextView!
+    // List of instructions to display
     let text = ["Choose an option from the storyline library",
-                "Choose words according to the given type",
-                "Choose words according to the given type",
+                "Input words according to the given type",
+                "Input words according to the given type",
                 "View your completed storyline!"]
     
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class HowToPlayViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
 
+        // Set the hand image to its starting position
         let screenSize: CGRect = UIScreen.main.bounds
         self.hand.frame = CGRect(x: screenSize.width / 1.8, y: screenSize.height / 1.4, width: self.hand.frame.width / 2, height: self.hand.frame.height / 2)
         self.view.addSubview(self.hand)
@@ -37,6 +39,14 @@ class HowToPlayViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    // Reset the hand back to the original position so that it doesn't go off screen
+    func resetHand() {
+        self.hand.isHidden = true
+        let screenSize: CGRect = UIScreen.main.bounds
+        self.hand.frame.origin.x = screenSize.width / 1.8
+        self.hand.frame.origin.y = screenSize.height / 1.4
     }
     
     // Animate the hand clicking on a storyline
@@ -50,7 +60,7 @@ class HowToPlayViewController: UIViewController {
         )
     }
     
-    // Animate the text changing
+    // Animates the text changing
     func fadeTextIn(val: Int) {
         let length = self.text.endIndex
         let curVal = val % length
@@ -67,9 +77,8 @@ class HowToPlayViewController: UIViewController {
                 self.howToPlayImage.image = #imageLiteral(resourceName: "blanks")
             case 2:
                 self.howToPlayImage.image = #imageLiteral(resourceName: "blanksFilledIn")
-                break
             default:
-                break
+                self.howToPlayImage.image = #imageLiteral(resourceName: "filledInSentence")
         }
 
         self.instructionsText.text = self.text[curVal]
@@ -79,23 +88,10 @@ class HowToPlayViewController: UIViewController {
             delay: 5,
             options: [.curveEaseOut],
             animations: {
-//                switch curVal {
-//                    case 0:
-//                        self.handClick()
-//                    case 1:
-//                        break
-//                    case 2:
-//                        break
-//                    default:
-//                        break
-//                }
                 self.instructionsText.alpha = 0.0;
         }, completion: { _ in
             if(self.hand.isHidden == false) {
-                self.hand.isHidden = true
-                let screenSize: CGRect = UIScreen.main.bounds
-                self.hand.frame.origin.x = screenSize.width / 1.8
-                self.hand.frame.origin.y = screenSize.height / 1.4
+                self.resetHand()
             }
             self.fadeTextIn(val: val + 1)
         })
@@ -103,7 +99,7 @@ class HowToPlayViewController: UIViewController {
 }
 
 extension UITextView {
-    
+    // Center the text vertically
     func centerVertically() {
         let fittingSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
         let size = sizeThatFits(fittingSize)
@@ -111,6 +107,5 @@ extension UITextView {
         let positiveTopOffset = max(1, topOffset)
         contentOffset.y = -positiveTopOffset
     }
-    
 }
 
