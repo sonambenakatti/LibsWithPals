@@ -46,7 +46,10 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
             let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
             destination.message = self.message
             destination.sentences = self.sentences
+            print("Sentences passed correctly \(sentences)")
+            print("Words recieved correctly \(message)")
         }
     }
     
 }
+

@@ -35,11 +35,11 @@ class TwoPlayerChooseWordsViewController: UIViewController{
                 && word != "enterWordsClicked"
                 && word != "chooseSentencesClicked"
                 && word != "doneEnteringWords") {
-                    // get rid of identifier on word
-                    var newWord = word
-                    let lastChar = newWord.removeLast()
-                    let val = Int(String(lastChar))
-                    ordered[val!] = newWord
+                // get rid of identifier on word
+                var newWord = word
+                let lastChar = newWord.removeLast()
+                let val = Int(String(lastChar))
+                ordered[val!] = newWord
             }
         }
         // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
@@ -56,14 +56,14 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         if segue.identifier == "TwoPlayerChooseWordsEmbed",
             let destination = segue.destination as? TwoPlayerWordsFormViewController {
             getTypesOfWords()
+            print("User sentences \(userSentences)")
             destination.delegate = self
             container = destination
             self.container?.userEnteredWords = userWords
         } else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
             let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
-            destination.words = userWords
+            destination.passedWords = (container?.words)!
             destination.sentences = userSentences
-            
         }
     }
     
@@ -80,16 +80,29 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     // Take user to final storyline if all fields are filled out
     @IBAction func onMakeMyMadLibPressed(_ sender: Any) {
         if (self.container?.checkIfAllRowsFilled())! {
-            var actionDict: [String: Bool] = [:]
-            // send entered words to next player so they can see their final mad lib
-            setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, true])
-            sendDataOverServer(dataToSend: actionDict)
+            words = [:]
+            processEnteredSentences()
+            setNeededValuesInJson(dataToSend: &words, Vals: [false, false, false, true])
+            sendDataOverServer(dataToSend: words)
             self.performSegue(withIdentifier: "TwoPlayerWordsFinalStorylineSegue", sender: AnyClass.self)
         } else {
             let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
+        }
+    }
+    
+    // Ensure the story is in order because words is a dictionary and therefore order is not guaranteed
+    func processEnteredSentences() {
+        var orderWords = 0
+        for i in 0...(container?.words.count)! - 1 {
+            var newWord = container?.words[String(i)]!! as! String
+            // concat a number at the end of the string to specify an order to put it in
+            let orderS = String(orderWords)
+            newWord = newWord + orderS
+            orderWords = orderWords + 1
+            words[newWord] = true
         }
     }
     
@@ -112,3 +125,4 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         }
     }
 }
+

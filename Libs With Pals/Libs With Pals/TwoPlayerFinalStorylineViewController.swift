@@ -14,6 +14,7 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
     var message: Dictionary<String, Bool> = [:]
     var sentences: [String] = []
     var words: [String] = []
+    var passedWords: Dictionary<String, Any?> = [:]
     var finalStory: String = ""
     var name: String = ""
     let prefs: UserDefaults = UserDefaults.standard
@@ -22,8 +23,8 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.putWordsInOrder()
-   //     self.showStory()
+        //        self.putWordsInOrder()
+        //     self.showStory()
         storylineTextView.isEditable = false
         storylineTextView.text = finalStory
     }
@@ -34,30 +35,30 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
     
     // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
     //func putWordsInOrder() {
-        //for i in 0...typesOfWords.count - 1 {
-            //wordsOrdered.append(words[String(i)]!! as! String)
-        //}
-        //print(wordsOrdered)
+    //for i in 0...typesOfWords.count - 1 {
+    //wordsOrdered.append(words[String(i)]!! as! String)
+    //}
+    //print(wordsOrdered)
     //}
     
     // Loop through each element in the story
     // Alternate between a component of the story and a user inputted word
-//    func showStory() {
-//        // Start this index at 1 because the first element is always the name
-//        var wordsOrderedIndex = 1
-//        for i in 0...sentences.count - 1 {
-//            finalStory += storyline!.getStory()[i]
-//            if storyline!.getBlanks().indices.contains(i) {
-//                if((storyline?.getBlanks()[i])! == "name") {
-//                    finalStory += name
-//                } else {
-//                    finalStory += wordsOrdered[wordsOrderedIndex]
-//                    wordsOrderedIndex += 1
-//                }
-//            }
-//        }
-//        print(finalStory)
-//    }
+    //    func showStory() {
+    //        // Start this index at 1 because the first element is always the name
+    //        var wordsOrderedIndex = 1
+    //        for i in 0...sentences.count - 1 {
+    //            finalStory += storyline!.getStory()[i]
+    //            if storyline!.getBlanks().indices.contains(i) {
+    //                if((storyline?.getBlanks()[i])! == "name") {
+    //                    finalStory += name
+    //                } else {
+    //                    finalStory += wordsOrdered[wordsOrderedIndex]
+    //                    wordsOrderedIndex += 1
+    //                }
+    //            }
+    //        }
+    //        print(finalStory)
+    //    }
     
     @IBAction func onHomeButtonPressed(_ sender: Any) {
         let saveLibs = prefs.bool(forKey: "saveLibs")

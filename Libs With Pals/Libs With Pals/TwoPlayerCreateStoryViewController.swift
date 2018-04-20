@@ -68,6 +68,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         concatDicts(left: &userWordTypes, right: userSentences)
         sendDataOverServer(dataToSend: userWordTypes)
     }
+    
     // function to check that the user inputted all the required fields
     func checkUserInputtedAllNeededWords() {
         if (self.container?.checkIfAllRowsFilled())! == false {
@@ -119,3 +120,4 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
 }
+
