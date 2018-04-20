@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="KohinoorBangla.ttc">
+            <string>KohinoorBangla-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--How To Play View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -21,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-RI-Blb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="0.0" height="44"/>
                                 <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="yxB-4h-hWl">
@@ -36,19 +41,19 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jw-hE-4dz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="0.0" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xEu-ok-kzf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="667"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5Y-5X-iPW">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="324"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="667"/>
                                                 <color key="textColor" red="0.94117647059999998" green="0.86666666670000003" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="32"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ODk-Bd-hjJ">
-                                                <rect key="frame" x="0.0" y="324" width="375" height="279"/>
+                                                <rect key="frame" x="0.0" y="667" width="0.0" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ODk-Bd-hjJ" secondAttribute="height" multiplier="125:93" id="hfq-N1-a5a"/>
                                                 </constraints>
@@ -116,131 +121,130 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zU3-8b-AUk">
-                                <rect key="frame" x="34.5" y="107" width="306" height="453"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="yxb-hx-uHV">
+                                <rect key="frame" x="88" y="190" width="200" height="370"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzh-gd-jpw">
-                                        <rect key="frame" x="0.0" y="0.0" width="306" height="63"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrm-xd-R0z">
+                                        <rect key="frame" x="35" y="0.0" width="130" height="130"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="63" id="AUj-y2-WoA"/>
+                                            <constraint firstAttribute="height" constant="130" id="APc-Oy-0AL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="36"/>
-                                        <color key="textColor" red="0.20597419140000001" green="0.23276054860000001" blue="0.32579594849999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="yxb-hx-uHV">
-                                        <rect key="frame" x="53" y="83" width="200" height="370"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-FN-cPB">
+                                        <rect key="frame" x="0.0" y="170" width="200" height="200"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrm-xd-R0z">
-                                                <rect key="frame" x="35" y="0.0" width="130" height="130"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfJ-Gs-8RP">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="130" id="9fT-JO-B6I"/>
+                                                    <constraint firstAttribute="height" constant="50" id="iLC-he-eYA"/>
                                                 </constraints>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-FN-cPB">
-                                                <rect key="frame" x="0.0" y="170" width="200" height="200"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfJ-Gs-8RP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
-                                                        <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="jyL-ih-ivh"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
-                                                        <state key="normal" title="New Game">
-                                                            <color key="titleColor" red="0.21313074230000001" green="0.23351633550000001" blue="0.30219572779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="onNewGameButtonPressed:" destination="8vk-ve-krd" eventType="touchUpInside" id="fjd-Tx-nFV"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-th-hod">
-                                                        <rect key="frame" x="0.0" y="75" width="200" height="50"/>
-                                                        <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="a9z-o7-QZP"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
-                                                        <state key="normal" title="How To Play">
-                                                            <color key="titleColor" red="0.21313074230000001" green="0.23351633550000001" blue="0.30219572779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <segue destination="BYZ-38-t0r" kind="show" identifier="HomeToHowToPlaySegue" id="of8-yv-wMg"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-Id-Weh">
-                                                        <rect key="frame" x="0.0" y="150" width="200" height="50"/>
-                                                        <color key="backgroundColor" red="0.97866434010000003" green="0.89135335360000001" blue="0.089821785279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="mSw-Mh-xHO"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
-                                                        <state key="normal" title="Saved Libs">
-                                                            <color key="titleColor" red="0.096382386982440948" green="0.11902237683534622" blue="0.20418325066566467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <segue destination="YW6-jP-cW0" kind="show" identifier="homeToSavedLibsSegue" id="rtb-FJ-CnN"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="jJR-b2-9AT"/>
-                                                </constraints>
-                                            </stackView>
+                                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
+                                                <state key="normal" title="New Game">
+                                                    <color key="titleColor" red="0.21313074230000001" green="0.23351633550000001" blue="0.30219572779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onNewGameButtonPressed:" destination="8vk-ve-krd" eventType="touchUpInside" id="fjd-Tx-nFV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-th-hod">
+                                                <rect key="frame" x="0.0" y="75" width="200" height="50"/>
+                                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
+                                                <state key="normal" title="How To Play">
+                                                    <color key="titleColor" red="0.21313074230000001" green="0.23351633550000001" blue="0.30219572779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="HomeToHowToPlaySegue" id="of8-yv-wMg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-Id-Weh">
+                                                <rect key="frame" x="0.0" y="150" width="200" height="50"/>
+                                                <color key="backgroundColor" red="0.97866434010000003" green="0.89135335360000001" blue="0.089821785279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
+                                                <state key="normal" title="Saved Libs">
+                                                    <color key="titleColor" red="0.096382386982440948" green="0.11902237683534622" blue="0.20418325066566467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="YW6-jP-cW0" kind="show" identifier="homeToSavedLibsSegue" id="rtb-FJ-CnN"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Z7I-th-hod" firstAttribute="centerY" secondItem="4Uo-FN-cPB" secondAttribute="centerY" id="jpN-4P-Y8n"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="rrm-xd-R0z" firstAttribute="leading" secondItem="yxb-hx-uHV" secondAttribute="leading" constant="35" id="bzL-hD-WrJ"/>
+                                    <constraint firstItem="4Uo-FN-cPB" firstAttribute="leading" secondItem="yxb-hx-uHV" secondAttribute="leading" id="qzA-5q-zcc"/>
+                                </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzh-gd-jpw">
+                                <rect key="frame" x="88" y="91" width="200" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="LKW-qz-RFH"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="UX2-Jj-e0v"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="36"/>
+                                <color key="textColor" red="0.20597419140000001" green="0.23276054860000001" blue="0.32579594849999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gRM-xd-6K7" secondAttribute="trailing" id="91I-74-aRU"/>
-                            <constraint firstItem="zU3-8b-AUk" firstAttribute="centerY" secondItem="1MR-PO-WEA" secondAttribute="centerY" id="LwM-W9-l7N"/>
-                            <constraint firstItem="gRM-xd-6K7" firstAttribute="leading" secondItem="1MR-PO-WEA" secondAttribute="leading" id="Sdz-Sv-dSz"/>
-                            <constraint firstItem="gRM-xd-6K7" firstAttribute="top" secondItem="xhV-4F-haK" secondAttribute="top" id="fIz-L5-smX"/>
-                            <constraint firstItem="zU3-8b-AUk" firstAttribute="centerX" secondItem="1MR-PO-WEA" secondAttribute="centerX" id="oPB-WE-zgD"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="trailing" secondItem="yxb-hx-uHV" secondAttribute="trailing" id="3hs-tk-4ML"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="leading" secondItem="yxb-hx-uHV" secondAttribute="leading" id="5Dz-TF-WWB"/>
+                            <constraint firstItem="gRM-xd-6K7" firstAttribute="top" secondItem="xhV-4F-haK" secondAttribute="top" id="QLh-9C-0mI"/>
+                            <constraint firstItem="xhV-4F-haK" firstAttribute="bottom" secondItem="yxb-hx-uHV" secondAttribute="bottom" constant="107" id="XSb-XO-gwd"/>
+                            <constraint firstAttribute="trailing" secondItem="gRM-xd-6K7" secondAttribute="trailing" id="Yfx-3Q-ZTX"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="top" secondItem="gRM-xd-6K7" secondAttribute="bottom" constant="27" id="bDA-yO-3ld"/>
+                            <constraint firstItem="gRM-xd-6K7" firstAttribute="centerX" secondItem="wzh-gd-jpw" secondAttribute="centerX" id="btq-fb-Py2"/>
+                            <constraint firstItem="gRM-xd-6K7" firstAttribute="leading" secondItem="1MR-PO-WEA" secondAttribute="leading" id="buG-Bb-gcu"/>
+                            <constraint firstItem="yxb-hx-uHV" firstAttribute="top" secondItem="wzh-gd-jpw" secondAttribute="bottom" constant="35" id="tgT-iv-6pY"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="leading" secondItem="xhV-4F-haK" secondAttribute="leading" constant="88" id="wzB-ib-rzb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xhV-4F-haK"/>
                     </view>
@@ -1651,10 +1655,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X2S-qW-p79"/>
-        <segue reference="Zfh-Zp-Aya"/>
-        <segue reference="hp1-8B-f8b"/>
+        <segue reference="5XK-7G-aqs"/>
+        <segue reference="Upi-xg-WhK"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="iFx-QR-Dwy"/>
+        <segue reference="TII-ou-g1B"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
