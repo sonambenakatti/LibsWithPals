@@ -11,7 +11,7 @@ import UIKit
 class TwoPlayerLoadingWordsViewController: UIViewController {
     
     var appDelegate: AppDelegate!
-    var words: [String] = []
+    var message: Dictionary<String, Bool> = [:]
     var sentences: [String] = []
     
     override func viewDidLoad() {
@@ -30,9 +30,10 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
         let recievedData:Data = userInfo["data"] as! Data
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
-            // player 2 is done entering sentences
-            print("In two player loading words VC")
+            // player 2 is done entering words
             if message["doneEnteringWords"]! {
+                // message containing entered of words
+                self.message = message
                 self.performSegue(withIdentifier: "TwoPlayerSentencesFinalStorylineSegue", sender: AnyClass.self)
             }
         } catch let error as NSError {
@@ -43,9 +44,12 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwoPlayerSentencesFinalStorylineSegue",
             let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
-            destination.words = self.words
+            destination.message = self.message
             destination.sentences = self.sentences
+            print("Sentences passed correctly \(sentences)")
+            print("Words recieved correctly \(message)")
         }
     }
     
 }
+

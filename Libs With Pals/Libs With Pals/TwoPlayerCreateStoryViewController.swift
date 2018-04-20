@@ -21,77 +21,52 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     var appDelegate: AppDelegate!
     var wordsOrdered = [String]()
     var sentencesOrdered = [String]()
+    var userWordTypes: Dictionary<String, Bool> = [:]
+    var userSentences: Dictionary<String, Bool> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func passEnteredWords(words: Dictionary<String, Any?>) {
+        self.words = words
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TwoPlayerWriteStorylineFormSegue",
-            let destination = segue.destination as? TwoPlayerWriteStorylineViewController {
-            container = destination
-            destination.delegate = self
-            destination.passWordsDelegate = self
-        }
-        if segue.identifier == "TwoPlayerLoadingWordsSegue",
-            let destination = segue.destination as? TwoPlayerLoadingWordsViewController {
-            destination.appDelegate = self.appDelegate
-            destination.words = wordsOrdered
-            destination.sentences = sentencesOrdered
-        }
-    }
-    
-    func passEnteredWords(words: Dictionary<String, Any?>) {
-        self.words = words
-        print(self.words)
-    }
-    
     // Ensure the story is in order because words is a dictionary and therefore order is not guaranteed
-    func putStoryInOrder() {
+    func processEnteredSentences() {
+        var orderWords = 0
+        var orderSentences = 1
         for i in 0...words.count - 1 {
             // if an odd index, than the value in the dictionary is a type of word
             if i % 2 != 0 {
-                wordsOrdered.append(words[String(i)]!! as! String)
+                var newWord = words[String(i)]!! as! String
+                // concat a number at the end of the string to specify an order to put it in
+                let orderS = String(orderWords)
+                newWord = newWord + orderS
+                orderWords = orderWords + 2
+                userWordTypes[newWord] = true
             } else {
-                sentencesOrdered.append(words[String(i)]!! as! String)
+                var newSentence = words[String(i)]!! as! String
+                // concat an order on end of sentence to specify which order it is in
+                let orderS = String(orderSentences)
+                newSentence = newSentence + orderS
+                orderSentences = orderSentences + 2
+                userSentences[newSentence] = true
+                sentencesOrdered.append(newSentence)
             }
         }
     }
-
-    // get the types of words inputed by player one
-    func getTypesOfWords() -> Dictionary<String, Bool>{
-        var userWords: Dictionary<String, Bool> = [:]
-        var order = 0
-        for word in self.wordsOrdered {
-            var newWord = word
-            // concat an order on end of word to indentify as user inputed word in what oreder they put it in
-            let orderS = String(order)
-            newWord = word + orderS
-            order = order + 1
-            userWords[newWord] = true
-        }
-        setNeededValuesInJson(dataToSend: &userWords, Vals: [true, false, false, false])
-        return userWords
-    }
     
-    // function to return the created sentences made by the user
-    func getSentences() -> Dictionary<String, Bool>{
-        var userSentences: Dictionary<String, Bool> = [:]
-        var order = 0
-        for sentence in self.sentencesOrdered {
-            var newSentence = sentence
-            // concat an order on end of sentence to specify which order it is in
-            let orderS = String(order)
-            newSentence = sentence + orderS
-            order = order + 1
-            userSentences[newSentence] = true
-        }
-        setNeededValuesInJson(dataToSend: &userSentences, Vals: [true, false, false, false])
-        return userSentences
+    @IBAction func onDonePressed(_ sender: Any) {
+        checkUserInputtedAllNeededWords()
+        processEnteredSentences()
+        setNeededValuesInJson(dataToSend: &userWordTypes, Vals: [true, false, false, false])
+        concatDicts(left: &userWordTypes, right: userSentences)
+        sendDataOverServer(dataToSend: userWordTypes)
     }
     
     // function to check that the user inputted all the required fields
@@ -101,15 +76,6 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    @IBAction func onDonePressed(_ sender: Any) {
-        checkUserInputtedAllNeededWords()
-        putStoryInOrder()
-        let userEnteredWords = getTypesOfWords()
-        let userEnteredSentences = getSentences()
-        sendDataOverServer(dataToSend: userEnteredWords)
-        //sendDataOverServer(dataToSend: userEnteredSentences)
     }
     
     // function to set all needed values sent over server
@@ -124,9 +90,6 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     // function to send data over the server
     func sendDataOverServer(dataToSend: Dictionary<String, Bool>) {
         do {
-            //sending data
-            print("In SendDataOverServer")
-            print(dataToSend)
             let messageData = try JSONSerialization.data(withJSONObject: dataToSend, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
             self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
@@ -135,6 +98,26 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         }
     }
     
+    // concat 2 dicitonaies
+    func concatDicts <K, V> (left: inout [K:V], right: [K:V]) {
+        for (k, v) in right {
+            left[k] = v
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TwoPlayerWriteStorylineFormSegue",
+            let destination = segue.destination as? TwoPlayerWriteStorylineViewController {
+            container = destination
+            destination.delegate = self
+            destination.passWordsDelegate = self
+        }
+        if segue.identifier == "TwoPlayerLoadingWordsSegue",
+            let destination = segue.destination as? TwoPlayerLoadingWordsViewController {
+            destination.appDelegate = self.appDelegate
+            destination.sentences = self.sentencesOrdered
+        }
+    }
     
 }
 

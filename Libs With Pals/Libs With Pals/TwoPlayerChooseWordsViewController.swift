@@ -14,6 +14,8 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     var container: TwoPlayerWordsFormViewController?
     var appDelegate: AppDelegate!
     var words: Dictionary<String, Bool> = [:]
+    var userSentences: [String] = []
+    var userWords: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     }
     
     // get the types of words inputed by player one
-    func getTypesOfWords() -> Array<String>{
-        var userWords: Array<String> = []
+    func getTypesOfWords(){
         var ordered: Dictionary<Int, String> = [:]
         for (word, _) in self.words {
             // need to make sure that word is not identified as sentence and not other data sent over server
@@ -43,22 +44,27 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         }
         // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
         for i in 0...ordered.count - 1 {
-            userWords.append(ordered[i]!)
+            if i % 2 == 0 {
+                userWords.append(ordered[i]!)
+            } else {
+                userSentences.append(ordered[i]!)
+            }
         }
-        return userWords
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwoPlayerChooseWordsEmbed",
             let destination = segue.destination as? TwoPlayerWordsFormViewController {
+            getTypesOfWords()
+            print("User sentences \(userSentences)")
             destination.delegate = self
             container = destination
-            self.container?.userEnteredWords = getTypesOfWords()
-        } //else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
-            //let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
-            //destination.words = userWords
-            
-        //}
+            self.container?.userEnteredWords = userWords
+        } else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
+            let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
+            destination.passedWords = (container?.words)!
+            destination.sentences = userSentences
+        }
     }
     
     // Return home but first warn the user they will lose their progress
@@ -74,16 +80,29 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     // Take user to final storyline if all fields are filled out
     @IBAction func onMakeMyMadLibPressed(_ sender: Any) {
         if (self.container?.checkIfAllRowsFilled())! {
-            var actionDict: [String: Bool] = [:]
-            // send entered words to next player so they can see their final mad lib
-            setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, true])
-            sendDataOverServer(dataToSend: actionDict)
+            words = [:]
+            processEnteredSentences()
+            setNeededValuesInJson(dataToSend: &words, Vals: [false, false, false, true])
+            sendDataOverServer(dataToSend: words)
             self.performSegue(withIdentifier: "TwoPlayerWordsFinalStorylineSegue", sender: AnyClass.self)
         } else {
             let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
+        }
+    }
+    
+    // Ensure the story is in order because words is a dictionary and therefore order is not guaranteed
+    func processEnteredSentences() {
+        var orderWords = 0
+        for i in 0...(container?.words.count)! - 1 {
+            var newWord = container?.words[String(i)]!! as! String
+            // concat a number at the end of the string to specify an order to put it in
+            let orderS = String(orderWords)
+            newWord = newWord + orderS
+            orderWords = orderWords + 1
+            words[newWord] = true
         }
     }
     
@@ -106,3 +125,4 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         }
     }
 }
+
