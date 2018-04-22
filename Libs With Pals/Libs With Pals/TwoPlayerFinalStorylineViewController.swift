@@ -23,9 +23,15 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.putWordsInOrder()
-        //     self.showStory()
         storylineTextView.isEditable = false
+        storylineTextView.text = finalStory
+        print("sentences \(sentences), passedWords, \(passedWords)")
+        if message.count > 0 {
+            getTypesOfWords()
+        } else {
+            putPassedWordsInOrder()
+        }
+        combineWordsAndSentences()
         storylineTextView.text = finalStory
     }
     
@@ -33,32 +39,44 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
-    //func putWordsInOrder() {
-    //for i in 0...typesOfWords.count - 1 {
-    //wordsOrdered.append(words[String(i)]!! as! String)
-    //}
-    //print(wordsOrdered)
-    //}
+    // get the types of words inputed by player one
+    func getTypesOfWords() {
+        var ordered: Dictionary<Int, String> = [:]
+        for (word, _) in self.message {
+            // need to make sure that word is not identified as sentence and not other data sent over server
+            if(word != "doneEnteringSentences"
+                && word != "enterWordsClicked"
+                && word != "chooseSentencesClicked"
+                && word != "doneEnteringWords") {
+                // get rid of identifier on word
+                var newWord = word
+                let lastChar = newWord.removeLast()
+                let val = Int(String(lastChar))
+                ordered[val!] = newWord
+            }
+        }
+        // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
+        for i in 0...ordered.count - 1 {
+            words.append(ordered[i]!)
+        }
+    }
     
-    // Loop through each element in the story
-    // Alternate between a component of the story and a user inputted word
-    //    func showStory() {
-    //        // Start this index at 1 because the first element is always the name
-    //        var wordsOrderedIndex = 1
-    //        for i in 0...sentences.count - 1 {
-    //            finalStory += storyline!.getStory()[i]
-    //            if storyline!.getBlanks().indices.contains(i) {
-    //                if((storyline?.getBlanks()[i])! == "name") {
-    //                    finalStory += name
-    //                } else {
-    //                    finalStory += wordsOrdered[wordsOrderedIndex]
-    //                    wordsOrderedIndex += 1
-    //                }
-    //            }
-    //        }
-    //        print(finalStory)
-    //    }
+    func putPassedWordsInOrder() {
+        for i in 0...passedWords.count - 1 {
+            words.append(passedWords[String(i)]! as! String)
+        }
+    }
+    
+    func combineWordsAndSentences() {
+        var sentencesIndex = 0
+        for wordsIndex in 0...words.count - 1 {
+            finalStory += sentences[sentencesIndex]
+            finalStory += " "
+            finalStory += words[wordsIndex]
+            finalStory += " "
+            sentencesIndex = sentencesIndex + 1
+        }
+    }
     
     @IBAction func onHomeButtonPressed(_ sender: Any) {
         let saveLibs = prefs.bool(forKey: "saveLibs")
@@ -66,7 +84,7 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
         if (saveLibs) {
             self.saveMadLib()
         }
-        performSegue(withIdentifier: "finalStorylineToHomeSegue", sender: AnyClass.self)
+        performSegue(withIdentifier: "TwoPlayerFinalStorylineToHomeSegue", sender: AnyClass.self)
         
     }
     
@@ -93,5 +111,6 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
         }
         
     }
+
 }
 

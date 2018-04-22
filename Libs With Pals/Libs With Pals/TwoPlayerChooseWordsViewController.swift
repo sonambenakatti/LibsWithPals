@@ -47,6 +47,8 @@ class TwoPlayerChooseWordsViewController: UIViewController{
             if i % 2 == 0 {
                 userWords.append(ordered[i]!)
             } else {
+                var sentence = ordered[i]!
+                sentence.removeLast()
                 userSentences.append(ordered[i]!)
             }
         }

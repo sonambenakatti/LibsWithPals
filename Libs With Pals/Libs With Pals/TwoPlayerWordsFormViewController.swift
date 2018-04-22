@@ -59,8 +59,6 @@ class TwoPlayerWordsFormViewController: FormViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
-    
     // Add the needed rows for the user to input words
     func addRows() {
         

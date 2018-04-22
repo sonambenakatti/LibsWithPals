@@ -51,12 +51,12 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
                 userWordTypes[newWord] = true
             } else {
                 var newSentence = words[String(i)]!! as! String
+                sentencesOrdered.append(newSentence)
                 // concat an order on end of sentence to specify which order it is in
                 let orderS = String(orderSentences)
                 newSentence = newSentence + orderS
                 orderSentences = orderSentences + 2
                 userSentences[newSentence] = true
-                sentencesOrdered.append(newSentence)
             }
         }
     }
