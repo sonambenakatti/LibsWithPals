@@ -23,6 +23,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     var sentencesOrdered = [String]()
     var userWordTypes: Dictionary<String, Bool> = [:]
     var userSentences: Dictionary<String, Bool> = [:]
+    var enterWordsClicked: Bool = true
     @IBOutlet weak var navBar: UINavigationBar!
     
     override func viewDidLoad() {
@@ -48,6 +49,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
             if message["connected"]! == false {
                 lostConnection()
             }
+            enterWordsClicked = message["enterWordsClicked"]!
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
@@ -64,6 +66,17 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     }
     
     @IBAction func onDonePressed(_ sender: Any) {
+        if !enterWordsClicked {
+            let alert = UIAlertController(title: "Other player is not responding", message: "Wait for player or return home", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
+                var actionDict: Dictionary<String, Bool> = [:]
+                self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
+                self.sendDataOverServer(dataToSend: actionDict)
+                self.performSegue(withIdentifier: "TwoPlayerCreateStoryToHome", sender: AnyClass.self)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
         let containerRowsAllFilled = self.container?.checkIfAllRowsFilled()
         if containerRowsAllFilled! {
             processEnteredSentences()
