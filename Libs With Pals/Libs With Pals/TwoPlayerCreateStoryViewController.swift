@@ -23,9 +23,12 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     var sentencesOrdered = [String]()
     var userWordTypes: Dictionary<String, Bool> = [:]
     var userSentences: Dictionary<String, Bool> = [:]
+    @IBOutlet weak var navBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // add observer to be notified when data is recieved over the server
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
     }
     
     func passEnteredWords(words: Dictionary<String, Any?>) {
@@ -34,6 +37,30 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // function to handle the recieved data between players
+    @objc func handleRecieveDataWithNotification(notification:NSNotification){
+        let userInfo = notification.userInfo! as Dictionary
+        let recievedData:Data = userInfo["data"] as! Data
+        do {
+            let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
+            if message["connected"]! == false {
+                lostConnection()
+            }
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
+        }
+    }
+    
+    func lostConnection() {
+        navBar.topItem?.title = "Disconnected"
+        let alert = UIAlertController(title: "The other player has left the session", message: "Please return home to connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
+            self.performSegue(withIdentifier: "TwoPlayerCreateStoryToHome", sender: AnyClass.self)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func onDonePressed(_ sender: Any) {

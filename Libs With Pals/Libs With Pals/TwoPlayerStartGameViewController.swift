@@ -49,31 +49,43 @@ class TwoPlayerStartGameViewController: UIViewController {
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             if message["connected"]! == false {
-                let alert = UIAlertController(title: "The other player has left the session", message: "Please connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                navBar.topItem?.title = "Disconnected"
-                enterWordsButton?.isUserInteractionEnabled = false
-                enterWordsButton?.isEnabled = false
-                self.view.reloadInputViews()
-                chooseSentencesButton?.isUserInteractionEnabled = false
-                chooseSentencesButton?.isEnabled = false
-                self.view.reloadInputViews()
-            }
-            // don't let other player click enter words
-            if message["enterWordsClicked"]! {
-                enterWordsButton?.isUserInteractionEnabled = false
-                enterWordsButton?.isEnabled = false
-                self.view.reloadInputViews()
-            // don't let other player click choose sentences
-            } else if message["chooseSentencesClicked"]! {
-                chooseSentencesButton?.isUserInteractionEnabled = false
-                chooseSentencesButton?.isEnabled = false
-                self.view.reloadInputViews()
+                lostConnection()
+            } else {
+                // don't let other player click enter words
+                if message["enterWordsClicked"]! {
+                    disableWordsButton()
+                    // don't let other player click choose sentences
+                } else if message["chooseSentencesClicked"]! {
+                    disableSentencesButton()
+                }
             }
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
+    }
+    
+    func disableWordsButton() {
+        enterWordsButton?.isUserInteractionEnabled = false
+        enterWordsButton?.isEnabled = false
+        self.view.reloadInputViews()
+    }
+    
+    func disableSentencesButton() {
+        chooseSentencesButton?.isUserInteractionEnabled = false
+        chooseSentencesButton?.isEnabled = false
+        self.view.reloadInputViews()
+    }
+    
+    func lostConnection() {
+        navBar.topItem?.title = "Disconnected"
+        let alert = UIAlertController(title: "The other player has left the session", message: "Please return home to connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
+            self.performSegue(withIdentifier: "TwoPlayerStartGameToHome", sender: AnyClass.self)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        disableWordsButton()
+        disableSentencesButton()
     }
     
     @IBAction func onHomePressed(_ sender: Any) {
@@ -81,16 +93,6 @@ class TwoPlayerStartGameViewController: UIViewController {
         setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
         sendDataOverServer(dataToSend: actionDict)
         self.performSegue(withIdentifier: "TwoPlayerStartGameToHome", sender: AnyClass.self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TwoPlayerWriteStorySegue" {
-            let vc: TwoPlayerCreateStoryViewController = segue.destination as! TwoPlayerCreateStoryViewController
-            vc.appDelegate = self.appDelegate
-        } else if segue.identifier == "TwoPlayerEnterWordsSegue" {
-            let vc: TwoPlayerLoadingSentencesViewController = segue.destination as! TwoPlayerLoadingSentencesViewController
-            vc.appDelegate = self.appDelegate
-        }
     }
     
     // function to set all needed values sent over server
@@ -113,5 +115,14 @@ class TwoPlayerStartGameViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TwoPlayerWriteStorySegue" {
+            let vc: TwoPlayerCreateStoryViewController = segue.destination as! TwoPlayerCreateStoryViewController
+            vc.appDelegate = self.appDelegate
+        } else if segue.identifier == "TwoPlayerEnterWordsSegue" {
+            let vc: TwoPlayerLoadingSentencesViewController = segue.destination as! TwoPlayerLoadingSentencesViewController
+            vc.appDelegate = self.appDelegate
+        }
+    }
 }
 

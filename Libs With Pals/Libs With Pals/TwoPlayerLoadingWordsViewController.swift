@@ -14,6 +14,7 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
     var appDelegate: AppDelegate!
     var message: Dictionary<String, Bool> = [:]
     var sentences: [String] = []
+    @IBOutlet weak var navBar: UINavigationBar!
     
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
@@ -31,20 +32,29 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
         let recievedData:Data = userInfo["data"] as! Data
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
-            // player 2 is done entering words
-            if message["doneEnteringWords"]! {
-                // message containing entered of words
-                self.message = message
-                self.performSegue(withIdentifier: "TwoPlayerSentencesFinalStorylineSegue", sender: AnyClass.self)
-            }
             if message["connected"]! == false {
-                let alert = UIAlertController(title: "The other player has left the session", message: "Please connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                lostConnection()
+            } else {
+                // player 2 is done entering words
+                if message["doneEnteringWords"]! {
+                    // message containing entered of words
+                    self.message = message
+                    self.performSegue(withIdentifier: "TwoPlayerSentencesFinalStorylineSegue", sender: AnyClass.self)
+                }
             }
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
+    }
+    
+    func lostConnection() {
+        navBar.topItem?.title = "Disconnected"
+        let alert = UIAlertController(title: "The other player has left the session", message: "Please return home to connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
+            self.performSegue(withIdentifier: "TwoPlayerLoadingWordsToHome", sender: AnyClass.self)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func onHomePressed(_ sender: Any) {

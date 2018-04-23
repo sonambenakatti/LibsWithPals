@@ -474,6 +474,7 @@
                         <viewLayoutGuide key="safeArea" id="edr-IL-5C3"/>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="qK4-EI-mUq" id="7o1-X7-sdj"/>
                         <segue destination="CFz-Ij-ne7" kind="show" identifier="TwoPlayerLoadingWordsSegue" id="btr-8P-Wm2"/>
                         <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerCreateStoryToHome" id="V1g-Nh-RQr"/>
                     </connections>
@@ -529,6 +530,7 @@
                         <viewLayoutGuide key="safeArea" id="Ny4-H5-LaD"/>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="E79-F5-WwM" id="DLN-YE-AKv"/>
                         <segue destination="sa7-K1-w2N" kind="show" identifier="TwoPlayerSentencesFinalStorylineSegue" id="X2S-qW-p79"/>
                         <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerLoadingWordsToHome" id="Qrr-98-I5U"/>
                     </connections>
@@ -1493,6 +1495,7 @@
                         <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="7rc-tm-i0t" id="B3J-wa-WxC"/>
                         <segue destination="a3J-SJ-Dfd" kind="show" identifier="TwoPlayerChooseWordsSegue" id="4tv-xQ-dsl"/>
                         <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerLoadingSentencesToHome" id="9zy-fi-1yo"/>
                     </connections>
@@ -1600,6 +1603,7 @@
                         <viewLayoutGuide key="safeArea" id="axn-Zp-tuQ"/>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="xsV-M4-at5" id="m3C-hs-P6A"/>
                         <segue destination="sa7-K1-w2N" kind="show" identifier="TwoPlayerWordsFinalStorylineSegue" id="0Pz-SR-6Gr"/>
                         <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerChooseWordsToHome" id="IO9-GK-f6e"/>
                     </connections>
@@ -1681,11 +1685,11 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Pz-SR-6Gr"/>
+        <segue reference="X2S-qW-p79"/>
         <segue reference="Zfh-Zp-Aya"/>
         <segue reference="hp1-8B-f8b"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="IO9-GK-f6e"/>
+        <segue reference="Qrr-98-I5U"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
