@@ -34,7 +34,8 @@ class TwoPlayerChooseWordsViewController: UIViewController{
             if(word != "doneEnteringSentences"
                 && word != "enterWordsClicked"
                 && word != "chooseSentencesClicked"
-                && word != "doneEnteringWords") {
+                && word != "doneEnteringWords"
+                && word != "connected") {
                 // get rid of identifier on word
                 var newWord = word
                 let lastChar = newWord.removeLast()
@@ -76,6 +77,9 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     @IBAction func onHomeButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Are you sure?", message: "If you return home you will lose your mad lib.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { action in
+            var actionDict: Dictionary<String, Bool> = [:]
+            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
+            self.sendDataOverServer(dataToSend: actionDict)
             self.performSegue(withIdentifier: "TwoPlayerChooseWordsToHome", sender: AnyClass.self)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
@@ -87,14 +91,13 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         if (self.container?.checkIfAllRowsFilled())! {
             words = [:]
             processEnteredWords()
-            setNeededValuesInJson(Vals: [false, false, false, true])
+            setNeededValuesInJson(dataToSend: &words, Vals: [false, false, false, true, true, true])
             sendDataOverServer(dataToSend: words)
             self.performSegue(withIdentifier: "TwoPlayerWordsFinalStorylineSegue", sender: AnyClass.self)
         } else {
             let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
         }
     }
     
@@ -112,12 +115,13 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     }
     
     // function to set all needed values sent over server
-    func setNeededValuesInJson(Vals: Array<Bool>) {
+    func setNeededValuesInJson(dataToSend: inout Dictionary<String, Bool>, Vals: Array<Bool>) {
         // let player know done enter sentences
-        words["doneEnteringSentences"] = Vals[0]
-        words["enterWordsClicked"] = Vals[1]
-        words["chooseSentencesClicked"] = Vals[2]
-        words["doneEnteringWords"] = Vals[3]
+        dataToSend["doneEnteringSentences"] = Vals[0]
+        dataToSend["enterWordsClicked"] = Vals[1]
+        dataToSend["chooseSentencesClicked"] = Vals[2]
+        dataToSend["doneEnteringWords"] = Vals[3]
+        dataToSend["connected"] = Vals[4]
     }
     
     // function to send data over the server

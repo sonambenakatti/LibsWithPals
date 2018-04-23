@@ -33,6 +33,7 @@
 		F3D1EA7A207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA79207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift */; };
 		F3D1EA7E2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7D2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift */; };
 		F3D1EA80207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1EA7F207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift */; };
+		F3D435C4208E820000FB17D1 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D435C3208E820000FB17D1 /* DrawingViewController.swift */; };
 		F3FD47F7207084C8001F66C6 /* TwoPlayerStartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD47F6207084C8001F66C6 /* TwoPlayerStartGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		F3D1EA79207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerLoadingSentencesViewController.swift; sourceTree = "<group>"; };
 		F3D1EA7D2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerLoadingWordsViewController.swift; sourceTree = "<group>"; };
 		F3D1EA7F207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerFinalStorylineViewController.swift; sourceTree = "<group>"; };
+		F3D435C3208E820000FB17D1 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		F3FD47F6207084C8001F66C6 /* TwoPlayerStartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerStartGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 		27F560162042829B00BD7549 /* Libs With Pals */ = {
 			isa = PBXGroup;
 			children = (
+				F3D435C3208E820000FB17D1 /* DrawingViewController.swift */,
 				27D44873205B290B00907DC0 /* CreateAccountViewController.swift */,
 				27F560172042829B00BD7549 /* AppDelegate.swift */,
 				27D44875205B364000907DC0 /* UserInfoModel.xcdatamodeld */,
@@ -113,6 +116,7 @@
 				27F560232042829B00BD7549 /* Info.plist */,
 				27D56793205B57F0005A26D1 /* HomeViewController.swift */,
 				27D56795205B58C1005A26D1 /* SettingsViewController.swift */,
+				2764D2922084311D00E9FA67 /* HowToPlayViewController.swift */,
 				270AFD1B206A9220009A73D6 /* Storyline.swift */,
 				27B31EF3206A985D00159410 /* ChooseStorylineViewController.swift */,
 				27B31EF1206A97DD00159410 /* ChooseWordsViewController.swift */,
@@ -129,7 +133,6 @@
 				F3D1EA7D2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift */,
 				F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewController.swift */,
 				F3D1EA7F207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift */,
-				2764D2922084311D00E9FA67 /* HowToPlayViewController.swift */,
 			);
 			path = "Libs With Pals";
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276E55492071C4130054261A /* TwoPlayerWriteStorylineViewController.swift in Sources */,
+				F3D435C4208E820000FB17D1 /* DrawingViewController.swift in Sources */,
 				F3D1EA7420730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift in Sources */,
 				27D44877205B364000907DC0 /* UserInfoModel.xcdatamodeld in Sources */,
 				27B31EF2206A97DD00159410 /* ChooseWordsViewController.swift in Sources */,

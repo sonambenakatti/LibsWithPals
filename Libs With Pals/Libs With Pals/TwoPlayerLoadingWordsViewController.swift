@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class TwoPlayerLoadingWordsViewController: UIViewController {
     
@@ -36,6 +37,38 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
                 self.message = message
                 self.performSegue(withIdentifier: "TwoPlayerSentencesFinalStorylineSegue", sender: AnyClass.self)
             }
+            if message["connected"]! == false {
+                let alert = UIAlertController(title: "The other player has left the session", message: "Please connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
+        }
+    }
+    
+    @IBAction func onHomePressed(_ sender: Any) {
+        var actionDict: Dictionary<String, Bool> = [:]
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
+        sendDataOverServer(dataToSend: actionDict)
+        performSegue(withIdentifier: "TwoPlayerLoadingWordsToHome" , sender: AnyClass.self)
+    }
+    
+    // function to set all needed values sent over server
+    func setNeededValuesInJson(dataToSend: inout Dictionary<String, Bool>, Vals: Array<Bool>) {
+        // let player know done enter sentences
+        dataToSend["doneEnteringSentences"] = Vals[0]
+        dataToSend["enterWordsClicked"] = Vals[1]
+        dataToSend["chooseSentencesClicked"] = Vals[2]
+        dataToSend["doneEnteringWords"] = Vals[3]
+        dataToSend["connected"] = Vals[4]
+    }
+    
+    // function to send data over the server
+    func sendDataOverServer(dataToSend: Dictionary<String, Bool>) {
+        do {
+            let messageData = try JSONSerialization.data(withJSONObject: dataToSend, options: JSONSerialization.WritingOptions.prettyPrinted)
+            try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }

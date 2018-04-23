@@ -56,6 +56,10 @@ class TwoPlayerConnectPlayerViewController: UIViewController, MCBrowserViewContr
         appDelegate.mpcHandler.browser.dismiss(animated: true)
         
     }
+ 
+    @IBAction func onHomePressed(_ sender: Any) {
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwoPlayerStartGameSegue" {

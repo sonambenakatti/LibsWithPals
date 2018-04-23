@@ -432,7 +432,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="gjn-wc-aw4">
                                             <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <segue destination="8vk-ve-krd" kind="show" id="dkz-GV-h0s"/>
+                                                <action selector="onHomePressed:" destination="rvt-gh-2Ra" id="mCB-yx-TeT"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -475,6 +475,7 @@
                     </view>
                     <connections>
                         <segue destination="CFz-Ij-ne7" kind="show" identifier="TwoPlayerLoadingWordsSegue" id="btr-8P-Wm2"/>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerCreateStoryToHome" id="V1g-Nh-RQr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDj-9X-EeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,8 +498,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="home" id="WXa-WX-5iD">
                                             <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="onHomePressed:" destination="haA-OV-LML" id="jCU-VA-fms"/>
-                                                <segue destination="8vk-ve-krd" kind="show" id="Mnb-SD-Yjm"/>
+                                                <action selector="onHomePressed:" destination="CFz-Ij-ne7" id="CVW-cY-cM2"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -530,6 +530,7 @@
                     </view>
                     <connections>
                         <segue destination="sa7-K1-w2N" kind="show" identifier="TwoPlayerSentencesFinalStorylineSegue" id="X2S-qW-p79"/>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerLoadingWordsToHome" id="Qrr-98-I5U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtA-Xo-yzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1172,8 +1173,7 @@
                                     <navigationItem id="abe-D3-50h">
                                         <barButtonItem key="leftBarButtonItem" image="home" id="i4l-WE-NRX">
                                             <connections>
-                                                <action selector="onHomePressed:" destination="haA-OV-LML" id="LiV-Bk-56J"/>
-                                                <segue destination="8vk-ve-krd" kind="show" id="Sxd-w7-yf3"/>
+                                                <action selector="onHomePressed:" destination="xWh-Dg-ieh" id="Krt-Kc-lt5"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1208,6 +1208,7 @@
                         <outlet property="navBar" destination="TCA-ch-pRR" id="EWt-dI-3H0"/>
                         <segue destination="ics-5Z-QnL" kind="show" identifier="TwoPlayerEnterWordsSegue" id="r1p-d2-lvI"/>
                         <segue destination="rvt-gh-2Ra" kind="show" identifier="TwoPlayerWriteStorySegue" id="7Mc-w9-zx3"/>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerStartGameToHome" id="vnA-uL-7oy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWi-dU-dqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1244,7 +1245,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="home" id="JgL-Nk-2XU">
                                             <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="onHomePressed:" destination="haA-OV-LML" id="ebj-0w-C8K"/>
+                                                <action selector="onHomePressed:" destination="haA-OV-LML" id="k99-jh-Xfg"/>
                                                 <segue destination="8vk-ve-krd" kind="show" id="iFx-QR-Dwy"/>
                                             </connections>
                                         </barButtonItem>
@@ -1308,7 +1309,7 @@
         <!--Drawing View Controller-->
         <scene sceneID="OyR-dR-RTM">
             <objects>
-                <viewController id="HOH-2b-Pfs" customClass="DrawingViewController" customModule="Libs_With_Pals" sceneMemberID="viewController">
+                <viewController id="HOH-2b-Pfs" customClass="DrawingViewController" customModule="Libs_With_Pals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pJz-kq-Upj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1459,8 +1460,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="home" id="5eO-Df-Hfd">
                                             <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="onHomePressed:" destination="haA-OV-LML" id="DfM-OG-ovw"/>
-                                                <segue destination="8vk-ve-krd" kind="show" id="lgq-LD-CDa"/>
+                                                <action selector="onHomePressed:" destination="ics-5Z-QnL" id="GbP-1h-FY2"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1494,6 +1494,7 @@
                     </view>
                     <connections>
                         <segue destination="a3J-SJ-Dfd" kind="show" identifier="TwoPlayerChooseWordsSegue" id="4tv-xQ-dsl"/>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerLoadingSentencesToHome" id="9zy-fi-1yo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cE7-5e-CI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1680,11 +1681,11 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X2S-qW-p79"/>
-        <segue reference="5XK-7G-aqs"/>
-        <segue reference="Upi-xg-WhK"/>
-        <segue reference="R9G-fw-mZC"/>
-        <segue reference="Mnb-SD-Yjm"/>
+        <segue reference="0Pz-SR-6Gr"/>
+        <segue reference="Zfh-Zp-Aya"/>
+        <segue reference="hp1-8B-f8b"/>
+        <segue reference="VwQ-28-Zr2"/>
+        <segue reference="IO9-GK-f6e"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

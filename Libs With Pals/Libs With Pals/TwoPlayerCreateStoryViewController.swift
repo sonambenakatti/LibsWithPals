@@ -40,9 +40,10 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         let containerRowsAllFilled = self.container?.checkIfAllRowsFilled()
         if containerRowsAllFilled! {
             processEnteredSentences()
-            setNeededValuesInJson(dataToSend: &userWordTypes, Vals: [true, false, false, false])
+            setNeededValuesInJson(dataToSend: &userWordTypes, Vals: [true, false, false, false, true])
             concatDicts(left: &userWordTypes, right: userSentences)
             sendDataOverServer(dataToSend: userWordTypes)
+            self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
         } else {
             let alert = UIAlertController(title: "Looks like you missed some words!", message: "You must fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -82,6 +83,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         dataToSend["enterWordsClicked"] = Vals[1]
         dataToSend["chooseSentencesClicked"] = Vals[2]
         dataToSend["doneEnteringWords"] = Vals[3]
+        dataToSend["connected"] = Vals[4]
     }
     
     // function to send data over the server
@@ -89,7 +91,6 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         do {
             let messageData = try JSONSerialization.data(withJSONObject: dataToSend, options: JSONSerialization.WritingOptions.prettyPrinted)
             try appDelegate.mpcHandler.session.send(messageData, toPeers: appDelegate.mpcHandler.session.connectedPeers, with: MCSessionSendDataMode.reliable)
-            self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
@@ -100,6 +101,13 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         for (k, v) in right {
             left[k] = v
         }
+    }
+    
+    @IBAction func onHomePressed(_ sender: Any) {
+        var actionDict: Dictionary<String, Bool> = [:]
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
+        sendDataOverServer(dataToSend: actionDict)
+        self.performSegue(withIdentifier: "TwoPlayerCreateStoryToHome", sender: AnyClass.self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

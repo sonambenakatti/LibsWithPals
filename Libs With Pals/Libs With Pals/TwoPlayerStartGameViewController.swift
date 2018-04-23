@@ -29,7 +29,7 @@ class TwoPlayerStartGameViewController: UIViewController {
     @IBAction func chooseSentencesClicked(_ sender: Any) {
         // send message to other player that the chooseSentences button has been pressed over server
         var actionDict: [String: Bool] = [:]
-        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, true, false])
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, true, false, true])
         sendDataOverServer(dataToSend: actionDict)
         self.performSegue(withIdentifier: "TwoPlayerWriteStorySegue", sender: AnyClass.self)
     }
@@ -37,7 +37,7 @@ class TwoPlayerStartGameViewController: UIViewController {
     @IBAction func enterWordsClicked(_ sender: Any) {
         // send message to other player that the enter words button has been pressed over server
         var actionDict: [String: Bool] = [:]
-        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, true, false, false])
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, true, false, false, true])
         sendDataOverServer(dataToSend: actionDict)
         self.performSegue(withIdentifier: "TwoPlayerEnterWordsSegue", sender: AnyClass.self)
     }
@@ -48,7 +48,18 @@ class TwoPlayerStartGameViewController: UIViewController {
         let recievedData:Data = userInfo["data"] as! Data
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
-            
+            if message["connected"]! == false {
+                let alert = UIAlertController(title: "The other player has left the session", message: "Please connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                navBar.topItem?.title = "Disconnected"
+                enterWordsButton?.isUserInteractionEnabled = false
+                enterWordsButton?.isEnabled = false
+                self.view.reloadInputViews()
+                chooseSentencesButton?.isUserInteractionEnabled = false
+                chooseSentencesButton?.isEnabled = false
+                self.view.reloadInputViews()
+            }
             // don't let other player click enter words
             if message["enterWordsClicked"]! {
                 enterWordsButton?.isUserInteractionEnabled = false
@@ -63,6 +74,13 @@ class TwoPlayerStartGameViewController: UIViewController {
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
+    }
+    
+    @IBAction func onHomePressed(_ sender: Any) {
+        var actionDict: Dictionary<String, Bool> = [:]
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
+        sendDataOverServer(dataToSend: actionDict)
+        self.performSegue(withIdentifier: "TwoPlayerStartGameToHome", sender: AnyClass.self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,6 +100,7 @@ class TwoPlayerStartGameViewController: UIViewController {
         dataToSend["enterWordsClicked"] = Vals[1]
         dataToSend["chooseSentencesClicked"] = Vals[2]
         dataToSend["doneEnteringWords"] = Vals[3]
+        dataToSend["connected"] = Vals[4]
     }
     
     // function to send data over the server
