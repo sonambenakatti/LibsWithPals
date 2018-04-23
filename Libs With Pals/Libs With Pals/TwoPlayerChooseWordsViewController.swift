@@ -16,6 +16,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     var words: Dictionary<String, Bool> = [:]
     var userSentences: [String] = []
     var userWords: [String] = []
+    var ordered: Dictionary<Int, String> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,6 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     
     // get the types of words inputed by player one
     func getTypesOfWords(){
-        var ordered: Dictionary<Int, String> = [:]
         for (word, _) in self.words {
             // need to make sure that word is not identified as sentence and not other data sent over server
             if(word != "doneEnteringSentences"
@@ -42,6 +42,9 @@ class TwoPlayerChooseWordsViewController: UIViewController{
                 ordered[val!] = newWord
             }
         }
+    }
+    
+    func orderWordsAndSentences() {
         // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
         for i in 0...ordered.count - 1 {
             if i % 2 == 0 {
@@ -58,7 +61,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         if segue.identifier == "TwoPlayerChooseWordsEmbed",
             let destination = segue.destination as? TwoPlayerWordsFormViewController {
             getTypesOfWords()
-            print("User sentences \(userSentences)")
+            orderWordsAndSentences()
             destination.delegate = self
             container = destination
             self.container?.userEnteredWords = userWords
@@ -83,8 +86,8 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     @IBAction func onMakeMyMadLibPressed(_ sender: Any) {
         if (self.container?.checkIfAllRowsFilled())! {
             words = [:]
-            processEnteredSentences()
-            setNeededValuesInJson(dataToSend: &words, Vals: [false, false, false, true])
+            processEnteredWords()
+            setNeededValuesInJson(Vals: [false, false, false, true])
             sendDataOverServer(dataToSend: words)
             self.performSegue(withIdentifier: "TwoPlayerWordsFinalStorylineSegue", sender: AnyClass.self)
         } else {
@@ -96,7 +99,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     }
     
     // Ensure the story is in order because words is a dictionary and therefore order is not guaranteed
-    func processEnteredSentences() {
+    func processEnteredWords() {
         var orderWords = 0
         for i in 0...(container?.words.count)! - 1 {
             var newWord = container?.words[String(i)]!! as! String
@@ -109,12 +112,12 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     }
     
     // function to set all needed values sent over server
-    func setNeededValuesInJson(dataToSend: inout Dictionary<String, Bool>, Vals: Array<Bool>) {
+    func setNeededValuesInJson(Vals: Array<Bool>) {
         // let player know done enter sentences
-        dataToSend["doneEnteringSentences"] = Vals[0]
-        dataToSend["enterWordsClicked"] = Vals[1]
-        dataToSend["chooseSentencesClicked"] = Vals[2]
-        dataToSend["doneEnteringWords"] = Vals[3]
+        words["doneEnteringSentences"] = Vals[0]
+        words["enterWordsClicked"] = Vals[1]
+        words["chooseSentencesClicked"] = Vals[2]
+        words["doneEnteringWords"] = Vals[3]
     }
     
     // function to send data over the server

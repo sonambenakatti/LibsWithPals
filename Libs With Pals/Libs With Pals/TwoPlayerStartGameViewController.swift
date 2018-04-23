@@ -14,12 +14,13 @@ class TwoPlayerStartGameViewController: UIViewController {
     @IBOutlet weak var enterWordsButton: UIButton!
     @IBOutlet weak var chooseSentencesButton: UIButton!
     var appDelegate: AppDelegate!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     //  dictionary to display disabled button to other player
     var messageDict: [String:Bool] = [:]
     
     override func viewDidLoad() {
-        
+        navBar.topItem?.title = "Connected"
         // add observer to be notified when data is recieved over the server
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
     }

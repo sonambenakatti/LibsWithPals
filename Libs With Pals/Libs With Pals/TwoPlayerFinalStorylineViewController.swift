@@ -24,8 +24,6 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         storylineTextView.isEditable = false
-        storylineTextView.text = finalStory
-        print("sentences \(sentences), passedWords, \(passedWords)")
         if message.count > 0 {
             getTypesOfWords()
         } else {

@@ -35,12 +35,11 @@ class TwoPlayerConnectPlayerViewController: UIViewController, MCBrowserViewContr
         }
     }
     
-    // When peer has been connected, change title of nav bar to connected
+   // When peer has been connected, change title of nav bar to connected
    @objc func peerChangedStateWithNotification(notification:NSNotification) {
         let userInfo = NSDictionary(dictionary: notification.userInfo!)
         let state = userInfo.object(forKey: "state") as! Int
-        if state != MCSessionState.connected.rawValue {
-            navBar.topItem?.title = "Connected"
+        if state == MCSessionState.connected.rawValue {
             self.performSegue(withIdentifier: "TwoPlayerStartGameSegue" , sender: AnyClass.self)
         }
     }

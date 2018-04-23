@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-RI-Blb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="0.0" height="44"/>
                                 <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="yxB-4h-hWl">
@@ -41,19 +41,19 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jw-hE-4dz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="0.0" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xEu-ok-kzf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="667"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5Y-5X-iPW">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="324"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="667"/>
                                                 <color key="textColor" red="0.94117647059999998" green="0.86666666670000003" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="32"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ODk-Bd-hjJ">
-                                                <rect key="frame" x="0.0" y="324" width="375" height="279"/>
+                                                <rect key="frame" x="0.0" y="667" width="0.0" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ODk-Bd-hjJ" secondAttribute="height" multiplier="125:93" id="hfq-N1-a5a"/>
                                                 </constraints>
@@ -122,7 +122,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="yxb-hx-uHV">
-                                <rect key="frame" x="88" y="190" width="200" height="370"/>
+                                <rect key="frame" x="88" y="204" width="200" height="356"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrm-xd-R0z">
                                         <rect key="frame" x="35" y="0.0" width="130" height="130"/>
@@ -131,7 +131,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-FN-cPB">
-                                        <rect key="frame" x="0.0" y="170" width="200" height="200"/>
+                                        <rect key="frame" x="0.0" y="170" width="200" height="186"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfJ-Gs-8RP">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
@@ -162,7 +162,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-th-hod">
-                                                <rect key="frame" x="0.0" y="75" width="200" height="50"/>
+                                                <rect key="frame" x="0.0" y="75" width="200" height="36"/>
                                                 <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                                 <state key="normal" title="How To Play">
@@ -187,7 +187,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-Id-Weh">
-                                                <rect key="frame" x="0.0" y="150" width="200" height="50"/>
+                                                <rect key="frame" x="0.0" y="136" width="200" height="50"/>
                                                 <color key="backgroundColor" red="0.97866434010000003" green="0.89135335360000001" blue="0.089821785279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                                 <state key="normal" title="Saved Libs">
@@ -223,9 +223,9 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzh-gd-jpw">
-                                <rect key="frame" x="88" y="91" width="200" height="64"/>
+                                <rect key="frame" x="88" y="97" width="200" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="LKW-qz-RFH"/>
+                                    <constraint firstAttribute="height" constant="64" id="xEQ-Ts-Mg6"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="UX2-Jj-e0v"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="36"/>
@@ -235,16 +235,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="wzh-gd-jpw" firstAttribute="trailing" secondItem="yxb-hx-uHV" secondAttribute="trailing" id="3hs-tk-4ML"/>
-                            <constraint firstItem="wzh-gd-jpw" firstAttribute="leading" secondItem="yxb-hx-uHV" secondAttribute="leading" id="5Dz-TF-WWB"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="trailing" secondItem="yxb-hx-uHV" secondAttribute="trailing" id="1PD-Rt-xlF"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="leading" secondItem="xhV-4F-haK" secondAttribute="leading" constant="88" id="DFF-Fe-saG"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="centerX" secondItem="gRM-xd-6K7" secondAttribute="centerX" id="EVk-KT-Thm"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="leading" secondItem="yxb-hx-uHV" secondAttribute="leading" id="QGk-hD-y54"/>
                             <constraint firstItem="gRM-xd-6K7" firstAttribute="top" secondItem="xhV-4F-haK" secondAttribute="top" id="QLh-9C-0mI"/>
                             <constraint firstItem="xhV-4F-haK" firstAttribute="bottom" secondItem="yxb-hx-uHV" secondAttribute="bottom" constant="107" id="XSb-XO-gwd"/>
                             <constraint firstAttribute="trailing" secondItem="gRM-xd-6K7" secondAttribute="trailing" id="Yfx-3Q-ZTX"/>
-                            <constraint firstItem="wzh-gd-jpw" firstAttribute="top" secondItem="gRM-xd-6K7" secondAttribute="bottom" constant="27" id="bDA-yO-3ld"/>
-                            <constraint firstItem="gRM-xd-6K7" firstAttribute="centerX" secondItem="wzh-gd-jpw" secondAttribute="centerX" id="btq-fb-Py2"/>
                             <constraint firstItem="gRM-xd-6K7" firstAttribute="leading" secondItem="1MR-PO-WEA" secondAttribute="leading" id="buG-Bb-gcu"/>
-                            <constraint firstItem="yxb-hx-uHV" firstAttribute="top" secondItem="wzh-gd-jpw" secondAttribute="bottom" constant="35" id="tgT-iv-6pY"/>
-                            <constraint firstItem="wzh-gd-jpw" firstAttribute="leading" secondItem="xhV-4F-haK" secondAttribute="leading" constant="88" id="wzB-ib-rzb"/>
+                            <constraint firstItem="wzh-gd-jpw" firstAttribute="top" secondItem="gRM-xd-6K7" secondAttribute="bottom" constant="33" id="h8M-CD-HVB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xhV-4F-haK"/>
                     </view>
@@ -425,9 +424,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qK4-EI-mUq">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK4-EI-mUq">
                                 <rect key="frame" x="0.0" y="21" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="B10-Y3-3Ka">
@@ -440,17 +438,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ohK-om-hCP">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ohK-om-hCP">
                                 <rect key="frame" x="-2" y="71" width="375" height="578"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-tR-ZGU">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-tR-ZGU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
                                         <connections>
                                             <segue destination="l6d-uQ-OGd" kind="embed" identifier="TwoPlayerWriteStorylineFormSegue" id="EhM-nC-lTc"/>
                                         </connections>
                                     </containerView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-Wk-2Ir">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-Wk-2Ir">
                                         <rect key="frame" x="0.0" y="543" width="375" height="35"/>
                                         <color key="backgroundColor" red="0.84177700430000002" green="0.95226506710000003" blue="0.97115851679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -465,6 +462,15 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qK4-EI-mUq" secondAttribute="trailing" id="32K-Z6-phr"/>
+                            <constraint firstItem="edr-IL-5C3" firstAttribute="bottom" secondItem="ohK-om-hCP" secondAttribute="bottom" constant="18" id="4VS-sv-IqC"/>
+                            <constraint firstItem="qK4-EI-mUq" firstAttribute="leading" secondItem="lNK-xe-uAK" secondAttribute="leading" id="B5c-ik-PDM"/>
+                            <constraint firstItem="ohK-om-hCP" firstAttribute="top" secondItem="qK4-EI-mUq" secondAttribute="bottom" constant="6" id="XHj-HO-pRL"/>
+                            <constraint firstItem="qK4-EI-mUq" firstAttribute="top" secondItem="edr-IL-5C3" secondAttribute="top" constant="1" id="YqJ-Uw-R1T"/>
+                            <constraint firstItem="ohK-om-hCP" firstAttribute="leading" secondItem="lNK-xe-uAK" secondAttribute="leadingMargin" constant="-18" id="dv5-u7-O3E"/>
+                            <constraint firstItem="edr-IL-5C3" firstAttribute="trailing" secondItem="ohK-om-hCP" secondAttribute="trailing" constant="2" id="rwk-iB-HEX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="edr-IL-5C3"/>
                     </view>
                     <connections>
@@ -483,16 +489,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2 is entering words, please wait..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cb-7g-bTV">
-                                <rect key="frame" x="30" y="171" width="315" height="243"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E79-F5-WwM">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E79-F5-WwM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="MTE-nu-RrN">
@@ -506,12 +504,28 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="TTu-MZ-Gos">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="TTu-MZ-Gos">
                                 <rect key="frame" x="177" y="171" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2 is entering words, please wait..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cb-7g-bTV">
+                                <rect key="frame" x="50" y="212" width="275" height="243"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="E79-F5-WwM" firstAttribute="top" secondItem="Ny4-H5-LaD" secondAttribute="top" id="21Q-IT-2j2"/>
+                            <constraint firstItem="8cb-7g-bTV" firstAttribute="centerY" secondItem="feJ-hM-aOl" secondAttribute="centerY" id="9rA-fz-Ebh"/>
+                            <constraint firstItem="E79-F5-WwM" firstAttribute="centerX" secondItem="TTu-MZ-Gos" secondAttribute="centerX" id="IHp-A7-bte"/>
+                            <constraint firstItem="8cb-7g-bTV" firstAttribute="leading" secondItem="Ny4-H5-LaD" secondAttribute="leading" constant="50" id="Rqs-yy-pm4"/>
+                            <constraint firstItem="Ny4-H5-LaD" firstAttribute="bottom" secondItem="8cb-7g-bTV" secondAttribute="bottom" constant="212" id="WgQ-WE-QSg"/>
+                            <constraint firstItem="8cb-7g-bTV" firstAttribute="top" secondItem="TTu-MZ-Gos" secondAttribute="bottom" constant="21" id="cqz-eS-LkB"/>
+                            <constraint firstAttribute="trailing" secondItem="E79-F5-WwM" secondAttribute="trailing" id="gfN-w0-mF9"/>
+                            <constraint firstItem="TTu-MZ-Gos" firstAttribute="centerX" secondItem="8cb-7g-bTV" secondAttribute="centerX" id="hNS-uX-y9R"/>
+                            <constraint firstItem="E79-F5-WwM" firstAttribute="leading" secondItem="feJ-hM-aOl" secondAttribute="leading" id="mDJ-nN-Cpt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ny4-H5-LaD"/>
                     </view>
                     <connections>
@@ -520,7 +534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtA-Xo-yzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5212" y="1694"/>
+            <point key="canvasLocation" x="5212" y="1693.4032983508248"/>
         </scene>
         <!--Choose Words View Controller-->
         <scene sceneID="5Og-SO-0aC">
@@ -1191,6 +1205,7 @@
                     <connections>
                         <outlet property="chooseSentencesButton" destination="Mfx-M8-cRr" id="z0u-7l-XT7"/>
                         <outlet property="enterWordsButton" destination="dk0-kF-Rox" id="Qfp-Yl-ASe"/>
+                        <outlet property="navBar" destination="TCA-ch-pRR" id="EWt-dI-3H0"/>
                         <segue destination="ics-5Z-QnL" kind="show" identifier="TwoPlayerEnterWordsSegue" id="r1p-d2-lvI"/>
                         <segue destination="rvt-gh-2Ra" kind="show" identifier="TwoPlayerWriteStorySegue" id="7Mc-w9-zx3"/>
                     </connections>
@@ -1436,9 +1451,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rc-tm-i0t">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rc-tm-i0t">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="hBE-JC-lej">
@@ -1452,19 +1466,30 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-60-FUZ">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-60-FUZ">
                                 <rect key="frame" x="177" y="192" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1 is choosing sentences, please wait...." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-Te-C6C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 is choosing sentences, please wait...." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-Te-C6C">
                                 <rect key="frame" x="72" y="254" width="230" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="RBA-11-xw6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415075302124" green="0.92149776220321655" blue="0.92157071828842163" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="qcR-Te-C6C" firstAttribute="top" secondItem="hLF-60-FUZ" secondAttribute="bottom" constant="42" id="1Km-zo-7Fr"/>
+                            <constraint firstItem="7rc-tm-i0t" firstAttribute="centerX" secondItem="hLF-60-FUZ" secondAttribute="centerX" id="3lS-V4-XSs"/>
+                            <constraint firstAttribute="trailing" secondItem="7rc-tm-i0t" secondAttribute="trailing" id="63L-vv-CNm"/>
+                            <constraint firstItem="hLF-60-FUZ" firstAttribute="centerX" secondItem="qcR-Te-C6C" secondAttribute="centerX" id="XgR-K3-vOc"/>
+                            <constraint firstItem="7rc-tm-i0t" firstAttribute="leading" secondItem="jMt-On-a4n" secondAttribute="leading" id="YP5-Pn-d8h"/>
+                            <constraint firstItem="GLs-tv-Lbh" firstAttribute="bottom" secondItem="qcR-Te-C6C" secondAttribute="bottom" constant="230" id="b3z-zN-DBI"/>
+                            <constraint firstItem="7rc-tm-i0t" firstAttribute="top" secondItem="GLs-tv-Lbh" secondAttribute="top" id="pbN-xq-z2Y"/>
+                            <constraint firstItem="qcR-Te-C6C" firstAttribute="leading" secondItem="GLs-tv-Lbh" secondAttribute="leading" constant="72" id="tg8-Ul-s8q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
                     </view>
                     <connections>
@@ -1655,11 +1680,11 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Pz-SR-6Gr"/>
+        <segue reference="X2S-qW-p79"/>
         <segue reference="5XK-7G-aqs"/>
         <segue reference="Upi-xg-WhK"/>
         <segue reference="R9G-fw-mZC"/>
-        <segue reference="dkz-GV-h0s"/>
+        <segue reference="Mnb-SD-Yjm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
