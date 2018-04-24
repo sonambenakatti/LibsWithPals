@@ -10,6 +10,7 @@
 
 import UIKit
 import MultipeerConnectivity
+import Foundation
 
 // class to enable player to create their sentences
 class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPlayer2Delegate {
@@ -50,6 +51,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
                 lostConnection()
             }
             enterWordsClicked = message["enterWordsClicked"]!
+            print("Enter words clicked, \(enterWordsClicked)")
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
@@ -69,10 +71,41 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         if !enterWordsClicked {
             playerNotResponding()
         }
+        performExitActions()
+    }
+    
+    func playerNotResponding() {
+        var actionDict: Dictionary<String, Bool> = [:]
+        let alert = UIAlertController(title: "Other player is not responding", message: "Wait for player or return home", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
+            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true])
+            self.sendDataOverServer(dataToSend: actionDict)
+            self.performSegue(withIdentifier: "TwoPlayerCreateStoryToHome", sender: AnyClass.self)
+        }))
+        alert.addAction(UIAlertAction(title: "Wait", style: UIAlertActionStyle.cancel, handler: { action in
+            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, true, false])
+            self.sendDataOverServer(dataToSend: actionDict)
+            self.pollUntilWaitOver()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func pollUntilWaitOver() {
+        let group = DispatchGroup()
+        group.enter()
+        if self.enterWordsClicked {
+            group.leave()
+        }
+        group.notify(queue: .main) {
+          self.performExitActions()
+        }
+    }
+    
+    func performExitActions() {
         let containerRowsAllFilled = self.container?.checkIfAllRowsFilled()
         if containerRowsAllFilled! {
             processEnteredSentences()
-            setNeededValuesInJson(dataToSend: &userWordTypes, Vals: [true, false, false, false, true])
+            setNeededValuesInJson(dataToSend: &userWordTypes, Vals: [true, false, false, false, true, true])
             concatDicts(left: &userWordTypes, right: userSentences)
             sendDataOverServer(dataToSend: userWordTypes)
             self.performSegue(withIdentifier: "TwoPlayerLoadingWordsSegue", sender: AnyClass.self)
@@ -81,18 +114,6 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    func playerNotResponding() {
-        let alert = UIAlertController(title: "Other player is not responding", message: "Wait for player or return home", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
-            var actionDict: Dictionary<String, Bool> = [:]
-            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
-            self.sendDataOverServer(dataToSend: actionDict)
-            self.performSegue(withIdentifier: "TwoPlayerCreateStoryToHome", sender: AnyClass.self)
-        }))
-        alert.addAction(UIAlertAction(title: "Wait", style: UIAlertActionStyle.cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     // Ensure the story is in order because words is a dictionary and therefore order is not guaranteed
@@ -128,6 +149,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         dataToSend["chooseSentencesClicked"] = Vals[2]
         dataToSend["doneEnteringWords"] = Vals[3]
         dataToSend["connected"] = Vals[4]
+        dataToSend["responding"] = Vals[5]
     }
     
     // function to send data over the server
@@ -149,7 +171,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
     
     @IBAction func onHomePressed(_ sender: Any) {
         var actionDict: Dictionary<String, Bool> = [:]
-        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true])
         sendDataOverServer(dataToSend: actionDict)
         self.performSegue(withIdentifier: "TwoPlayerCreateStoryToHome", sender: AnyClass.self)
     }

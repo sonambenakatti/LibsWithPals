@@ -46,7 +46,8 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
                 && word != "enterWordsClicked"
                 && word != "chooseSentencesClicked"
                 && word != "doneEnteringWords"
-                && word != "connected") {
+                && word != "connected"
+                && word != "responding") {
                 // get rid of identifier on word
                 var newWord = word
                 let lastChar = newWord.removeLast()

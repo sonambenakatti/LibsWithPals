@@ -29,7 +29,7 @@ class TwoPlayerStartGameViewController: UIViewController {
     @IBAction func chooseSentencesClicked(_ sender: Any) {
         // send message to other player that the chooseSentences button has been pressed over server
         var actionDict: [String: Bool] = [:]
-        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, true, false, true])
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, true, false, true, true])
         sendDataOverServer(dataToSend: actionDict)
         self.performSegue(withIdentifier: "TwoPlayerWriteStorySegue", sender: AnyClass.self)
     }
@@ -37,7 +37,7 @@ class TwoPlayerStartGameViewController: UIViewController {
     @IBAction func enterWordsClicked(_ sender: Any) {
         // send message to other player that the enter words button has been pressed over server
         var actionDict: [String: Bool] = [:]
-        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, true, false, false, true])
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, true, false, false, true, true])
         sendDataOverServer(dataToSend: actionDict)
         self.performSegue(withIdentifier: "TwoPlayerEnterWordsSegue", sender: AnyClass.self)
     }
@@ -58,10 +58,24 @@ class TwoPlayerStartGameViewController: UIViewController {
                 } else if message["chooseSentencesClicked"]! {
                     disableSentencesButton()
                 }
+                if !message["responding"]! {
+                    playerNotResponding()
+                }
             }
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
+    }
+    
+    func playerNotResponding() {
+        var actionDict: Dictionary<String, Bool> = [:]
+        let alert = UIAlertController(title: "Please respond to other player", message: "Please press 'Enter Words' to conintue the game, or go home to end session", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Enter words", style: UIAlertActionStyle.default, handler: { action in
+            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, true, false, false, true, true])
+            self.sendDataOverServer(dataToSend: actionDict)
+            self.performSegue(withIdentifier: "TwoPlayerEnterWordsSegue", sender: AnyClass.self)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func disableWordsButton() {
@@ -90,7 +104,7 @@ class TwoPlayerStartGameViewController: UIViewController {
     
     @IBAction func onHomePressed(_ sender: Any) {
         var actionDict: Dictionary<String, Bool> = [:]
-        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false])
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true])
         sendDataOverServer(dataToSend: actionDict)
         self.performSegue(withIdentifier: "TwoPlayerStartGameToHome", sender: AnyClass.self)
     }
@@ -103,6 +117,7 @@ class TwoPlayerStartGameViewController: UIViewController {
         dataToSend["chooseSentencesClicked"] = Vals[2]
         dataToSend["doneEnteringWords"] = Vals[3]
         dataToSend["connected"] = Vals[4]
+        dataToSend["responding"] = Vals[5]
     }
     
     // function to send data over the server
