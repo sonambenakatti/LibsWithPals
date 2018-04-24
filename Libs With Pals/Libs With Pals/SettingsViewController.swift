@@ -130,9 +130,10 @@ class SettingsViewController: UIViewController {
         }
 
         let user = fetchedResults![0]
-        let imageData: NSData = UIImagePNGRepresentation(userImage)! as NSData
+        let imageData: NSData = UIImageJPEGRepresentation(userImage, 0.5)! as NSData
 
         user.setValue(imageData, forKey: "image")
+        prefs.set(true, forKey: "hasImage")
         print("Added image to user account")
     }
     

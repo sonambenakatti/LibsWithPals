@@ -9,9 +9,13 @@
 import UIKit
 import MultipeerConnectivity
 import Foundation
+import CoreData
 
 // class to set up connection between 2 players
 class TwoPlayerConnectPlayerViewController: UIViewController, MCBrowserViewControllerDelegate {
+    
+    let prefs: UserDefaults = UserDefaults.standard
+    @IBOutlet weak var personImage: UIImageView!
     
     @IBOutlet weak var navBar: UINavigationBar!
     var appDelegate: AppDelegate!
@@ -24,6 +28,44 @@ class TwoPlayerConnectPlayerViewController: UIViewController, MCBrowserViewContr
         
         // add observer to be notified when connection state has been changed
         NotificationCenter.default.addObserver(self, selector: #selector(peerChangedStateWithNotification(notification:)), name: NSNotification.Name(rawValue: "MPC_DidChangeStateNotification"), object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getPlayerPhotoIfExists()
+    }
+    
+    // Place player's profile picture if they have one
+    func getPlayerPhotoIfExists() {
+        
+        if((prefs.bool(forKey: "hasImage"))) {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName:"User")
+            var fetchedResults:[NSManagedObject]? = nil
+            request.predicate = NSPredicate(format: "email == %@", String(describing: prefs.value(forKey: "email")!))
+            
+            do {
+                try fetchedResults = context.fetch(request) as? [NSManagedObject]
+            } catch {
+                // If an error occurs
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+            
+            if((fetchedResults?.count)! > 0) {
+                let user = fetchedResults![0]
+                
+                print(user)
+                
+                if let imageData = user.value(forKey: "image") as? NSData {
+                    if let image = UIImage(data:imageData as Data)  {
+                        personImage.image = image
+                    }
+                }
+            }
+        }
     }
     
     // function to setup connection
