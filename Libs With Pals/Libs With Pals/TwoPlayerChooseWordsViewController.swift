@@ -21,6 +21,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //enterWordsClicked()
         
         // add observer to be notified when data is recieved over the server
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
@@ -64,7 +65,8 @@ class TwoPlayerChooseWordsViewController: UIViewController{
                 && word != "chooseSentencesClicked"
                 && word != "doneEnteringWords"
                 && word != "connected"
-                && word != "responding") {
+                && word != "responding"
+                && word != "doneResponding") {
                 // get rid of identifier on word
                 var newWord = word
                 let lastChar = newWord.removeLast()
@@ -107,7 +109,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         let alert = UIAlertController(title: "Are you sure?", message: "If you return home you will lose your mad lib.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { action in
             var actionDict: Dictionary<String, Bool> = [:]
-            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true])
+            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true, false])
             self.sendDataOverServer(dataToSend: actionDict)
             self.performSegue(withIdentifier: "TwoPlayerChooseWordsToHome", sender: AnyClass.self)
         }))
@@ -120,7 +122,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         if (self.container?.checkIfAllRowsFilled())! {
             words = [:]
             processEnteredWords()
-            setNeededValuesInJson(dataToSend: &words, Vals: [false, false, false, true, true, true, true])
+            setNeededValuesInJson(dataToSend: &words, Vals: [false, false, false, true, true, true, true, false])
             sendDataOverServer(dataToSend: words)
             self.performSegue(withIdentifier: "TwoPlayerWordsFinalStorylineSegue", sender: AnyClass.self)
         } else {
@@ -152,6 +154,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         dataToSend["doneEnteringWords"] = Vals[3]
         dataToSend["connected"] = Vals[4]
         dataToSend["responding"] = Vals[5]
+        dataToSend["doneResponding"] = Vals[5]
     }
     
     // function to send data over the server

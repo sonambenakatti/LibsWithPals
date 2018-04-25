@@ -59,7 +59,7 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
     
     @IBAction func onHomePressed(_ sender: Any) {
         var actionDict: Dictionary<String, Bool> = [:]
-        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true])
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true, false])
         sendDataOverServer(dataToSend: actionDict)
         performSegue(withIdentifier: "TwoPlayerLoadingWordsToHome" , sender: AnyClass.self)
     }
@@ -73,6 +73,7 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
         dataToSend["doneEnteringWords"] = Vals[3]
         dataToSend["connected"] = Vals[4]
         dataToSend["responding"] = Vals[5]
+        dataToSend["doneResponding"] = Vals[5]
     }
     
     // function to send data over the server
