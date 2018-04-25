@@ -86,6 +86,7 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
         }
     }
     
+    // function to prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwoPlayerSentencesFinalStorylineSegue",
             let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
