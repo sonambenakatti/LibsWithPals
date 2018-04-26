@@ -39,9 +39,29 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
                 self.message = message
                 self.performSegue(withIdentifier: "TwoPlayerChooseWordsSegue", sender: AnyClass.self)
             }
+            if !message["chooseSentencesClicked"]! {
+                playerNotResponding()
+            }
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
+    }
+    
+    func playerNotResponding() {
+        //doneResponding = false
+        var actionDict: Dictionary<String, Bool> = [:]
+        let alert = UIAlertController(title: "Other player is not responding", message: "Wait for player for 10 seconds and press done, or return home", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
+            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true, false])
+            self.sendDataOverServer(dataToSend: actionDict)
+            self.performSegue(withIdentifier: "TwoPlayerCreateStoryToHome", sender: AnyClass.self)
+        }))
+        alert.addAction(UIAlertAction(title: "Wait", style: UIAlertActionStyle.cancel, handler: { action in
+            self.setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, true, false, false])
+            self.sendDataOverServer(dataToSend: actionDict)
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func lostConnection() {

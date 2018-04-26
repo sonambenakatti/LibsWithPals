@@ -36,6 +36,11 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         super.viewDidLoad()
         // add observer to be notified when data is recieved over the server
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
+        
+        // send message to loading sentences 2 player that enter sentences has been clicked, if this is not sent they know the player is not responding
+        var actionDict: Dictionary<String, Bool> = [:]
+        setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, true, false, true, true, false])
+        self.sendDataOverServer(dataToSend: actionDict)
     }
     
     func passEnteredWords(words: Dictionary<String, Any?>) {
@@ -57,9 +62,9 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
             }
             enterWordsClicked = message["enterWordsClicked"]!
             enterSentencesClicked = message["chooseSentencesClicked"]!
-            if message["doneResponding"]! {
-                performExitActions()
-            }
+//            if message["doneResponding"]! {
+//                performExitActions()
+//            }
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
