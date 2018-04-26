@@ -1371,8 +1371,8 @@
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="pressBackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="chA-bm-m3V"/>
-                                    <segue destination="haA-OV-LML" kind="show" identifier="backSegue" id="Zfh-Zp-Aya"/>
+                                    <action selector="pressBackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="3Dg-32-lK6"/>
+                                    <segue destination="ics-5Z-QnL" kind="show" identifier="backLoadingSentencesSegue" id="eR3-RI-DHD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xg-X3-rBx">
@@ -1515,6 +1515,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eS-gB-QPO">
+                                <rect key="frame" x="72" y="459" width="250" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Draw"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="Lc1-nM-rkv" eventType="touchUpInside" id="She-kA-CJC"/>
+                                    <segue destination="HOH-2b-Pfs" kind="show" identifier="drawSegue" id="kWU-FC-1v9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415075302124" green="0.92149776220321655" blue="0.92157071828842163" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1536,6 +1546,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cE7-5e-CI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Lc1-nM-rkv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3508" y="241.52923538230885"/>
         </scene>
@@ -1721,9 +1732,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X2S-qW-p79"/>
-        <segue reference="5XK-7G-aqs"/>
+        <segue reference="eR3-RI-DHD"/>
+        <segue reference="kWU-FC-1v9"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="TII-ou-g1B"/>
+        <segue reference="9zy-fi-1yo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

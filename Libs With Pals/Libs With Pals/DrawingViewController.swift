@@ -17,13 +17,25 @@ class DrawingViewController: UIViewController {
     var touchPoint = CGPoint()
     var color = UIColor.black
     
+    /*
+    @IBAction func onButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "drawSegue", sender: AnyClass.self)
+    }
+ */
+    
     @IBAction func onButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "drawSegue", sender: AnyClass.self)
     }
     
     @IBAction func pressBackButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "backLoadingSentencesSegue", sender: AnyClass.self)
+    }
+    
+    /*
+    @IBAction func pressBackButton(_ sender: Any) {
         self.performSegue(withIdentifier: "backSegue", sender: AnyClass.self)
     }
+ */
     
     @IBAction func pressBlueButton(_ sender: Any) {
         color = UIColor.blue
