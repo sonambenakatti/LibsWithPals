@@ -1251,16 +1251,16 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mOp-UX-2nu">
-                                <rect key="frame" x="62.5" y="135.5" width="250" height="396"/>
+                                <rect key="frame" x="62.5" y="168.5" width="250" height="330"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LbF-As-U6U">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="396"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="330"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aVe-qo-ZOe">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="396"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="330"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="aED-d6-sHh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="396"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="330"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uuj-5G-xM1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="330"/>
@@ -1294,24 +1294,6 @@
                                                                     <constraint firstAttribute="width" constant="250" id="BK2-sf-7gR"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-hK-FVk">
-                                                                <rect key="frame" x="0.0" y="360" width="250" height="36"/>
-                                                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="250" id="rGy-dD-SeR"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <state key="normal" title="Draw"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="onButtonPressed:" destination="6Ii-sV-6hG" eventType="touchUpInside" id="eUZ-E9-yau"/>
-                                                                    <segue destination="HOH-2b-Pfs" kind="show" identifier="drawSegue" id="J5g-zQ-Du3"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -1339,7 +1321,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF3-zj-KgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="6Ii-sV-6hG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2693.5999999999999" y="241.52923538230885"/>
         </scene>
@@ -1731,11 +1712,11 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="kWU-FC-1v9"/>
         <segue reference="X2S-qW-p79"/>
         <segue reference="eR3-RI-DHD"/>
-        <segue reference="kWU-FC-1v9"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="9zy-fi-1yo"/>
+        <segue reference="iFx-QR-Dwy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
