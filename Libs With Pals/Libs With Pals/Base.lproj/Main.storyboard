@@ -1295,11 +1295,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMq-NT-j3B">
-                                <rect key="frame" x="0.0" y="129" width="375" height="538"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-3L-qZv">
                                 <rect key="frame" x="23" y="83" width="57" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1406,6 +1401,11 @@
                                     <action selector="pressOrangeButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="GIJ-ki-pyl"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMq-NT-j3B">
+                                <rect key="frame" x="0.0" y="129" width="375" height="538"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1596,10 +1596,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-NU-nny">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-NU-nny">
                                 <rect key="frame" x="62" y="520" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="3I6-LF-wTF"/>
+                                    <constraint firstAttribute="height" constant="50" id="uQw-SV-2HF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Draw"/>
                                 <connections>
                                     <action selector="onButtonPressed:" destination="5JU-lf-l6W" eventType="touchUpInside" id="Bh2-jt-4fK"/>
@@ -1610,12 +1614,15 @@
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="zdd-6N-3yP" firstAttribute="leading" secondItem="zfV-1q-YTm" secondAttribute="leading" id="Bhs-jp-emy"/>
+                            <constraint firstItem="mlD-3o-d38" firstAttribute="trailing" secondItem="rlu-NU-nny" secondAttribute="trailing" constant="63" id="E1c-UH-1Pj"/>
+                            <constraint firstItem="rlu-NU-nny" firstAttribute="top" secondItem="zdd-6N-3yP" secondAttribute="bottom" constant="454" id="EOu-71-LJx"/>
                             <constraint firstItem="huT-P9-chg" firstAttribute="top" secondItem="zdd-6N-3yP" secondAttribute="bottom" id="KCY-IT-mQl"/>
                             <constraint firstItem="mlD-3o-d38" firstAttribute="trailing" secondItem="huT-P9-chg" secondAttribute="trailing" id="Pqf-DV-1Ue"/>
                             <constraint firstAttribute="trailing" secondItem="zdd-6N-3yP" secondAttribute="trailing" id="XMh-95-wPv"/>
                             <constraint firstItem="huT-P9-chg" firstAttribute="leading" secondItem="mlD-3o-d38" secondAttribute="leading" id="csk-Sa-EKz"/>
                             <constraint firstItem="zdd-6N-3yP" firstAttribute="top" secondItem="mlD-3o-d38" secondAttribute="top" constant="2" id="mq6-1y-JwQ"/>
                             <constraint firstItem="mlD-3o-d38" firstAttribute="bottom" secondItem="huT-P9-chg" secondAttribute="bottom" id="rJb-9R-hht"/>
+                            <constraint firstItem="rlu-NU-nny" firstAttribute="leading" secondItem="mlD-3o-d38" secondAttribute="leading" constant="62" id="wg0-No-eOE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mlD-3o-d38"/>
                     </view>
@@ -1636,6 +1643,7 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Mml-JT-LGM"/>
         <segue reference="IER-do-6bW"/>
         <segue reference="VwQ-28-Zr2"/>
         <segue reference="kH6-JE-x88"/>
