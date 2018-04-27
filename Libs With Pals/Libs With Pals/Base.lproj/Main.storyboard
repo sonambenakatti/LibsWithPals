@@ -1598,10 +1598,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-NU-nny">
-                                <rect key="frame" x="65" y="569" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-NU-nny">
+                                <rect key="frame" x="62" y="538" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="gZd-Ew-kht"/>
+                                    <constraint firstAttribute="height" constant="50" id="lHi-Dk-hH6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="18"/>
                                 <state key="normal" title="Draw"/>
                                 <userDefinedRuntimeAttributes>
@@ -1617,6 +1620,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="mlD-3o-d38" firstAttribute="trailing" secondItem="rlu-NU-nny" secondAttribute="trailing" constant="63" id="77I-bR-eke"/>
                             <constraint firstItem="zdd-6N-3yP" firstAttribute="leading" secondItem="zfV-1q-YTm" secondAttribute="leading" id="Bhs-jp-emy"/>
                             <constraint firstItem="huT-P9-chg" firstAttribute="top" secondItem="zdd-6N-3yP" secondAttribute="bottom" id="KCY-IT-mQl"/>
                             <constraint firstItem="mlD-3o-d38" firstAttribute="trailing" secondItem="huT-P9-chg" secondAttribute="trailing" id="Pqf-DV-1Ue"/>
@@ -1624,6 +1628,8 @@
                             <constraint firstItem="huT-P9-chg" firstAttribute="leading" secondItem="mlD-3o-d38" secondAttribute="leading" id="csk-Sa-EKz"/>
                             <constraint firstItem="zdd-6N-3yP" firstAttribute="top" secondItem="mlD-3o-d38" secondAttribute="top" constant="2" id="mq6-1y-JwQ"/>
                             <constraint firstItem="mlD-3o-d38" firstAttribute="bottom" secondItem="huT-P9-chg" secondAttribute="bottom" id="rJb-9R-hht"/>
+                            <constraint firstItem="mlD-3o-d38" firstAttribute="bottom" secondItem="rlu-NU-nny" secondAttribute="bottom" constant="79" id="vJm-41-Dd3"/>
+                            <constraint firstItem="rlu-NU-nny" firstAttribute="leading" secondItem="mlD-3o-d38" secondAttribute="leading" constant="62" id="vsd-Xf-M0N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mlD-3o-d38"/>
                     </view>
