@@ -1317,8 +1317,8 @@
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="pressBackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="Ojt-S1-e2a"/>
-                                    <segue destination="sa7-K1-w2N" kind="show" identifier="backSegue" id="IER-do-6bW"/>
+                                    <action selector="pressBackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="MhB-Lc-Cia"/>
+                                    <segue destination="8vk-ve-krd" kind="show" identifier="backSegue" id="yvO-45-1Qr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xg-X3-rBx">
@@ -1650,10 +1650,9 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mml-JT-LGM"/>
-        <segue reference="IER-do-6bW"/>
+        <segue reference="X2S-qW-p79"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="kH6-JE-x88"/>
+        <segue reference="yvO-45-1Qr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
