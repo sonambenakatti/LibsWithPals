@@ -11,6 +11,7 @@ target 'Libs With Pals' do
   pod 'FacebookLogin'
   pod 'IQKeyboardManagerSwift'
   pod 'DKCamera'
+  pod 'SwiftSpinner'
 
     post_install do |installer|
         installer.pods_project.targets.each do |target|

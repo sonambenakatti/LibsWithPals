@@ -480,47 +480,10 @@
                     <view key="view" contentMode="scaleToFill" id="feJ-hM-aOl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E79-F5-WwM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <items>
-                                    <navigationItem id="MTE-nu-RrN">
-                                        <barButtonItem key="leftBarButtonItem" image="home" id="WXa-WX-5iD">
-                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <connections>
-                                                <action selector="onHomePressed:" destination="CFz-Ij-ne7" id="CVW-cY-cM2"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="TTu-MZ-Gos">
-                                <rect key="frame" x="177" y="171" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2 is entering words, please wait..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cb-7g-bTV">
-                                <rect key="frame" x="50" y="212" width="275" height="243"/>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="E79-F5-WwM" firstAttribute="top" secondItem="Ny4-H5-LaD" secondAttribute="top" id="21Q-IT-2j2"/>
-                            <constraint firstItem="8cb-7g-bTV" firstAttribute="centerY" secondItem="feJ-hM-aOl" secondAttribute="centerY" id="9rA-fz-Ebh"/>
-                            <constraint firstItem="E79-F5-WwM" firstAttribute="centerX" secondItem="TTu-MZ-Gos" secondAttribute="centerX" id="IHp-A7-bte"/>
-                            <constraint firstItem="8cb-7g-bTV" firstAttribute="leading" secondItem="Ny4-H5-LaD" secondAttribute="leading" constant="50" id="Rqs-yy-pm4"/>
-                            <constraint firstItem="Ny4-H5-LaD" firstAttribute="bottom" secondItem="8cb-7g-bTV" secondAttribute="bottom" constant="212" id="WgQ-WE-QSg"/>
-                            <constraint firstItem="8cb-7g-bTV" firstAttribute="top" secondItem="TTu-MZ-Gos" secondAttribute="bottom" constant="21" id="cqz-eS-LkB"/>
-                            <constraint firstAttribute="trailing" secondItem="E79-F5-WwM" secondAttribute="trailing" id="gfN-w0-mF9"/>
-                            <constraint firstItem="TTu-MZ-Gos" firstAttribute="centerX" secondItem="8cb-7g-bTV" secondAttribute="centerX" id="hNS-uX-y9R"/>
-                            <constraint firstItem="E79-F5-WwM" firstAttribute="leading" secondItem="feJ-hM-aOl" secondAttribute="leading" id="mDJ-nN-Cpt"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ny4-H5-LaD"/>
                     </view>
                     <connections>
-                        <outlet property="navBar" destination="E79-F5-WwM" id="DLN-YE-AKv"/>
                         <segue destination="sa7-K1-w2N" kind="show" identifier="TwoPlayerSentencesFinalStorylineSegue" id="X2S-qW-p79"/>
                         <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerLoadingWordsToHome" id="Qrr-98-I5U"/>
                     </connections>
@@ -1470,37 +1433,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rc-tm-i0t">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.2004292607" green="0.33692091699999999" blue="0.48675513269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <items>
-                                    <navigationItem id="hBE-JC-lej">
-                                        <barButtonItem key="leftBarButtonItem" image="home" id="5eO-Df-Hfd">
-                                            <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <connections>
-                                                <action selector="onHomePressed:" destination="ics-5Z-QnL" id="GbP-1h-FY2"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-60-FUZ">
-                                <rect key="frame" x="177" y="192" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 is choosing sentences, please wait...." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-Te-C6C">
-                                <rect key="frame" x="72" y="254" width="230" height="183"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="183" id="RBA-11-xw6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eS-gB-QPO">
                                 <rect key="frame" x="72" y="459" width="250" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Draw"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onButtonPressed:" destination="Lc1-nM-rkv" eventType="touchUpInside" id="She-kA-CJC"/>
                                     <segue destination="HOH-2b-Pfs" kind="show" identifier="drawSegue" id="kWU-FC-1v9"/>
@@ -1508,20 +1450,9 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415075302124" green="0.92149776220321655" blue="0.92157071828842163" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="qcR-Te-C6C" firstAttribute="top" secondItem="hLF-60-FUZ" secondAttribute="bottom" constant="42" id="1Km-zo-7Fr"/>
-                            <constraint firstItem="7rc-tm-i0t" firstAttribute="centerX" secondItem="hLF-60-FUZ" secondAttribute="centerX" id="3lS-V4-XSs"/>
-                            <constraint firstAttribute="trailing" secondItem="7rc-tm-i0t" secondAttribute="trailing" id="63L-vv-CNm"/>
-                            <constraint firstItem="hLF-60-FUZ" firstAttribute="centerX" secondItem="qcR-Te-C6C" secondAttribute="centerX" id="XgR-K3-vOc"/>
-                            <constraint firstItem="7rc-tm-i0t" firstAttribute="leading" secondItem="jMt-On-a4n" secondAttribute="leading" id="YP5-Pn-d8h"/>
-                            <constraint firstItem="GLs-tv-Lbh" firstAttribute="bottom" secondItem="qcR-Te-C6C" secondAttribute="bottom" constant="230" id="b3z-zN-DBI"/>
-                            <constraint firstItem="7rc-tm-i0t" firstAttribute="top" secondItem="GLs-tv-Lbh" secondAttribute="top" id="pbN-xq-z2Y"/>
-                            <constraint firstItem="qcR-Te-C6C" firstAttribute="leading" secondItem="GLs-tv-Lbh" secondAttribute="leading" constant="72" id="tg8-Ul-s8q"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
                     </view>
                     <connections>
-                        <outlet property="navBar" destination="7rc-tm-i0t" id="B3J-wa-WxC"/>
                         <segue destination="a3J-SJ-Dfd" kind="show" identifier="TwoPlayerChooseWordsSegue" id="4tv-xQ-dsl"/>
                         <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerLoadingSentencesToHome" id="9zy-fi-1yo"/>
                     </connections>
@@ -1716,7 +1647,7 @@
         <segue reference="X2S-qW-p79"/>
         <segue reference="eR3-RI-DHD"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="iFx-QR-Dwy"/>
+        <segue reference="9zy-fi-1yo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

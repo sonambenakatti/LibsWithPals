@@ -20,6 +20,7 @@ PODS:
   - FBSDKLoginKit (4.30.0):
     - FBSDKCoreKit
   - IQKeyboardManagerSwift (5.0.7)
+  - SwiftSpinner (1.5.0)
 
 DEPENDENCIES:
   - DKCamera
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - IQKeyboardManagerSwift
+  - SwiftSpinner
 
 EXTERNAL SOURCES:
   Eureka:
@@ -46,7 +48,8 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 7c4bba2877781a131ab5d54c0a78c405d4307b62
   FBSDKLoginKit: fe7a7e82373dc5daad92e1623219e86224ab1fb1
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
 
-PODFILE CHECKSUM: 481574106e8140f23fb7c3bf7863b1308fc71bdb
+PODFILE CHECKSUM: e7549159cb6b89f79c1ca2b4370948cbfaa64684
 
 COCOAPODS: 1.4.0

@@ -8,6 +8,7 @@
 
 import UIKit
 import MultipeerConnectivity
+import SwiftSpinner
 
 class TwoPlayerLoadingWordsViewController: UIViewController {
     
@@ -19,6 +20,12 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        SwiftSpinner.show(delay: 1.0, title: "Player 2 is Entering Words", animated: true)
     }
     
     override func didReceiveMemoryWarning() {
