@@ -137,7 +137,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfJ-Gs-8RP">
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
-                                                        <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.97866434010000003" green="0.89135335360000001" blue="0.089821785279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="hdc-g7-PfV"/>
                                                             <constraint firstAttribute="height" constant="45" id="ySk-Py-d1e"/>
@@ -166,7 +166,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-th-hod">
                                                         <rect key="frame" x="0.0" y="70" width="200" height="45"/>
-                                                        <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.97960096597671509" green="0.89033132791519165" blue="0.29640370607376099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="w46-ib-UOF"/>
                                                         </constraints>
@@ -1113,9 +1113,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCA-ch-pRR">
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCA-ch-pRR">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.30053249001502991" green="0.42412573099136353" blue="0.54944407939910889" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="abe-D3-50h">
@@ -1172,8 +1171,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="TCA-ch-pRR" firstAttribute="leading" secondItem="kH2-Wm-jWz" secondAttribute="leading" id="6JV-bq-uFo"/>
                             <constraint firstItem="D09-ZU-2HQ" firstAttribute="centerY" secondItem="9xa-kp-0Lh" secondAttribute="centerY" id="Blq-Cp-kaI"/>
                             <constraint firstItem="D09-ZU-2HQ" firstAttribute="centerX" secondItem="9xa-kp-0Lh" secondAttribute="centerX" id="Cw2-OG-eJ5"/>
+                            <constraint firstItem="TCA-ch-pRR" firstAttribute="trailing" secondItem="kH2-Wm-jWz" secondAttribute="trailing" id="W8G-ho-gVR"/>
+                            <constraint firstItem="TCA-ch-pRR" firstAttribute="top" secondItem="kH2-Wm-jWz" secondAttribute="top" id="o4k-dE-Pqk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kH2-Wm-jWz"/>
                     </view>
@@ -1597,10 +1599,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-NU-nny">
-                                <rect key="frame" x="62" y="520" width="250" height="50"/>
+                                <rect key="frame" x="65" y="569" width="250" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="18"/>
                                 <state key="normal" title="Draw"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onButtonPressed:" destination="5JU-lf-l6W" eventType="touchUpInside" id="Bh2-jt-4fK"/>
                                     <segue destination="HOH-2b-Pfs" kind="show" identifier="drawSegue" id="Mml-JT-LGM"/>
@@ -1636,6 +1644,7 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Mml-JT-LGM"/>
         <segue reference="IER-do-6bW"/>
         <segue reference="VwQ-28-Zr2"/>
         <segue reference="kH6-JE-x88"/>
