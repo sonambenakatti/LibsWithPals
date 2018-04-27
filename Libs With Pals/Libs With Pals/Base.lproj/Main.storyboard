@@ -1315,8 +1315,8 @@
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="pressBackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="3Dg-32-lK6"/>
-                                    <segue destination="ics-5Z-QnL" kind="show" identifier="backLoadingSentencesSegue" id="eR3-RI-DHD"/>
+                                    <action selector="pressBackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="Ojt-S1-e2a"/>
+                                    <segue destination="sa7-K1-w2N" kind="show" identifier="backSegue" id="IER-do-6bW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xg-X3-rBx">
@@ -1423,7 +1423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvZ-Nd-T1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3309.5999999999999" y="-560.86956521739137"/>
+            <point key="canvasLocation" x="7270" y="944"/>
         </scene>
         <!--Two Player Loading Sentences View Controller-->
         <scene sceneID="E9c-U9-yD0">
@@ -1432,23 +1432,6 @@
                     <view key="view" contentMode="scaleToFill" id="jMt-On-a4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eS-gB-QPO">
-                                <rect key="frame" x="72" y="459" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Draw"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="onButtonPressed:" destination="Lc1-nM-rkv" eventType="touchUpInside" id="She-kA-CJC"/>
-                                    <segue destination="HOH-2b-Pfs" kind="show" identifier="drawSegue" id="kWU-FC-1v9"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.77487415075302124" green="0.92149776220321655" blue="0.92157071828842163" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="GLs-tv-Lbh"/>
                     </view>
@@ -1458,7 +1441,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cE7-5e-CI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Lc1-nM-rkv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3508" y="241.52923538230885"/>
         </scene>
@@ -1614,6 +1596,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-NU-nny">
+                                <rect key="frame" x="62" y="520" width="250" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Draw"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="5JU-lf-l6W" eventType="touchUpInside" id="Bh2-jt-4fK"/>
+                                    <segue destination="HOH-2b-Pfs" kind="show" identifier="drawSegue" id="Mml-JT-LGM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1632,6 +1624,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jh-WG-NGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5JU-lf-l6W" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6376.8000000000002" y="994.45277361319347"/>
         </scene>
@@ -1643,11 +1636,9 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kWU-FC-1v9"/>
-        <segue reference="X2S-qW-p79"/>
-        <segue reference="eR3-RI-DHD"/>
+        <segue reference="IER-do-6bW"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="9zy-fi-1yo"/>
+        <segue reference="kH6-JE-x88"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
