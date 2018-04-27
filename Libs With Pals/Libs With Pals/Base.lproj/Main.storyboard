@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="KohinoorBangla.ttc">
+            <string>KohinoorBangla-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--How To Play View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -563,11 +568,12 @@
                     </view>
                     <connections>
                         <segue destination="l1Y-hP-RDB" kind="show" identifier="ChooseWordsToFinalStorySegue" id="js7-PB-RyZ"/>
+                        <segue destination="sa7-K1-w2N" kind="show" identifier="ChooseWordsToFinalStorySegue" id="ciT-cW-7wB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzR-qO-SHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="1842"/>
+            <point key="canvasLocation" x="2412" y="1892"/>
         </scene>
         <!--Saved Libs View Controller-->
         <scene sceneID="HsT-CD-69i">
@@ -1318,7 +1324,7 @@
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="pressBackButton:" destination="HOH-2b-Pfs" eventType="touchUpInside" id="MhB-Lc-Cia"/>
-                                    <segue destination="8vk-ve-krd" kind="show" identifier="backSegue" id="yvO-45-1Qr"/>
+                                    <segue destination="8vk-ve-krd" kind="show" identifier="backSegue" id="uWn-TP-cVc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xg-X3-rBx">
@@ -1586,24 +1592,28 @@
                                             <color key="tintColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="onHomeButtonPressed:" destination="sa7-K1-w2N" id="hqN-Gl-Tt5"/>
-                                                <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerFinalStorylineToHomeSegue" id="kH6-JE-x88"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Nmt-i2-BkC">
+                                            <color key="tintColor" red="0.95843797922134399" green="0.86401623487472534" blue="0.048901528120040894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="onShareButtonPressed:" destination="sa7-K1-w2N" id="bdv-jS-O61"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="huT-P9-chg">
-                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                                <rect key="frame" x="0.0" y="66" width="375" height="476"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-NU-nny">
-                                <rect key="frame" x="62" y="538" width="250" height="50"/>
+                                <rect key="frame" x="62" y="559" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.94054148800000004" green="0.86663631429999999" blue="0.29507183939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="gZd-Ew-kht"/>
-                                    <constraint firstAttribute="height" constant="50" id="lHi-Dk-hH6"/>
+                                    <constraint firstAttribute="height" constant="50" id="6rr-pG-ICK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="18"/>
                                 <state key="normal" title="Draw"/>
@@ -1617,24 +1627,39 @@
                                     <segue destination="HOH-2b-Pfs" kind="show" identifier="drawSegue" id="Mml-JT-LGM"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KUh-R0-BUK">
+                                <rect key="frame" x="14" y="625" width="347" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="vv9-lq-46G"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="onChangeFontSizeSlide:" destination="sa7-K1-w2N" eventType="valueChanged" id="UxX-fj-95S"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="mlD-3o-d38" firstAttribute="trailing" secondItem="rlu-NU-nny" secondAttribute="trailing" constant="63" id="77I-bR-eke"/>
-                            <constraint firstItem="zdd-6N-3yP" firstAttribute="leading" secondItem="zfV-1q-YTm" secondAttribute="leading" id="Bhs-jp-emy"/>
-                            <constraint firstItem="huT-P9-chg" firstAttribute="top" secondItem="zdd-6N-3yP" secondAttribute="bottom" id="KCY-IT-mQl"/>
-                            <constraint firstItem="mlD-3o-d38" firstAttribute="trailing" secondItem="huT-P9-chg" secondAttribute="trailing" id="Pqf-DV-1Ue"/>
-                            <constraint firstAttribute="trailing" secondItem="zdd-6N-3yP" secondAttribute="trailing" id="XMh-95-wPv"/>
-                            <constraint firstItem="huT-P9-chg" firstAttribute="leading" secondItem="mlD-3o-d38" secondAttribute="leading" id="csk-Sa-EKz"/>
-                            <constraint firstItem="zdd-6N-3yP" firstAttribute="top" secondItem="mlD-3o-d38" secondAttribute="top" constant="2" id="mq6-1y-JwQ"/>
-                            <constraint firstItem="mlD-3o-d38" firstAttribute="bottom" secondItem="huT-P9-chg" secondAttribute="bottom" id="rJb-9R-hht"/>
-                            <constraint firstItem="mlD-3o-d38" firstAttribute="bottom" secondItem="rlu-NU-nny" secondAttribute="bottom" constant="79" id="vJm-41-Dd3"/>
-                            <constraint firstItem="rlu-NU-nny" firstAttribute="leading" secondItem="mlD-3o-d38" secondAttribute="leading" constant="62" id="vsd-Xf-M0N"/>
+                            <constraint firstItem="zdd-6N-3yP" firstAttribute="trailing" secondItem="huT-P9-chg" secondAttribute="trailing" id="9Tz-8r-2OV"/>
+                            <constraint firstItem="KUh-R0-BUK" firstAttribute="leading" secondItem="zfV-1q-YTm" secondAttribute="leadingMargin" id="CWM-ZY-URs"/>
+                            <constraint firstAttribute="trailing" secondItem="zdd-6N-3yP" secondAttribute="trailing" id="Ecq-xo-Xz4"/>
+                            <constraint firstItem="zdd-6N-3yP" firstAttribute="leading" secondItem="huT-P9-chg" secondAttribute="leading" id="JHi-Dh-hyG"/>
+                            <constraint firstItem="huT-P9-chg" firstAttribute="top" secondItem="zdd-6N-3yP" secondAttribute="bottom" id="O0L-6v-Lxg"/>
+                            <constraint firstItem="KUh-R0-BUK" firstAttribute="centerX" secondItem="rlu-NU-nny" secondAttribute="centerX" id="OBz-VR-3xp"/>
+                            <constraint firstItem="zdd-6N-3yP" firstAttribute="leading" secondItem="zfV-1q-YTm" secondAttribute="leading" id="SnN-Z9-BC8"/>
+                            <constraint firstItem="KUh-R0-BUK" firstAttribute="top" secondItem="rlu-NU-nny" secondAttribute="bottom" constant="16" id="ULQ-5R-g4Z"/>
+                            <constraint firstItem="zdd-6N-3yP" firstAttribute="centerX" secondItem="rlu-NU-nny" secondAttribute="centerX" id="dJ3-zi-zEu"/>
+                            <constraint firstItem="mlD-3o-d38" firstAttribute="bottom" secondItem="KUh-R0-BUK" secondAttribute="bottom" constant="13" id="lRJ-8d-XxY"/>
+                            <constraint firstItem="zdd-6N-3yP" firstAttribute="top" secondItem="mlD-3o-d38" secondAttribute="top" constant="2" id="meZ-RR-k04"/>
+                            <constraint firstItem="rlu-NU-nny" firstAttribute="leading" secondItem="mlD-3o-d38" secondAttribute="leading" constant="62" id="ruU-uO-aac"/>
+                            <constraint firstItem="huT-P9-chg" firstAttribute="bottom" secondItem="mlD-3o-d38" secondAttribute="bottom" constant="-125" id="za8-JY-7wJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mlD-3o-d38"/>
                     </view>
                     <connections>
+                        <outlet property="UISlider" destination="KUh-R0-BUK" id="sUs-r5-uQR"/>
+                        <outlet property="navBar" destination="zdd-6N-3yP" id="cC8-g8-T6h"/>
                         <outlet property="storylineTextView" destination="huT-P9-chg" id="tLS-Au-PRr"/>
+                        <segue destination="8vk-ve-krd" kind="show" identifier="TwoPlayerFinalStorylineToHomeSegue" id="tno-d4-Pbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jh-WG-NGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1650,9 +1675,9 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X2S-qW-p79"/>
+        <segue reference="ciT-cW-7wB"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="yvO-45-1Qr"/>
+        <segue reference="tno-d4-Pbl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

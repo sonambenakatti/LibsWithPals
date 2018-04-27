@@ -51,6 +51,7 @@ class TwoPlayerStartGameViewController: UIViewController {
         do {
             let message = try JSONSerialization.jsonObject(with: recievedData, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Bool>
             if message["connected"]! == false {
+                print("Here")
                 lostConnection()
             } else {
                 // don't let other player click enter words

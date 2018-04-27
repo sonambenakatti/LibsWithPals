@@ -14,7 +14,6 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
     
     var appDelegate: AppDelegate!
     var message: Dictionary<String,Bool> = [:]
-    @IBOutlet weak var navBar: UINavigationBar!
     
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
@@ -72,7 +71,6 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
     }
     
     func lostConnection() {
-        navBar.topItem?.title = "Disconnected"
         let alert = UIAlertController(title: "The other player has left the session", message: "Please return home to connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
             self.performSegue(withIdentifier: "TwoPlayerLoadingSentencesToHome", sender: AnyClass.self)

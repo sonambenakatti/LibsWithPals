@@ -7,7 +7,7 @@
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>DKCamera.xcscheme</key>
 		<dict>
@@ -48,6 +48,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>9</integer>
+		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 	</dict>
 </dict>

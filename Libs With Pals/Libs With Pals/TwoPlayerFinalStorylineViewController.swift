@@ -20,9 +20,12 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
     let prefs: UserDefaults = UserDefaults.standard
     
     @IBOutlet weak var storylineTextView: UITextView!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var UISlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.topItem?.title = "Final Story!"
         storylineTextView.isEditable = false
         if message.count > 0 {
             getTypesOfWords()
@@ -110,7 +113,25 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        
+    }
+    
+    // Allow user to share their mad lib
+    @IBAction func onShareButtonPressed(_ sender: Any) {
+        let items = [finalStory];
+        let activity = UIActivityViewController(activityItems: items, applicationActivities: nil);
+        self.present(activity, animated: true, completion: nil)
+    }
+    
+    @IBAction func onChangeFontSizeSlide(_ sender: Any) {
+        self.storylineTextView.font = UIFont.systemFont(ofSize: CGFloat(UISlider.value * 30.0))
+        self.reloadInputViews()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "drawSegue",
+            let destination = segue.destination as? DrawingViewController {
+            destination.finalStory = self.finalStory
+        }
     }
 
 }

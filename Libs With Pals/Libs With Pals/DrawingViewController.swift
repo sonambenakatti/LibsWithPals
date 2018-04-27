@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DrawingViewController: UIViewController {
     
@@ -16,14 +17,40 @@ class DrawingViewController: UIViewController {
     var startPoint = CGPoint()
     var touchPoint = CGPoint()
     var color = UIColor.black
-    
-    
-    @IBAction func onButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "drawSegue", sender: AnyClass.self)
-    }
+    let prefs: UserDefaults = UserDefaults.standard
+    var finalStory: String = ""
     
     @IBAction func pressBackButton(_ sender: Any) {
+        let saveLibs = prefs.bool(forKey: "saveLibs")
+        print("value of saveLibs: \(saveLibs)")
+        if (saveLibs) {
+            self.saveMadLib()
+        }
         self.performSegue(withIdentifier: "backSegue", sender: AnyClass.self)
+    }
+    
+    // Save the mad lib into core data if the user has the setting enabled
+    func saveMadLib() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let lib = NSEntityDescription.insertNewObject(
+            forEntityName: "MadLib", into: context)
+        
+        lib.setValue(finalStory, forKey: "story")
+        
+        // Commit the changes
+        do {
+            try context.save()
+            NSLog("Saved story into core data")
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
     }
     
     /*
