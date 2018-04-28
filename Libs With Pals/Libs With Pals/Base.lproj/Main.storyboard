@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkW-ZX-Inf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="KohinoorBangla.ttc">
-            <string>KohinoorBangla-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--How To Play View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1059,26 +1054,26 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aVk-CN-DQB">
-                                <rect key="frame" x="30" y="76" width="316" height="533"/>
+                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Choose a Storyline Theme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXq-B3-eLu">
-                                        <rect key="frame" x="0.0" y="0.0" width="316" height="217"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="3" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-rq-e6H">
-                                        <rect key="frame" x="0.0" y="237" width="316" height="296"/>
-                                        <color key="backgroundColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="separatorColor" red="0.63345128299999998" green="0.83475136760000002" blue="0.85498255489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="0.0" y="155" width="375" height="427"/>
+                                        <color key="backgroundColor" red="0.77647058823529413" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="separatorColor" red="0.77647058823529413" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="sectionIndexBackgroundColor" red="0.77487415075302124" green="0.92149776220321655" blue="0.92157071828842163" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.77647058823529413" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="storylineCell" id="60E-g9-eEd">
-                                                <rect key="frame" x="0.0" y="28" width="316" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="60E-g9-eEd" id="dvP-xt-mvo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="316" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -1092,13 +1087,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.77487415079999999" green="0.92149776220000001" blue="0.92157071830000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="aVk-CN-DQB" firstAttribute="trailing" secondItem="Q9a-PB-mwF" secondAttribute="trailing" id="4F0-jy-zFu"/>
                             <constraint firstItem="yRt-Kf-FgS" firstAttribute="leading" secondItem="tCR-PP-Uue" secondAttribute="leading" id="5AU-aV-Me1"/>
-                            <constraint firstItem="aVk-CN-DQB" firstAttribute="top" secondItem="yRt-Kf-FgS" secondAttribute="bottom" constant="11" id="By3-l9-3Jk"/>
+                            <constraint firstItem="aVk-CN-DQB" firstAttribute="leading" secondItem="Q9a-PB-mwF" secondAttribute="leading" id="9Yf-0h-pQH"/>
                             <constraint firstAttribute="trailing" secondItem="yRt-Kf-FgS" secondAttribute="trailing" id="IB6-N0-cCj"/>
-                            <constraint firstItem="yRt-Kf-FgS" firstAttribute="centerX" secondItem="aVk-CN-DQB" secondAttribute="centerX" id="ZVp-ww-D08"/>
-                            <constraint firstItem="aVk-CN-DQB" firstAttribute="leading" secondItem="Q9a-PB-mwF" secondAttribute="leading" constant="30" id="hzR-QJ-dM7"/>
+                            <constraint firstItem="aVk-CN-DQB" firstAttribute="top" secondItem="yRt-Kf-FgS" secondAttribute="bottom" constant="20" id="Wk2-in-syl"/>
+                            <constraint firstItem="Q9a-PB-mwF" firstAttribute="bottom" secondItem="aVk-CN-DQB" secondAttribute="bottom" id="puu-1h-iHp"/>
                             <constraint firstItem="yRt-Kf-FgS" firstAttribute="top" secondItem="Q9a-PB-mwF" secondAttribute="top" constant="1" id="qGm-Ue-8iN"/>
-                            <constraint firstItem="Q9a-PB-mwF" firstAttribute="bottom" secondItem="aVk-CN-DQB" secondAttribute="bottom" constant="58" id="qSc-M4-vHH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Q9a-PB-mwF"/>
                     </view>
@@ -1109,7 +1104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8k-bw-9JX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698" y="977"/>
+            <point key="canvasLocation" x="2696.8000000000002" y="976.46176911544239"/>
         </scene>
         <!--Two Player Start Game View Controller-->
         <scene sceneID="skH-Up-iyR">
@@ -1677,7 +1672,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="ciT-cW-7wB"/>
         <segue reference="VwQ-28-Zr2"/>
-        <segue reference="tno-d4-Pbl"/>
+        <segue reference="JHC-Nb-mFF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
