@@ -15,9 +15,16 @@ class HowToPlayViewController: UIViewController {
     
     @IBOutlet weak var instructionsText: UITextView!
     // List of instructions to display
-    let text = ["Choose an option from the storyline library",
+    let text = ["One Player",
+                "Choose an option from the storyline library",
                 "Input words according to the given type",
                 "Input words according to the given type",
+                "View your completed storyline!",
+                
+                "Two Player",
+                "Connect with another player",
+                "Player one chooses sentences",
+                "Player two chooses words",
                 "View your completed storyline!"]
     
     override func viewDidLoad() {
@@ -28,12 +35,9 @@ class HowToPlayViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
 
-        // Set the hand image to its starting position
-        let screenSize: CGRect = UIScreen.main.bounds
-        self.hand.frame = CGRect(x: screenSize.width / 1.8, y: screenSize.height / 1.4, width: self.hand.frame.width / 2, height: self.hand.frame.height / 2)
-        self.view.addSubview(self.hand)
+        addHandToScreen()
         fadeTextIn(val: 0)
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +45,13 @@ class HowToPlayViewController: UIViewController {
 
     }
     
+    func addHandToScreen() {
+        // Set the hand image to its starting position
+        let screenSize: CGRect = UIScreen.main.bounds
+        self.hand.frame = CGRect(x: screenSize.width / 1.8, y: screenSize.height / 1.4, width: self.hand.frame.width / 2, height: self.hand.frame.height / 2)
+        self.view.addSubview(self.hand)
+    }
+
     // Reset the hand back to the original position so that it doesn't go off screen
     func resetHand() {
         self.hand.isHidden = true
@@ -69,16 +80,21 @@ class HowToPlayViewController: UIViewController {
         // Images are white, which is why you may not be able to see them below
         switch curVal {
             case 0:
+                hand.isHidden = true
+            case 1:
                 self.hand.isHidden = false
                 self.howToPlayImage.image = #imageLiteral(resourceName: "storylineTable")
                 self.handClick()
-            case 1:
-                hand.isHidden = true
-                self.howToPlayImage.image = #imageLiteral(resourceName: "blanks")
             case 2:
+                self.howToPlayImage.image = #imageLiteral(resourceName: "blanks")
+            case 3:
                 self.howToPlayImage.image = #imageLiteral(resourceName: "blanksFilledIn")
-            default:
+            case 4:
                 self.howToPlayImage.image = #imageLiteral(resourceName: "filledInSentence")
+            case 5:
+                self.howToPlayImage.image = nil
+            default:
+                self.howToPlayImage.image = nil
         }
 
         self.instructionsText.text = self.text[curVal]
@@ -86,7 +102,7 @@ class HowToPlayViewController: UIViewController {
         UIView.animate(
             withDuration: 1.0,
             delay: 5,
-            options: [.curveEaseOut],
+            options: [.transitionFlipFromLeft],
             animations: {
                 self.instructionsText.alpha = 0.0;
         }, completion: { _ in
