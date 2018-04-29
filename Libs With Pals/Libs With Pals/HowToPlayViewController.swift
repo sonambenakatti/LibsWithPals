@@ -23,9 +23,9 @@ class HowToPlayViewController: UIViewController {
                 
                 "Two Player",
                 "Connect with another player",
-                "Player one chooses sentences",
-                "Player two chooses words",
-                "View your completed storyline!"]
+                "Player one creates sentences, including blanks for player two",
+                "Player two chooses words based on player one's input",
+                "View the completed storyline!"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +78,8 @@ class HowToPlayViewController: UIViewController {
         
         // Change the images depending on the current text
         // Images are white, which is why you may not be able to see them below
+        
+        // This is poorly hardcoded and not very nice code. Needs to be cleaned up to make it easier to change in the future.
         switch curVal {
             case 0:
                 hand.isHidden = true
@@ -93,6 +95,14 @@ class HowToPlayViewController: UIViewController {
                 self.howToPlayImage.image = #imageLiteral(resourceName: "filledInSentence")
             case 5:
                 self.howToPlayImage.image = nil
+            case 6:
+                self.howToPlayImage.image = #imageLiteral(resourceName: "playerWantsToConnect")
+            case 7:
+                self.howToPlayImage.image = nil
+            case 8:
+                self.howToPlayImage.image = nil
+            case 9:
+                self.howToPlayImage.image = #imageLiteral(resourceName: "filledInSentence")
             default:
                 self.howToPlayImage.image = nil
         }
