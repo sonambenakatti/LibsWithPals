@@ -18,9 +18,9 @@ class Storyline {
     
     // TODO: Don't allow the user to enter a pronoun more than one time
     
-    let groceryStory = ["It’s Saturday night and ", " has no ", " in ", " fridge. So clearly, it’s time for a trip to the store. ", " gets in ", " ", " and drives to the local grocery store wearing nothing but a ",   ". On",  "way in, the ",  " store manager greets ",  ", looking a little ", " due to ", "'s attire. ", " realizes ", " completely forgot what ", " originally came for! So instead, ", " heads to the aisle with the ", ". ", " picks up seventeen ", " and heads to check out. ", " realizes ", " forgot their wallet at ", ", so ", " drops their items and heads to ", "."]
+    let groceryStory = ["It’s Saturday night and ", " has no ", " in ", " fridge. So clearly, it’s time for a trip to the store. ", " gets in ", " ", " and drives to the local grocery store wearing nothing but a ",   ". On ",  " way in, the ",  " store manager greets ",  ", looking a little ", " due to ", "'s attire. ", " realizes ", " completely forgot what ", " originally came for! So instead, ", " heads to the aisle with the ", ". ", " picks up seventeen ", " and heads to check out. ", " realizes ", " forgot their wallet at ", ", so ", " drops their items and heads to ", "."]
     
-    let groceryBlanks = ["name", "noun", "possessive-pronoun", "name", "possessive-pronoun", "noun", "noun - article of clothing", "pronoun", "adjective", "name", "noun - emotion", "name", "name", "pronoun", "pronoun", "pronoun", "noun", "name", "noun - plural", "name", "pronoun", "noun - place", "pronoun", "adverb"]
+    let groceryBlanks = ["name", "noun", "possessive-pronoun", "name", "possessive-pronoun", "noun", "noun - article of clothing", "possessive-pronoun", "adjective", "name", "noun - emotion", "name", "name", "pronoun", "pronoun", "pronoun", "noun", "name", "noun - plural", "name", "pronoun", "noun - place", "pronoun", "adverb"]
     
     let morningStory = ["After a full 8 hours of sleep, ", " woke up early this morning. ", " went to the bathroom ", " and brushed ", " teeth ", ". After that, ", " went downstairs to cook ", " for breakfast. While ", " was cooking, ", " spilled all over ", " and ", " shouted, 'Oh no!' ", " went upstairs to clean up and unexpectedly found a ", " at the top of the stairs. This was turning out to be a really eye opening day."]
 

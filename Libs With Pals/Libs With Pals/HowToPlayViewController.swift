@@ -82,6 +82,7 @@ class HowToPlayViewController: UIViewController {
         // This is poorly hardcoded and not very nice code. Needs to be cleaned up to make it easier to change in the future.
         switch curVal {
             case 0:
+                self.howToPlayImage.image = nil
                 hand.isHidden = true
             case 1:
                 self.hand.isHidden = false
