@@ -11,11 +11,21 @@ import CoreData
 
 class TwoPlayerFinalStorylineViewController: UIViewController {
     
+    // message containng entered words if sent over server
     var message: Dictionary<String, Bool> = [:]
+    
+    // sentences in order
     var sentences: [String] = []
+    
+    // words in order
     var words: [String] = []
+    
+    // entered words passed from TwoPlayerChooseWordsVC
     var passedWords: Dictionary<String, Any?> = [:]
+    
+    // string of the final story combined
     var finalStory: String = ""
+    
     var name: String = ""
     let prefs: UserDefaults = UserDefaults.standard
     
@@ -27,6 +37,7 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
         super.viewDidLoad()
         navBar.topItem?.title = "Final Story!"
         storylineTextView.isEditable = false
+        // if the types of words were sent over server
         if message.count > 0 {
             getTypesOfWords()
         } else {
@@ -80,6 +91,7 @@ class TwoPlayerFinalStorylineViewController: UIViewController {
             finalStory += " "
             sentencesIndex = sentencesIndex + 1
         }
+        finalStory += "."
     }
     
     @IBAction func onHomeButtonPressed(_ sender: Any) {

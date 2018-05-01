@@ -44,6 +44,18 @@ class TwoPlayerStartGameViewController: UIViewController {
         self.performSegue(withIdentifier: "TwoPlayerEnterWordsSegue", sender: AnyClass.self)
     }
     
+    func disableWordsButton() {
+        enterWordsButton?.isUserInteractionEnabled = false
+        enterWordsButton?.isEnabled = false
+        self.view.reloadInputViews()
+    }
+    
+    func disableSentencesButton() {
+        chooseSentencesButton?.isUserInteractionEnabled = false
+        chooseSentencesButton?.isEnabled = false
+        self.view.reloadInputViews()
+    }
+    
     // function to handle the recieved data between players
     @objc func handleRecieveDataWithNotification(notification:NSNotification){
         let userInfo = notification.userInfo! as Dictionary
@@ -71,6 +83,7 @@ class TwoPlayerStartGameViewController: UIViewController {
         }
     }
     
+    // function to handle when the player is not responding, and has not pressed "Enter words"
     func playerNotResponding() {
         var actionDict: Dictionary<String, Bool> = [:]
         let alert = UIAlertController(title: "Please respond to other player", message: "Please press 'Enter Words' to conintue the game, or go home to end session", preferredStyle: UIAlertControllerStyle.alert)
@@ -88,18 +101,9 @@ class TwoPlayerStartGameViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func disableWordsButton() {
-        enterWordsButton?.isUserInteractionEnabled = false
-        enterWordsButton?.isEnabled = false
-        self.view.reloadInputViews()
-    }
     
-    func disableSentencesButton() {
-        chooseSentencesButton?.isUserInteractionEnabled = false
-        chooseSentencesButton?.isEnabled = false
-        self.view.reloadInputViews()
-    }
     
+    // handle when the other player leaves the game 
     func lostConnection() {
         navBar.topItem?.title = "Disconnected"
         let alert = UIAlertController(title: "The other player has left the session", message: "Please return home to connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
@@ -113,6 +117,7 @@ class TwoPlayerStartGameViewController: UIViewController {
     }
     
     @IBAction func onHomePressed(_ sender: Any) {
+        // if home is pressed, let send notification to other player that this player is not responding
         var actionDict: Dictionary<String, Bool> = [:]
         setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true, false])
         sendDataOverServer(dataToSend: actionDict)
@@ -121,7 +126,6 @@ class TwoPlayerStartGameViewController: UIViewController {
     
     // function to set all needed values sent over server
     func setNeededValuesInJson(dataToSend: inout Dictionary<String, Bool>, Vals: Array<Bool>) {
-        // let player know done enter sentences
         dataToSend["doneEnteringSentences"] = Vals[0]
         dataToSend["enterWordsClicked"] = Vals[1]
         dataToSend["chooseSentencesClicked"] = Vals[2]
@@ -145,7 +149,6 @@ class TwoPlayerStartGameViewController: UIViewController {
         if segue.identifier == "TwoPlayerWriteStorySegue" {
             let vc: TwoPlayerCreateStoryViewController = segue.destination as! TwoPlayerCreateStoryViewController
             vc.appDelegate = self.appDelegate
-            print("Enter Words Clicked value, \(enterWordsClicked)")
             vc.enterWordsClicked = self.enterWordsClicked
         } else if segue.identifier == "TwoPlayerEnterWordsSegue" {
             let vc: TwoPlayerLoadingSentencesViewController = segue.destination as! TwoPlayerLoadingSentencesViewController

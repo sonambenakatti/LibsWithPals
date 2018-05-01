@@ -24,7 +24,7 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        SwiftSpinner.show(delay: 1.0, title: "Player 2 is Entering Words", animated: true)
+        SwiftSpinner.show(delay: 0.5, title: "Player 2 is Entering Words", animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,7 +43,7 @@ class TwoPlayerLoadingWordsViewController: UIViewController {
             } else {
                 // player 2 is done entering words
                 if message["doneEnteringWords"]! {
-                    // message containing entered of words
+                    // message containing entered words
                     self.message = message
                     self.performSegue(withIdentifier: "TwoPlayerSentencesFinalStorylineSegue", sender: AnyClass.self)
                 }

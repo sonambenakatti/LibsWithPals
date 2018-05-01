@@ -63,6 +63,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         }
     }
     
+    // handle when other player has left the sesison
     func lostConnection() {
         navBar.topItem?.title = "Disconnected"
         let alert = UIAlertController(title: "The other player has left the session", message: "Please return home to connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
@@ -80,6 +81,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         performExitActions()
     }
     
+    // handle when the other player has not responded 
     func playerNotResponding() {
         var actionDict: Dictionary<String, Bool> = [:]
         let alert = UIAlertController(title: "Other player is not responding", message: "Wait for player for 10 seconds and press done, or return home", preferredStyle: UIAlertControllerStyle.alert)
@@ -96,6 +98,7 @@ class TwoPlayerCreateStoryViewController: UIViewController, passEnteredWordsToPl
         self.present(alert, animated: true, completion: nil)
     }
     
+    // check if all rows filled, process entered sentences and send words and sentences over server to other player
     func performExitActions() {
         let containerRowsAllFilled = self.container?.checkIfAllRowsFilled()
         if containerRowsAllFilled! {

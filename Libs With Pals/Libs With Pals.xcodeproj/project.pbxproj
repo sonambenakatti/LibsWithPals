@@ -129,8 +129,8 @@
 				F3D1EA79207317CF0031D43C /* TwoPlayerLoadingSentencesViewController.swift */,
 				276E55462071BE700054261A /* TwoPlayerCreateStoryViewController.swift */,
 				276E55482071C4130054261A /* TwoPlayerWriteStorylineViewController.swift */,
-				F3D1EA7320730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift */,
 				F3D1EA7D2073403E0031D43C /* TwoPlayerLoadingWordsViewController.swift */,
+				F3D1EA7320730D7C0031D43C /* TwoPlayerChooseWordsViewController.swift */,
 				F3D1EA7520730DFA0031D43C /* TwoPlayerWordsFormViewController.swift */,
 				F3D1EA7F207349A90031D43C /* TwoPlayerFinalStorylineViewController.swift */,
 			);

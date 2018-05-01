@@ -14,14 +14,21 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     @IBOutlet weak var navBar: UINavigationBar!
     var container: TwoPlayerWordsFormViewController?
     var appDelegate: AppDelegate!
+    
+    // types of words and sentences entered by player 1 when creating sentences
     var words: Dictionary<String, Bool> = [:]
+    
+    // sentences entered by player one
     var userSentences: [String] = []
+    
+    // words entered by this player
     var userWords: [String] = []
+    
+    // temporary dict to handle putting words in order
     var ordered: Dictionary<Int, String> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //enterWordsClicked()
         
         // add observer to be notified when data is recieved over the server
         NotificationCenter.default.addObserver(self, selector: #selector(handleRecieveDataWithNotification(notification:)) , name: NSNotification.Name(rawValue: "MPC_DidRecieveDataNotification"), object: nil)
@@ -46,6 +53,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
         }
     }
     
+    // handle when the other player has left the session
     func lostConnection() {
         navBar.topItem?.title = "Disconnected"
         let alert = UIAlertController(title: "The other player has left the session", message: "Please return home to connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
@@ -59,7 +67,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     // get the types of words inputed by player one
     func getTypesOfWords(){
         for (word, _) in self.words {
-            // need to make sure that word is not identified as sentence and not other data sent over server
+            // need to make sure that word is not other data sent over server
             if(word != "doneEnteringSentences"
                 && word != "enterWordsClicked"
                 && word != "chooseSentencesClicked"
@@ -67,20 +75,23 @@ class TwoPlayerChooseWordsViewController: UIViewController{
                 && word != "connected"
                 && word != "responding"
                 && word != "doneResponding") {
-                // get rid of identifier on word
+                // last char is an int corresponding to the order it was entered in 
                 var newWord = word
                 let lastChar = newWord.removeLast()
                 let val = Int(String(lastChar))
+                // add to ordered dictionary
                 ordered[val!] = newWord
             }
         }
     }
     
+    // put all of the types of words and sentences in the correct order
     func orderWordsAndSentences() {
-        // Ensure the words are in order because words is a dictionary and therefore order is not guaranteed
         for i in 0...ordered.count - 1 {
+            // types of words will have even order (0, 2, 4...)
             if i % 2 == 0 {
                 userWords.append(ordered[i]!)
+            // sentences will have odd order (1, 3, 5 ...)
             } else {
                 var sentence = ordered[i]!
                 sentence.removeLast()
@@ -90,6 +101,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // show types of words to this player
         if segue.identifier == "TwoPlayerChooseWordsEmbed",
             let destination = segue.destination as? TwoPlayerWordsFormViewController {
             getTypesOfWords()
@@ -99,7 +111,9 @@ class TwoPlayerChooseWordsViewController: UIViewController{
             self.container?.userEnteredWords = userWords
         } else if segue.identifier == "TwoPlayerWordsFinalStorylineSegue",
             let destination = segue.destination as? TwoPlayerFinalStorylineViewController {
+            // pass entered words to final storyline
             destination.passedWords = (container?.words)!
+            // pass entered sentences to final storyline
             destination.sentences = userSentences
         }
     }
@@ -120,7 +134,7 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     // Take user to final storyline if all fields are filled out
     @IBAction func onMakeMyMadLibPressed(_ sender: Any) {
         if (self.container?.checkIfAllRowsFilled())! {
-            words = [:]
+            // send entered words to other player over the server
             processEnteredWords()
             setNeededValuesInJson(dataToSend: &words, Vals: [false, false, false, true, true, true, true, false])
             sendDataOverServer(dataToSend: words)
@@ -134,6 +148,8 @@ class TwoPlayerChooseWordsViewController: UIViewController{
     
     // Ensure the story is in order because words is a dictionary and therefore order is not guaranteed
     func processEnteredWords() {
+        // clear words dict to send entered words to other player's final storyline
+        words = [:]
         var orderWords = 0
         for i in 0...(container?.words.count)! - 1 {
             var newWord = container?.words[String(i)]!! as! String

@@ -23,7 +23,7 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        SwiftSpinner.show(delay: 1.0, title: "Player 2 is Choosing Sentences", animated: true)
+        SwiftSpinner.show(delay: 0.5, title: "Player 2 is Choosing Sentences", animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,8 +53,8 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
         }
     }
     
+    // func to handle when the other player has not responded
     func playerNotResponding() {
-        //doneResponding = false
         var actionDict: Dictionary<String, Bool> = [:]
         let alert = UIAlertController(title: "Other player is not responding", message: "Wait for player for 10 seconds and press done, or return home", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
@@ -70,6 +70,7 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // handle when other player leaves the session
     func lostConnection() {
         let alert = UIAlertController(title: "The other player has left the session", message: "Please return home to connect another player or play in one player mode.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Go home", style: UIAlertActionStyle.default, handler: { action in
@@ -80,6 +81,7 @@ class TwoPlayerLoadingSentencesViewController: UIViewController {
     }
     
     @IBAction func onHomePressed(_ sender: Any) {
+        // if this player leaves the session, notify the other player
         var actionDict: Dictionary<String, Bool> = [:]
         setNeededValuesInJson(dataToSend: &actionDict, Vals: [false, false, false, false, false, true, false])
         sendDataOverServer(dataToSend: actionDict)
